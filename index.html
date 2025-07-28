@@ -18,6 +18,8 @@
 <body class="bg-white">
 
 
+
+<div class="fixed top-0 left-0 right-0 z-50">
     <div class="bg-[#8bc83f] text-white text-sm py-2 px-6 flex justify-between items-center">
         <div>Welcome to Our Real Estate Site</div>
         <div class="space-x-4">
@@ -27,17 +29,14 @@
         </div>
     </div>
 
-    <nav class="bg-white shadow-md py-4 px-6">
+    <nav class="bg-white shadow-md py-2 px-6">
         <div class="container mx-auto flex justify-between items-center">
-
             <a href="#">
                 <img src="./static/images/logo.png" alt="Logo" class="h-14 w-auto">
             </a>
 
-
-
-            <ul class="hidden md:flex space-x-10  text-gray-700 navbar-times"">
-        <li><a href=" #" class="text-[#8bc83f] ">Home</a></li>
+            <ul class="hidden md:flex space-x-10 text-gray-700 navbar-times">
+                <li><a href="#" class="text-[#8bc83f]">Home</a></li>
                 <li><a href="#" class="hover:text-[#8bc83f]">About Us</a></li>
                 <li><a href="#" class="hover:text-[#8bc83f]">Properties</a></li>
                 <li><a href="#" class="hover:text-[#8bc83f]">Agents</a></li>
@@ -47,33 +46,29 @@
 
             <a href="#"
                 class="ml-4 border border-[#8bc83f] text-[#8bc83f] px-6 py-2 flex items-center gap-2 hover:bg-[#76ad33] hover:text-white transition rounded">
-
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                     <g fill="none" stroke="currentColor" stroke-dasharray="28" stroke-dashoffset="28"
                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                         <path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1">
                             <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="28;0" />
                         </path>
-                        <path
-                            d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z">
+                        <path d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z">
                             <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.4s" dur="0.4s"
                                 values="28;0" />
                         </path>
                     </g>
                 </svg>
-
                 Login
             </a>
-
         </div>
     </nav>
+</div>
 
 
 
-<section class="bg-gray-50 min-h-screen flex items-center justify-center px-6">
+<section class="bg-gray-50 h-[75vh] flex items-center  px-20">
   <div class="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10">
     
-    <!-- Left Content -->
     <div class="md:w-1/2 text-left">
       <h1 class="text-4xl md:text-6xl font-bold leading-tight">
         Start Your <br />
@@ -82,17 +77,166 @@
       </h1>
       <p class="mt-6 text-gray-600 text-lg">
         Whether it's a property or scrap, 
-        <span class="text-green-600 font-medium">Buysel.in</span> connects you directly with the right people.
+        <span class="text-[#8bc83f] font-medium">Buysel.in</span> connects you directly with the right people.
       </p>
-      <button class="mt-6 bg-lime-500 hover:bg-lime-600 text-white font-semibold py-2 px-6 rounded-full transition">
+      <button class="mt-6 bg-lime-500 hover:bg-lime-600 text-white font-semibold py-2 px-6 rounded-lg transition">
         Explore
       </button>
     </div>
 
-    <!-- Right Image or Empty Space for Future Content -->
-    <div class="md:w-1/2 hidden md:block">
-      <!-- You can place an image or illustration here -->
-      <img src="{% static 'img/your-image.png' %}" alt="BuySell Illustration" class="w-full">
+
+     <div
+        class="image-section"
+        onclick="sendMessageToWhatsApp('property', 'place')"
+      >
+        <a
+          href="https://wa.me/9061827363"
+          style="height: 100%"
+          target="_blank"
+          aria-label="WhatsApp Chat 1"
+        >
+          <img class="image-box" id="box1" src="./static/images/9p.jpg" alt="" />
+        </a>
+        <a
+          href="https://wa.me/9061827363"
+          style="height: 100%"
+          target="_blank"
+          aria-label="WhatsApp Chat 1"
+        >
+          <img class="image-box" id="box2" src="./static/images/10p.jpg" alt="" />
+        </a>
+        <a
+          href="https://wa.me/9061827363"
+          style="height: 100%"
+          target="_blank"
+          aria-label="WhatsApp Chat 1"
+        >
+          <img class="image-box" id="box3" src="./static/images/11p.jpg" alt="" />
+        </a>
+        <a
+          href="https://wa.me/9061827363"
+          style="height: 100%"
+          target="_blank"
+          aria-label="WhatsApp Chat 1"
+        >
+          <img class="image-box" id="box4" src="./static/images/9p.jpg" alt="" />
+        </a>
+      </div>
+
+  </div>
+</section>
+ <div class="image-section-mobile-outer">
+      <div
+        class="image-section-mobile"
+        onclick="sendMessageToWhatsApp('property', 'place')"
+      >
+        <a
+          href="https://wa.me/9061827363"
+          style="height: 100%"
+          target="_blank"
+          aria-label="WhatsApp Chat 1"
+        >
+          <img
+            class="image-box-mobile"
+            id="box-mobile1"
+            src="./static/img/9p.jpg"
+            alt=""
+          />
+        </a>
+        <a
+          href="https://wa.me/9061827363"
+          style="height: 100%"
+          target="_blank"
+          aria-label="WhatsApp Chat 1"
+        >
+          <img
+            class="image-box-mobile"
+            id="box-mobile2"
+            src="./static/img/10p.jpg"
+            alt=""
+          />
+        </a>
+        <a
+          href="https://wa.me/9061827363"
+          style="height: 100%"
+          target="_blank"
+          aria-label="WhatsApp Chat 1"
+        >
+          <img
+            class="image-box-mobile"
+            id="box-mobile3"
+            src="./static/img/11p.jpg"
+            alt=""
+          />
+        </a>
+        <a
+          href="https://wa.me/9061827363"
+          style="height: 100%"
+          target="_blank"
+          aria-label="WhatsApp Chat 1"
+        >
+          <img
+            class="image-box-mobile"
+            id="box-mobile4"
+            src="./asset/img/9p.jpg"
+            alt=""
+          />
+        </a>
+      </div>
+    </div>
+
+
+
+
+<section class="w-[80%] mx-auto md:px-6 py-16 bg-white mt-10">
+  <div class="flex flex-col md:flex-row items-center justify-between gap-20">
+    
+  
+    <div class="w-full md:w-1/2 space-y-6 xl:px-24">
+      <h2 class="text-4xl font-bold text-gray-800 leading-snug">
+        LIST NOW & GET<br><span class="text-[#a8bfa0]">NOTICED!</span>
+      </h2>
+      <p class="text-gray-600 text-lg">
+        Get your property in front of thousands of buyers or renters in just a few steps.
+      </p>
+
+ <a
+          class="add-property-btn-link"
+          href="https://docs.google.com/forms/d/e/1FAIpQLScL6Sa7CSnkjqW8d_469HRNaWIqZiaFJ04QA0r8YiBT9s_R-w/viewform?usp=dialog"
+        >
+     <div class="add-property-btn popup-zoom inline-flex items-center space-x-2 cursor-pointer border border-[#a8bfa0] rounded-xl py-2 px-2 mt-6">
+  <span class="text-[#8bc83f] font-semibold text-lg">Add your property</span>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke="#8bc83f"
+    class="add-property-icon w-6 h-6"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
+    />
+  </svg>
+</div>
+</a>
+
+    </div>
+
+  
+    <div class="w-full md:w-1/2 relative flex justify-center items-center  max-lg:right-[-4rem] max-md:right-[-30px]">
+      <img
+        src="https://storage.googleapis.com/a1aa/image/fFr3NpP8fZqEAUuvcHsjaowep8eei8G9PHOwKZIkeko0SZQAF.jpg"
+        alt="Property 1"
+        class="w-[19rem] h-80 rounded-xl shadow-lg object-cover z-10"
+      />
+      <img
+        src="https://storage.googleapis.com/a1aa/image/ZleGScqhQ7yKeEMNfTUDy3XQmOkgSUQVzZkIFVZfkcVzUGEQB.jpg"
+        alt="Property 2"
+        class="w-[19rem] h-80 rounded-xl shadow-xl object-cover absolute top-10 left-[-2.5rem] xl:left-10"
+      />
     </div>
 
   </div>
@@ -100,7 +244,223 @@
 
 
 
-    
+
+
+<section class="px-20 py-10 mt-20">
+
+  <h2 class="text-4xl font-bold text-gray-800 uppercase text-center mb-6">Properties</h2>
+
+  <div class="flex flex-wrap justify-center items-center gap-4 mb-10">
+    <div class="flex space-x-4">
+  <button class="w-24 px-4 py-2 bg-[#8bc83f] text-white rounded-lg text-center">All</button>
+  <button class="w-24 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-[#8bc83f] hover:text-white text-center">Sale</button>
+  <button class="w-24 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-[#8bc83f] hover:text-white text-center">Rent</button>
+  <button class="w-24 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-[#8bc83f] hover:text-white text-center">Lease</button>
+</div>
+
+
+    <button onclick="toggleSidebar()" class="ml-4 text-[#8bc83f] border border-[#8bc83f] px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-[#f3fef1]">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="#8bc83f" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5" d="M21.25 12H8.895m-4.361 0H2.75m18.5 6.607h-5.748m-4.361 0H2.75m18.5-13.214h-3.105m-4.361 0H2.75m13.214 2.18a2.18 2.18 0 1 0 0-4.36a2.18 2.18 0 0 0 0 4.36Zm-9.25 6.607a2.18 2.18 0 1 0 0-4.36a2.18 2.18 0 0 0 0 4.36Zm6.607 6.608a2.18 2.18 0 1 0 0-4.361a2.18 2.18 0 0 0 0 4.36Z"/></svg>
+      <span>Filter</span>
+    </button>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
+     <div class="bg-white rounded-xl shadow-md overflow-hidden relative hover:shadow-lg transition-shadow duration-300">
+      <img src="./static/images/demo.png" alt="Property Image" class="w-full h-48 object-cover">
+
+      <span class="absolute top-3 left-3 bg-[red] text-white text-[14px] font-semibold px-3 py-1 rounded-lg shadow-sm">
+        For Rent
+      </span>
+
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800 mb-1">House for Rent</h3>
+        <p class="text-md font-medium text-[#8bc83f] mb-1">₹12,000/month</p>
+        <p class="text-sm text-gray-500 mb-2">Kochi</p>
+        <p class="text-sm text-gray-600 mb-3 overflow-hidden whitespace-nowrap text-ellipsis">
+          Spacious 2BHK house with parking, modular kitchen, balcony and peaceful surroundings...
+        </p>
+        <a href="#" class="inline-block text-sm text-white bg-[#8bc83f] px-4 py-2 rounded-lg hover:bg-[#75a52c] transition">
+          View Details
+        </a>
+      </div>
+    </div>
+
+     <div class="bg-white rounded-xl shadow-md overflow-hidden relative hover:shadow-lg transition-shadow duration-300">
+      <img src="./static/images/demo.png" alt="Property Image" class="w-full h-48 object-cover">
+
+      <span class="absolute top-3 left-3 bg-[red] text-white text-[14px] font-semibold px-3 py-1 rounded-lg shadow-sm">
+        For Sale
+      </span>
+
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800 mb-1">House for Rent</h3>
+        <p class="text-md font-medium text-[#8bc83f] mb-1">₹12,000/month</p>
+        <p class="text-sm text-gray-500 mb-2">Kochi</p>
+        <p class="text-sm text-gray-600 mb-3 overflow-hidden whitespace-nowrap text-ellipsis">
+          Spacious 2BHK house with parking, modular kitchen, balcony and peaceful surroundings...
+        </p>
+        <a href="#" class="inline-block text-sm text-white bg-[#8bc83f] px-4 py-2 rounded-lg hover:bg-[#75a52c] transition">
+          View Details
+        </a>
+      </div>
+    </div>
+
+     <div class="bg-white rounded-xl shadow-md overflow-hidden relative hover:shadow-lg transition-shadow duration-300">
+      <img src="./static/images/demo.png" alt="Property Image" class="w-full h-48 object-cover">
+
+      <span class="absolute top-3 left-3 bg-[red] text-white text-[14px] font-semibold px-3 py-1 rounded-lg shadow-sm">
+        For Lease
+      </span>
+
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800 mb-1">House for Rent</h3>
+        <p class="text-md font-medium text-[#8bc83f] mb-1">₹12,000/month</p>
+        <p class="text-sm text-gray-500 mb-2">Kochi</p>
+        <p class="text-sm text-gray-600 mb-3 overflow-hidden whitespace-nowrap text-ellipsis">
+          Spacious 2BHK house with parking, modular kitchen, balcony and peaceful surroundings...
+        </p>
+        <a href="#" class="inline-block text-sm text-white bg-[#8bc83f] px-4 py-2 rounded-lg hover:bg-[#75a52c] transition">
+          View Details
+        </a>
+      </div>
+    </div>
+
+     <div class="bg-white rounded-xl shadow-md overflow-hidden relative hover:shadow-lg transition-shadow duration-300">
+      <img src="./static/images/demo.png" alt="Property Image" class="w-full h-48 object-cover">
+
+      <span class="absolute top-3 left-3 bg-[red] text-white text-[14px] font-semibold px-3 py-1 rounded-lg shadow-sm">
+        For Sale
+      </span>
+
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800 mb-1">House for Rent</h3>
+        <p class="text-md font-medium text-[#8bc83f] mb-1">₹12,000/month</p>
+        <p class="text-sm text-gray-500 mb-2">Kochi</p>
+        <p class="text-sm text-gray-600 mb-3 overflow-hidden whitespace-nowrap text-ellipsis">
+          Spacious 2BHK house with parking, modular kitchen, balcony and peaceful surroundings...
+        </p>
+        <a href="#" class="inline-block text-sm text-white bg-[#8bc83f] px-4 py-2 rounded-lg hover:bg-[#75a52c] transition">
+          View Details
+        </a>
+      </div>
+    </div>
+
+     <div class="bg-white rounded-xl shadow-md overflow-hidden relative hover:shadow-lg transition-shadow duration-300">
+      <img src="./static/images/demo.png" alt="Property Image" class="w-full h-48 object-cover">
+
+      <span class="absolute top-3 left-3 bg-[red] text-white text-[14px] font-semibold px-3 py-1 rounded-lg shadow-sm">
+        For Rent
+      </span>
+
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800 mb-1">House for Rent</h3>
+        <p class="text-md font-medium text-[#8bc83f] mb-1">₹12,000/month</p>
+        <p class="text-sm text-gray-500 mb-2">Kochi</p>
+        <p class="text-sm text-gray-600 mb-3 overflow-hidden whitespace-nowrap text-ellipsis">
+          Spacious 2BHK house with parking, modular kitchen, balcony and peaceful surroundings...
+        </p>
+        <a href="#" class="inline-block text-sm text-white bg-[#8bc83f] px-4 py-2 rounded-lg hover:bg-[#75a52c] transition">
+          View Details
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div id="sidebarFilter" class="fixed top-0 right-0 h-full w-[350px] bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+  <div class="p-6">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-xl font-semibold text-gray-800">Filter Properties</h3>
+      <button onclick="toggleSidebar()" class="text-gray-600 text-2xl hover:text-red-600">&times;</button>
+    </div>
+
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-semibold mb-1">Purpose</label>
+        <select class="w-full border border-gray-300 rounded-lg px-3 py-2">
+          <option>All</option>
+          <option>Sale</option>
+          <option>Rent</option>
+          <option>Lease</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-1">Category</label>
+        <select class="w-full border border-gray-300 rounded-lg px-3 py-2">
+          <option>All</option>
+          <option>House</option>
+          <option>Land</option>
+          <option>Offplans</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-1">District</label>
+        <select class="w-full border border-gray-300 rounded-lg px-3 py-2">
+          <option>Select District</option>
+          <option>Ernakulam</option>
+          <option>Trivandrum</option>
+          <option>Kozhikode</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-1">City</label>
+        <select class="w-full border border-gray-300 rounded-lg px-3 py-2">
+          <option>Select City</option>
+          <option>Kochi</option>
+          <option>Thrissur</option>
+          <option>Kannur</option>
+        </select>
+      </div>
+
+      <div class="flex gap-2">
+        <div class="w-1/2">
+          <label class="block text-sm font-semibold mb-1">Min Price</label>
+          <input type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="₹ Min">
+        </div>
+        <div class="w-1/2">
+          <label class="block text-sm font-semibold mb-1">Max Price</label>
+          <input type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="₹ Max">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-1">Pincode</label>
+        <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter Pincode">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-1">Agent</label>
+        <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Enter Agent Name">
+      </div>
+
+      <button class="w-full mt-20 bg-[#8bc83f] text-white py-2 rounded-lg hover:bg-[#75a52c] transition ">
+        Apply Filters
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to toggle sidebar -->
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById("sidebarFilter");
+    sidebar.classList.toggle("translate-x-full");
+  }
+</script>
+
+
+
+
+
+
+
+<script src="./static/js/script.js"></script>
 </body>
 
 </html>
