@@ -218,3 +218,20 @@ function eventFunction() {
       icon.classList.toggle('rotate-180');
     });
   });
+
+
+
+
+  // toggle
+
+   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const closeMenuBtn = document.getElementById('close-menu');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+  });
+
+  closeMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('translate-x-full');
+  });
