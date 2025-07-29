@@ -218,3 +218,27 @@
   .zoom-button {
     animation: zoomInOut 2s ease-in-out infinite;
   }
+
+
+  .img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #a8bfa0;
+  opacity: 0.5;
+  transition: right 0.5s ease;
+  pointer-events: none;
+}
+
+.text-section:hover ~ .img-container .img-overlay,
+.text-section:hover + .img-container .img-overlay,
+.img-container:hover .img-overlay {
+  right: 0;
+}
