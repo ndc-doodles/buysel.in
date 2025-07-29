@@ -163,3 +163,58 @@ function eventFunction() {
       noResultsMsg.classList.add('hidden');
     }
   }
+
+
+
+
+
+
+
+  const images = [
+    './static/images/demo.png',
+    './static/images/about1.png',
+    './static/images/addproperty.png'
+  ];
+
+  const imageEl = document.getElementById('propertyImage');
+  const dots = document.querySelectorAll('.dot');
+
+  function changeImage(index) {
+    imageEl.src = images[index];
+
+    // Reset all dots
+    dots.forEach(dot => {
+      dot.classList.remove('w-2', 'h-2', 'opacity-100');
+      dot.classList.add('w-2', 'h-2', 'opacity-70');
+    });
+
+    // Highlight active dot
+    dots[index].classList.remove('w-2', 'h-2', 'opacity-70');
+    dots[index].classList.add('w-2.5', 'h-2.5', 'opacity-100');
+  }
+
+  // Load first image by default
+  window.onload = () => changeImage(0);
+
+
+
+  // faq
+
+   document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('svg');
+
+      // Close all other answers
+      document.querySelectorAll('.faq-toggle').forEach(btn => {
+        if (btn !== button) {
+          btn.nextElementSibling.classList.add('hidden');
+          btn.querySelector('svg').classList.remove('rotate-180');
+        }
+      });
+
+      // Toggle current answer
+      answer.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    });
+  });
