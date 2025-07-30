@@ -223,37 +223,56 @@
         latest listings for sale, rent and lease across your favorite
         locations.</p>
 
-      <div
-        class="flex flex-wrap sm:flex-nowrap justify-center  items-center gap-3 mb-10 mt-10">
-        <button onclick="filterCards('all', this)"
-          class="filter-btn w-20 sm:w-24 px-3 py-1 sm:py-2 bg-[#8bc83f] text-white rounded-lg">All</button>
-        <button onclick="filterCards('sale', this)"
-          class="filter-btn w-20 sm:w-24 px-3 py-1 sm:py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-[#8bc83f] hover:text-white">Sale</button>
-        <button onclick="filterCards('rent', this)"
-          class="filter-btn w-20 sm:w-24 px-3 py-1 sm:py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-[#8bc83f] hover:text-white">Rent</button>
-        <button onclick="filterCards('lease', this)"
-          class="filter-btn w-20 sm:w-24 px-3 py-1 sm:py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-[#8bc83f] hover:text-white">Lease</button>
+     <div class="flex flex-wrap sm:flex-nowrap justify-center items-center gap-3 mb-10 mt-10">
+  <!-- Filter Buttons -->
+  <button onclick="filterCards('all', this)"
+    class="filter-btn min-w-[96px] sm:min-w-[110px] px-4 py-2 bg-[#8bc83f] text-white rounded-lg text-sm sm:text-base">
+    All
+  </button>
+  <button onclick="filterCards('sale', this)"
+    class="filter-btn min-w-[96px] sm:min-w-[110px] px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-[#8bc83f] hover:text-white text-sm sm:text-base">
+    Sale
+  </button>
+  <button onclick="filterCards('rent', this)"
+    class="filter-btn min-w-[96px] sm:min-w-[110px] px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-[#8bc83f] hover:text-white text-sm sm:text-base">
+    Rent
+  </button>
+  <button onclick="filterCards('lease', this)"
+    class="filter-btn min-w-[96px] sm:min-w-[110px] px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-[#8bc83f] hover:text-white text-sm sm:text-base">
+    Lease
+  </button>
 
-        <button onclick="toggleSidebar()"
-          class="ml-0 sm:ml-4 mt-3 sm:mt-0 text-[#8bc83f] border border-[#8bc83f] px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-[#f3fef1]">
-          <svg xmlns="http://www.w3.org/2000/svg"
-            class="w-5 h-5 group-hover:stroke-black" viewBox="0 0 24 24">
-            <path fill="none" stroke="#8bc83f" stroke-linecap="round"
-              stroke-miterlimit="10" stroke-width="1.5"
-              d="M21.25 12H8.895m-4.361 0H2.75m18.5 6.607h-5.748m-4.361 0H2.75m18.5-13.214h-3.105m-4.361 0H2.75m13.214 2.18a2.18 2.18 0 1 0 0-4.36a2.18 2.18 0 0 0 0 4.36Zm-9.25 6.607a2.18 2.18 0 1 0 0-4.36a2.18 2.18 0 0 0 0 4.36Zm6.607 6.608a2.18 2.18 0 1 0 0-4.361a2.18 2.18 0 0 0 0 4.36Z" />
-          </svg>
-          <span class="text-sm sm:text-base">Filter</span>
-        </button>
-      </div>
+  <!-- Filter Sidebar Button -->
+  <button onclick="toggleSidebar()"
+    class="min-w-[96px] sm:min-w-[110px] px-4 py-2 border border-[#8bc83f] text-[#8bc83f] rounded-lg hover:bg-[#f3fef1] flex items-center justify-center gap-1 text-sm sm:text-base">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
+      <path fill="none" stroke="#8bc83f" stroke-linecap="round"
+        stroke-miterlimit="10" stroke-width="1.5"
+        d="M21.25 12H8.895m-4.361 0H2.75m18.5 6.607h-5.748m-4.361 0H2.75m18.5-13.214h-3.105m-4.361 0H2.75m13.214 2.18a2.18 2.18 0 1 0 0-4.36a2.18 2.18 0 0 0 0 4.36Zm-9.25 6.607a2.18 2.18 0 1 0 0-4.36a2.18 2.18 0 0 0 0 4.36Zm6.607 6.608a2.18 2.18 0 1 0 0-4.361a2.18 2.18 0 0 0 0 4.36Z" />
+    </svg>
+    <span>Filter</span>
+  </button>
+
+  <!-- View Toggle Button (Only Mobile) -->
+  <button onclick="toggleViewMode()"
+    class="min-w-[96px] sm:min-w-[110px] px-4 py-2 border border-[#8bc83f] text-[#8bc83f] rounded-lg hover:bg-[#f3fef1] flex items-center justify-center gap-1 text-sm sm:text-base md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+    </svg>
+    <span>View</span>
+  </button>
+</div>
+
       <p id="no-results-msg"
         class="text-center text-red-600 text-lg font-semibold hidden mb-6">No
         properties found.</p>
 
-      <div
+      <div 
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-[96%] mx-auto">
        
 
-      <div
+      <div 
   class="property-card bg-white rounded-xl shadow-md overflow-hidden relative hover:shadow-lg transition-shadow duration-300"
   data-type="sale">
   <div class="relative">
@@ -273,7 +292,7 @@
 
   <span
     class="absolute top-3 left-3 bg-[red] text-white text-[14px] font-semibold px-3 py-1 rounded-lg shadow-sm">
-    For Lease
+    For Sale
   </span>
 
   <button class="absolute top-3 right-3 group">
@@ -340,11 +359,46 @@
     </div>
   </div>
 </div>
+  </div>
+<div class="list-view hidden bg-white rounded-xl shadow-md overflow-hidden text-sm ">
+  <div class="flex flex-row">
+    <!-- Image -->
+    <div class="w-1/3 h-suto">
+      <img src="./static/images/demo.png" alt="Property Image" class="w-full h-full object-cover">
+    </div>
 
+    <!-- Info -->
+    <div class="w-2/3 p-2 sm:p-4 flex flex-col justify-between">
+      <span class="bg-red-500 text-white text-[8px] sm:text-xs font-semibold px-2 py-0.5 rounded w-max mb-1 sm:mb-2">For Sale</span>
+      
+      <h2 class="text-base sm:text-lg font-bold mb-1">House for Rent</h2>
+      <!-- <p class="text-gray-500 text-xs sm:text-sm mb-1">Spacious 2BHK house featuring parking, kitchen, balcony...</p> -->
+      
+      <p class="text-black font-semibold text-base sm:text-lg">₹80 Lakhs 
+        <span class="text-xs sm:text-sm text-gray-400">/acre</span>
+      </p>
+      <!-- <p class="text-gray-500 text-xs sm:text-sm">Total: ₹1.9 crore</p> -->
+
+      <div class="flex justify-between items-center mt-2 sm:mt-3">
+<p class="text-[11px] text-gray-500 flex items-center space-x-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#8bc83f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M12.56 20.82a.96.96 0 0 1-1.12 0C6.611 17.378 1.486 10.298 6.667 5.182A7.6 7.6 0 0 1 12 3c2 0 3.919.785 5.333 2.181c5.181 5.116.056 12.196-4.773 15.64"/><path d="M12 12a2 2 0 1 0 0-4a2 2 0 0 0 0 4"/></g></svg>
+        <span class="text-[11px] text-black">Ernakulam, Kerala</span>
+      </p>        <a href="#" class="text-blue-500 underline text-xs sm:text-sm">Directions</a>
+      </div>
+
+      
+    </div>
+    
+  </div>
+  <div class="flex space-x-2 mt-3 p-[1rem]">
+        <a href="tel:1234567890" class="w-1/2 bg-[#8bc83f] text-white py-1 sm:py-2 rounded text-xs sm:text-sm text-center">Call</a>
+        <a href="https://wa.me/1234567890" target="_blank" class="w-1/2 border border-[#8bc83f] text-[#8bc83f] py-1 sm:py-2 rounded text-xs sm:text-sm text-center">WhatsApp</a>
+    </div>
+</div>
 
         
 
-      </div>
+    
 
       <div class="justify-self-center mt-10">
         <a href>
@@ -355,7 +409,13 @@
         </a>
       </div>
     </section>
+ <script>
+    function toggleViewMode() {
 
+      document.querySelectorAll('.property-card').forEach(el => el.classList.toggle('hidden'));
+      document.querySelectorAll('.list-view').forEach(el => el.classList.toggle('hidden'));
+    }
+  </script>
     <div id="sidebarFilter"
       class="fixed top-1/2 right-0 h-[750px] w-[350px] bg-white shadow-lg z-50 transform -translate-y-1/2 translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
       <div class="p-6">
@@ -533,16 +593,13 @@
 <div class="w-full bg-gray-50 px-6 py-16 lg:px-20">
   <div class="flex flex-col lg:flex-row gap-10">
     
-    <!-- Left Side: Heading -->
     <div class="lg:w-1/3">
       <h2 class="text-3xl font-bold uppercase text-gray-800 mb-4">Frequently Asked<br>Questions</h2>
       <p class="text-gray-600 text-sm">Find answers to the most common questions about our platform and services.</p>
     </div>
 
-    <!-- Right Side: FAQ Accordion -->
     <div class="lg:w-2/3 space-y-4">
       
-      <!-- FAQ Item 1 -->
       <div class="border border-gray-300 rounded-lg overflow-hidden">
         <button class="w-full text-left px-6 py-4 bg-white font-medium text-gray-800 flex justify-between items-center faq-toggle">
           What is Buysel.in?
@@ -555,7 +612,6 @@
         </div>
       </div>
 
-      <!-- FAQ Item 2 -->
       <div class="border border-gray-300 rounded-lg overflow-hidden">
         <button class="w-full text-left px-6 py-4 bg-white font-medium text-gray-800 flex justify-between items-center faq-toggle">
           How does Buysel.in work?
@@ -568,7 +624,6 @@
         </div>
       </div>
 
-      <!-- FAQ Item 3 -->
       <div class="border border-gray-300 rounded-lg overflow-hidden">
         <button class="w-full text-left px-6 py-4 bg-white font-medium text-gray-800 flex justify-between items-center faq-toggle">
 What services does Buysel.in offer?
@@ -604,7 +659,7 @@ What services does Buysel.in offer?
 <footer class="bg-white text-gray-700 mt-10">
   <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-start">
     
-    <!-- Logo & Contact -->
+   
     <div class="space-y-4">
       <img src="./static/images/logo.png" class="w-28 h-[4rem] object-contain">
       <div class="text-sm space-y-2">
@@ -624,7 +679,7 @@ What services does Buysel.in offer?
       </div>
     </div>
 
-    <!-- Pages -->
+  
     <div>
       <h3 class="text-lg font-semibold mb-4">Pages</h3>
       <ul class="space-y-4 text-sm">
@@ -635,7 +690,7 @@ What services does Buysel.in offer?
       </ul>
     </div>
 
-    <!-- Services -->
+
     <div>
       <h3 class="text-lg font-semibold mb-4">Services</h3>
       <ul class="space-y-4 text-sm">
@@ -646,23 +701,20 @@ What services does Buysel.in offer?
       </ul>
     </div>
 
-    <!-- Social Links -->
+
     <div>
       <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
       <div class="flex space-x-4">
-        <!-- Facebook -->
         <a href="#" aria-label="Facebook" class="text-gray-600 hover:text-[#8bc83f] transition">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M22 12a10 10 0 10-11.63 9.87v-6.99H8v-2.88h2.37V9.41c0-2.34 1.4-3.64 3.54-3.64 1.03 0 2.1.18 2.1.18v2.3h-1.18c-1.16 0-1.53.72-1.53 1.46v1.75h2.6l-.42 2.88h-2.18v6.99A10 10 0 0022 12z"/>
           </svg>
         </a>
-        <!-- Twitter -->
         <a href="#" aria-label="Twitter" class="text-gray-600 hover:text-[#8bc83f] transition">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M8.29 20c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.35-.01-.53A8.35 8.35 0 0022 5.92a8.18 8.18 0 01-2.36.65 4.1 4.1 0 001.8-2.27 8.2 8.2 0 01-2.6.99A4.1 4.1 0 0015.5 4c-2.27 0-4.1 1.84-4.1 4.1 0 .32.04.64.1.94C7.7 8.9 4.1 7.1 1.67 4.15a4.1 4.1 0 00-.55 2.07c0 1.43.73 2.68 1.84 3.42a4.07 4.07 0 01-1.86-.52v.05c0 2 1.42 3.67 3.3 4.05a4.1 4.1 0 01-1.85.07c.52 1.62 2.03 2.8 3.83 2.84A8.24 8.24 0 012 18.57a11.61 11.61 0 006.29 1.84"/>
           </svg>
         </a>
-        <!-- Instagram -->
         <a href="#" aria-label="Instagram" class="text-gray-600 hover:text-[#8bc83f] transition">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.06 1.95.24 2.4.4.58.22 1 .48 1.44.92.44.44.7.86.92 1.44.16.45.34 1.23.4 2.4.07 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.06 1.17-.24 1.95-.4 2.4-.22.58-.48 1-.92 1.44-.44.44-.86.7-1.44.92-.45.16-1.23.34-2.4.4-1.25.07-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.06-1.95-.24-2.4-.4a3.69 3.69 0 01-1.44-.92 3.69 3.69 0 01-.92-1.44c-.16-.45-.34-1.23-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.06-1.17.24-1.95.4-2.4.22-.58.48-1 .92-1.44.44-.44.86-.7 1.44-.92.45-.16 1.23-.34 2.4-.4C8.4 2.2 8.8 2.2 12 2.2m0 1.8c-3.14 0-3.5 0-4.73.07-1.02.05-1.57.22-1.93.36a2.17 2.17 0 00-1.27 1.27c-.14.36-.31.91-.36 1.93C3.8 8.5 3.8 8.86 3.8 12s0 3.5.07 4.73c.05 1.02.22 1.57.36 1.93.26.64.73 1.11 1.27 1.27.36.14.91.31 1.93.36 1.23.07 1.59.07 4.73.07s3.5 0 4.73-.07c1.02-.05 1.57-.22 1.93-.36.64-.26 1.11-.73 1.27-1.27.14-.36.31-.91.36-1.93.07-1.23.07-1.59.07-4.73s0-3.5-.07-4.73c-.05-1.02-.22-1.57-.36-1.93a2.17 2.17 0 00-1.27-1.27c-.36-.14-.91-.31-1.93-.36C15.5 4 15.14 4 12 4zM12 7.1a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zm0 1.8a3.1 3.1 0 110 6.2 3.1 3.1 0 010-6.2zm5.55-1.8a1.17 1.17 0 11-2.34 0 1.17 1.17 0 012.34 0z"/>
