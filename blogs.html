@@ -41,7 +41,7 @@
 
   <nav class="bg-white shadow-md py-2 px-6 relative">
     <div class="container mx-auto flex justify-between items-center">
-      <a href="#">
+      <a href="index.html">
         <img src="./static/images/logo.png" alt="Logo" class="h-14 w-auto" />
       </a>
 
@@ -106,67 +106,74 @@
 
 
 
-<section class="bg-gray-50 py-16 px-4 md:px-20 mt-24 max-md:px-6">
-  <div class="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 pt-20 max-md:pt-0">
-    
-    <div>
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">GET IN TOUCH WITH US</h2>
-      <p class="text-gray-600 mb-10">Have questions or need assistance? We're here to help!</p>
 
-      <div class="space-y-6 text-gray-800">
-        <div class="flex items-center gap-4">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#575555" d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3"/></svg>
-          <span>+91 9061827363</span>
-        </div>
-        <div class="flex items-center gap-4">
-       
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#575555" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7L4 8v10h16V8zm0-2l8-5H4zM4 8V6v12z"/></svg>
-          <span>buyselinfo@gmail.com</span>
-        </div>
-        <div class="flex items-center gap-4">
-       
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#575555" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M12.56 20.82a.96.96 0 0 1-1.12 0C6.611 17.378 1.486 10.298 6.667 5.182A7.6 7.6 0 0 1 12 3c2 0 3.919.785 5.333 2.181c5.181 5.116.056 12.196-4.773 15.64"/><path d="M12 12a2 2 0 1 0 0-4a2 2 0 0 0 0 4"/></g></svg>
-          <span>Kochi, Kerala, India</span>
-        </div>
+
+
+<section class="px-6 md:px-16 xl:px-24 py-12 bg-gray-50 mt-28">
+  <div class="text-center mb-10">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Our Latest Blogs</h2>
+    <p class="text-gray-600 mt-2 text-sm md:text-base">Explore news, tips and stories from our team</p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+  <div class="bg-white rounded-xl shadow-md overflow-hidden min-h-[430px] flex flex-col">
+    <div class="relative">
+      <img src="./static/images/demo.png" alt="Blog Image" class="w-full h-64 object-cover">
+      <div class="absolute bottom-2 right-2 bg-white p-2 rounded shadow-md cursor-pointer hover:bg-[#8bc83f]" onclick="openModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+          <path fill="currentColor" fill-rule="evenodd" d="M3.646 11.354a.5.5 0 0 1 0-.707L10.293 4H6a.5.5 0 0 1 0-1h5.5a.5.5 0 0 1 .5.5V9a.5.5 0 0 1-1 0V4.707l-6.646 6.647a.5.5 0 0 1-.708 0" clip-rule="evenodd"/>
+        </svg>
       </div>
     </div>
-
-
-    <div>
-      <form class="space-y-6">
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Name</label>
-          <input type="text" class="mt-1 block w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-[#8bc83f] focus:border-[#8bc83f]" placeholder="Your Name">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Email</label>
-          <input type="email" class="mt-1 block w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-[#8bc83f] focus:border-[#8bc83f]" placeholder="Your Email">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Phone Number</label>
-          <input type="tel" class="mt-1 block w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-[#8bc83f] focus:border-[#8bc83f]" placeholder="Your Phone Number">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Message</label>
-          <textarea rows="4" class="mt-1 block w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-[#8bc83f] focus:border-[#8bc83f]" placeholder="Your Message"></textarea>
-        </div>
-        <button type="submit" class="w-full bg-black text-white py-3 rounded hover:bg-gray-800 transition">Submit</button>
-      </form>
+    <div class="p-4 flex-grow">
+      <span class="inline-block bg-[#8bc83f] text-white text-xs px-3 py-1 rounded-full mb-2">Property Tips</span>
+      <p class="text-xs text-gray-400 mb-1">Jul 30, 2025</p>
+      <h3 class="text-lg font-semibold text-gray-800 mb-1">How to Choose the Right Property</h3>
+      <p class="text-sm text-gray-600">Learn the essentials of picking the best property for investment and living...</p>
     </div>
   </div>
+</div>
+
+
+<div class="flex justify-center mt-12 space-x-2">
+  <button class="px-3 py-1 bg-[#8bc83f] text-white border border-[#8bc83f] rounded">1</button>
+  <button class="px-3 py-1 bg-white border text-gray-700 rounded hover:bg-[#8bc83f] hover:text-white">2</button>
+  <button class="px-3 py-1 bg-white border text-gray-700 rounded hover:bg-[#8bc83f] hover:text-white">3</button>
+</div>
+
 </section>
 
+<div id="blogModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+  <div class="relative bg-white rounded-lg shadow-lg w-full max-w-7xl mx-4 max-h-[90vh] overflow-hidden flex flex-col">
+
+  <button class="absolute top-3 right-3 w-9 h-9 flex items-center justify-center bg-white rounded-full shadow text-gray-600 hover:text-red-500 text-2xl font-bold z-10" onclick="closeModal()">
+  &times;
+</button>
 
 
-<div class="bg-white py-12 px-4 md:px-20 max-md:px-6 text-center">
-  <h3 class="text-2xl font-semibold text-gray-800 mb-4">We’d love to hear from you!</h3>
-  <p class="text-gray-600 max-w-2xl mx-auto">
-    Whether you're buying, selling or simply looking for advice, our team is ready to provide the guidance and support you need.
-    Expect a response within 24 hours.
-  </p>
 
-  
+    <img src="./static/images/demo.png" alt="Modal Image" class="w-full h-64 object-cover">
+
+  <div class="p-6 overflow-y-auto space-y-4" style="max-height: calc(90vh - 16rem);">
+      <div class="flex items-center justify-between text-sm text-gray-500">
+        <span class="bg-[#8bc83f] text-white px-3 py-1 rounded-full text-xs">For Sale</span>
+        <span>July 29, 2025</span>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-800">The Real Problem in Property Deals Today</h2>
+
+      <p>The real estate market of today is overrun by unconfirmed listings and unidentified contacts. This lack of trust leads to misunderstandings, hold-ups, and, worst of all, fraud. Sellers spend time with phony leads or untrustworthy parties, and buyers are reluctant to commit. The system is flawed and detrimental to both parties. When verification isn't given priority, scams, misunderstandings, and third-party influence are all too typical. Real opportunities are wasted, money is lost, and deals fall through. Verification is not only beneficial in such a setting, but also necessary for secure and fruitful real estate transactions. In order to combat this, Buysel.in makes sure that all buyers and sellers are validated before they can complete a transaction. This implies that users can interact with confidence, trust the listings, and close deals fearlessly. Better real estate deals inevitably follow when the platform is created with trust.</p>
+      <p>The real estate market of today is overrun by unconfirmed listings and unidentified contacts. This lack of trust leads to misunderstandings, hold-ups, and, worst of all, fraud. Sellers spend time with phony leads or untrustworthy parties, and buyers are reluctant to commit. The system is flawed and detrimental to both parties. When verification isn't given priority, scams, misunderstandings, and third-party influence are all too typical. Real opportunities are wasted, money is lost, and deals fall through. Verification is not only beneficial in such a setting, but also necessary for secure and fruitful real estate transactions. In order to combat this, Buysel.in makes sure that all buyers and sellers are validated before they can complete a transaction. This implies that users can interact with confidence, trust the listings, and close deals fearlessly. Better real estate deals inevitably follow when the platform is created with trust.</p>
+      <p>The real estate market of today is overrun by unconfirmed listings and unidentified contacts. This lack of trust leads to misunderstandings, hold-ups, and, worst of all, fraud. Sellers spend time with phony leads or untrustworthy parties, and buyers are reluctant to commit. The system is flawed and detrimental to both parties. When verification isn't given priority, scams, misunderstandings, and third-party influence are all too typical. Real opportunities are wasted, money is lost, and deals fall through. Verification is not only beneficial in such a setting, but also necessary for secure and fruitful real estate transactions. In order to combat this, Buysel.in makes sure that all buyers and sellers are validated before they can complete a transaction. This implies that users can interact with confidence, trust the listings, and close deals fearlessly. Better real estate deals inevitably follow when the platform is created with trust.p>
+      <p>The real estate market of today is overrun by unconfirmed listings and unidentified contacts. This lack of trust leads to misunderstandings, hold-ups, and, worst of all, fraud. Sellers spend time with phony leads or untrustworthy parties, and buyers are reluctant to commit. The system is flawed and detrimental to both parties. When verification isn't given priority, scams, misunderstandings, and third-party influence are all too typical. Real opportunities are wasted, money is lost, and deals fall through. Verification is not only beneficial in such a setting, but also necessary for secure and fruitful real estate transactions. In order to combat this, Buysel.in makes sure that all buyers and sellers are validated before they can complete a transaction. This implies that users can interact with confidence, trust the listings, and close deals fearlessly. Better real estate deals inevitably follow when the platform is created with trust.</p>
+    </div>
+  </div>
 </div>
+
+
+
+
+
 
 
 
@@ -195,7 +202,7 @@
     </div>
 
     <div>
-      <h3 class="text-lg font-semibold mb-4">Pages</h3>
+      <h3 class="text-xl  mb-4">Pages</h3>
       <ul class="space-y-4 text-sm">
         <li><a href="index.html" class="hover:text-[#8bc83f] transition">Home</a></li>
         <li><a href="about.html" class="hover:text-[#8bc83f] transition">About Us</a></li>
@@ -205,7 +212,7 @@
     </div>
 
     <div>
-      <h3 class="text-lg font-semibold mb-4">Services</h3>
+      <h3 class="text-xl  mb-4">Services</h3>
       <ul class="space-y-4 text-sm">
         <li><a href="#" class="hover:text-[#8bc83f] transition">Buy Property</a></li>
         <li><a href="#" class="hover:text-[#8bc83f] transition">Sell Property</a></li>
@@ -215,7 +222,7 @@
     </div>
 
     <div>
-      <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+      <h3 class="text-xl  mb-4">Follow Us</h3>
       <div class="flex space-x-4">
         <a href="#" aria-label="Facebook" class="text-gray-600 hover:text-[#8bc83f] transition">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -241,16 +248,6 @@
   </div>
 </footer> 
 
-
-
-
-
-
-
-
-
-
-    <script src="./static/js/script.js"></script>
-  </body>
-
+<script src="./static/js/script.js"></script>
+</body>
 </html>

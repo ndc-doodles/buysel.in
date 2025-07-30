@@ -235,3 +235,20 @@ function eventFunction() {
   closeMenuBtn.addEventListener('click', () => {
     mobileMenu.classList.add('translate-x-full');
   });
+
+
+
+
+
+  // blogs
+
+
+  function openModal() {
+  document.getElementById('blogModal').classList.remove('hidden');
+  document.body.classList.add('overflow-hidden');
+}
+
+function closeModal() {
+  document.getElementById('blogModal').classList.add('hidden');
+  document.body.classList.remove('overflow-hidden');
+}

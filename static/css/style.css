@@ -1,8 +1,13 @@
 .h1{
     font-family: "Geist", sans-serif;
 }
+p{
+    font-family: "Geist", sans-serif;
+}
 
-
+body{
+    font-family: "Geist", sans-serif;
+}
 .navbar-times {
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
