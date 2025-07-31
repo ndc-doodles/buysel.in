@@ -168,6 +168,18 @@ function eventFunction() {
 
 
 
+// list view of property card
+
+ function toggleViewMode() {
+
+      document.querySelectorAll('.property-card').forEach(el => el.classList.toggle('hidden'));
+      document.querySelectorAll('.list-view').forEach(el => el.classList.toggle('hidden'));
+    }
+
+
+
+
+
 
 
   const images = [
@@ -184,13 +196,13 @@ function eventFunction() {
 
     // Reset all dots
     dots.forEach(dot => {
-      dot.classList.remove('w-2', 'h-2', 'opacity-100');
-      dot.classList.add('w-2', 'h-2', 'opacity-70');
+      dot.classList.remove('w-1.5', 'h-1.5', 'opacity-100');
+      dot.classList.add('w-1.5', 'h-1.5', 'opacity-70');
     });
 
     // Highlight active dot
-    dots[index].classList.remove('w-2', 'h-2', 'opacity-70');
-    dots[index].classList.add('w-2.5', 'h-2.5', 'opacity-100');
+    dots[index].classList.remove('w-1.5', 'h-1.5', 'opacity-70');
+    dots[index].classList.add('w-2', 'h-2', 'opacity-100');
   }
 
   // Load first image by default
@@ -240,7 +252,114 @@ function eventFunction() {
 
 
 
-  // blogs
+
+
+
+
+
+
+
+
+
+
+// 
+
+function showMessageButton() {
+      document.getElementById("floatMessageBtn").classList.remove("hidden");
+    }
+
+    function requestLocation() {
+      document.getElementById("locationBox").classList.add("hidden");
+      showMessageButton();
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            console.log("Lat:", position.coords.latitude, "Long:", position.coords.longitude);
+          },
+          error => {
+            console.log("Location access denied or unavailable.");
+          }
+        );
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function denyLocation() {
+      document.getElementById("locationBox").classList.add("hidden");
+      showMessageButton();
+    }
+
+    function openMessageModal() {
+  const modal = document.getElementById("messageModal");
+  const content = document.getElementById("modalContent");
+
+  modal.classList.remove("hidden");
+  // Trigger animation
+  setTimeout(() => {
+    content.classList.remove("opacity-0", "scale-95");
+    content.classList.add("opacity-100", "scale-100");
+  }, 10);
+}
+
+function closeMessageModal() {
+  const modal = document.getElementById("messageModal");
+  const content = document.getElementById("modalContent");
+
+  content.classList.remove("opacity-100", "scale-100");
+  content.classList.add("opacity-0", "scale-95");
+
+  // Wait for animation to finish before hiding modal
+  setTimeout(() => {
+    modal.classList.add("hidden");
+  }, 300); // same as duration-300
+}
+
+
+
+
+
+
+
+
+
+// scrolling smooth 
+
+function scrollToSection(event) {
+  event.preventDefault();  // prevents the jump
+  document.getElementById("properties").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+// property form modal
+
+ function openModal() {
+    document.getElementById("propertyModal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("propertyModal").classList.add("hidden");
+  }
+
+// agent form modal
+
+ function openAgentModal() {
+    document.getElementById('agentModal').classList.remove('hidden');
+  }
+
+  function closeAgentModal() {
+    document.getElementById('agentModal').classList.add('hidden');
+  }
+
+
+
+
+
+
+
+    // blogs
 
 
   function openModal() {
@@ -252,3 +371,10 @@ function closeModal() {
   document.getElementById('blogModal').classList.add('hidden');
   document.body.classList.remove('overflow-hidden');
 }
+
+
+
+
+
+
+

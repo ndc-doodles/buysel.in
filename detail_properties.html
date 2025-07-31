@@ -21,279 +21,419 @@
 
   <body class="bg-white">
 
-<div class="fixed top-0 left-0 right-0 z-50">
-  <div class="bg-[#8bc83f] text-white text-sm py-2 px-6 flex justify-between items-center">
-    <div>Welcome to Our Real Estate Site</div>
-    <div class="space-x-4 flex">
+    <div class="fixed top-0 left-0 right-0 z-50">
+      <div
+        class="bg-[#8bc83f] text-white text-sm py-2 px-6 flex justify-between items-center">
+        <div>Welcome to Our Real Estate Platform</div>
+        <div class="space-x-4 flex">
 
-      <a href="#" class="hover:text-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/></svg>
-      </a>
-      <a href="#" class="hover:text-gray-200">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"/><path d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m1.008-5.5h-.01"/></g></svg>
-      </a>
-      <a href="#" class="hover:text-gray-200">
-       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.14.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18s.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.27c-.25-.14-1.47-.74-1.69-.82c-.23-.08-.37-.12-.56.12c-.16.25-.64.81-.78.97c-.15.17-.29.19-.53.07c-.26-.13-1.06-.39-2-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.12-.24-.01-.39.11-.5c.11-.11.27-.29.37-.44c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.56-1.35-.77-1.84c-.2-.48-.4-.42-.56-.43c-.14 0-.3-.01-.47-.01"/></svg>
-      </a>
-    </div>
-  </div>
-
-
-  <nav class="bg-white shadow-md py-2 px-6 relative">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="index.html">
-        <img src="./static/images/logo.png" alt="Logo" class="h-14 w-auto" />
-      </a>
-
-      <ul class="hidden md:flex space-x-10 text-gray-700 navbar-times">
-        <li><a href="index.html" class="text-[#8bc83f]">Home</a></li>
-        <li><a href="about.html" class="hover:text-[#8bc83f]">About Us</a></li>
-        <li><a href="properties.html" class="hover:text-[#8bc83f]">Properties</a></li>
-        <li><a href="agents.html" class="hover:text-[#8bc83f]">Agents</a></li>
-        <li><a href="blogs.html" class="hover:text-[#8bc83f]">Blogs</a></li>
-        <li><a href="contact.html" class="hover:text-[#8bc83f]">Contact</a></li>
-      </ul>
-
-      <a href="user_login.html" class="hidden md:flex ml-4 border border-[#8bc83f] text-[#8bc83f] px-6 py-2 items-center gap-2 hover:bg-[#76ad33] hover:text-white transition rounded">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-          viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-dasharray="28"
-            stroke-dashoffset="28" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2">
-            <path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1">
-              <animate fill="freeze" attributeName="stroke-dashoffset"
-                dur="0.4s" values="28;0" />
-            </path>
-            <path
-              d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z">
-              <animate fill="freeze" attributeName="stroke-dashoffset"
-                begin="0.4s" dur="0.4s" values="28;0" />
-            </path>
-          </g>
-        </svg>
-        Login
-      </a>
-
-      <div class="md:hidden">
-        <button id="mobile-menu-btn" class="text-[#8bc83f] focus:outline-none">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <div id="mobile-menu" class="fixed top-0 right-0 w-[90%] h-full bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
-      <div class="p-6 flex justify-end">
-        <button id="close-menu" class="text-gray-700 text-2xl">&times;</button>
-      </div>
-      <ul class="flex flex-col items-start space-y-6 p-6 text-gray-700">
-        <li><a href="index.html" class="hover:text-[#8bc83f]">Home</a></li>
-        <li><a href="about.html" class="hover:text-[#8bc83f]">About Us</a></li>
-        <li><a href="properties.html" class="hover:text-[#8bc83f]">Properties</a></li>
-        <li><a href="agents.html" class="hover:text-[#8bc83f]">Agents</a></li>
-        <li><a href="blogs.html" class="hover:text-[#8bc83f]">Blogs</a></li>
-        <li><a href="contact.html" class="hover:text-[#8bc83f]">Contact</a></li>
-        <li><a href="user_login.html" class="text-[#8bc83f] border border-[#8bc83f] px-4 py-2 rounded hover:bg-[#8bc83f] hover:text-white">Login</a></li>
-      </ul>
-    </div>
-  </nav>
-</div>
-
-
-
-
-
-
-<div class="w-full px-20 mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-8 mt-32">
-  <!-- Left Side: Images and Info -->
-  <div class="lg:col-span-2 space-y-6">
-    <!-- Main Image -->
-    
-    <!-- Small Images Grid -->
-    <div class="grid grid-cols-3 gap-4 max-w-7xl mx-auto ">
-  <!-- Left - Large Image -->
-  <div class="col-span-2">
-    <img src="./static/images/demo.png" alt="Main Property" class="w-full h-[450px] object-cover rounded-xl">
-  </div>
-
-  <!-- Right - Small Images -->
-  <div class="flex flex-col gap-4">
-    <!-- Top small image -->
-    <img src="./static/images/addproperty.png" alt="Small Image 1" class="w-full h-[215px] object-cover rounded-xl">
-
-    <!-- Bottom small image with overlay -->
-    <div class="relative">
-      <img src="./static/images/about1.png" alt="Small Image 2" class="w-full h-[215px] object-cover rounded-xl">
-      <div class="absolute inset-0 bg-black bg-opacity-50 rounded-xl flex items-center justify-center">
-        <span class="text-white text-2xl font-semibold">7+</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    <!-- Title and Info -->
-    <div class="space-y-4">
-      <div class="flex flex-col gap-2">
-  <!-- Top Row: Sale, House (hidden), Price -->
-  <div class="flex justify-between items-center">
-    <p class="bg-[red] text-white rounded-full px-3 py-1">Sale</p>
-    <p class="hidden">House</p>
-    <span class="text-xl font-semibold text-gray-800">
-      $4050 <span class="text-sm text-gray-500">USD</span>
-    </span>
-  </div>
-
-  <!-- Heading Row: Aligned to left -->
-  <h2 class="text-2xl font-bold text-left">HOUSE FOR SALE</h2>
-</div>
-
-
-      <div class="text-sm text-gray-500 flex items-center space-x-2">
-        <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a6 6 0 016 6c0 4-6 10-6 10S4 12 4 8a6 6 0 016-6z"/></svg>
-        <span>Miami, Florida, celman delaware 2098</span>
-        <span class="text-yellow-500 flex items-center"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.49 6.91l6.564-.955L10 0l2.946 5.955 6.564.955-4.754 4.635 1.122 6.545z"/></svg> 5.0</span>
-      </div>
-
-      <div class="text-gray-700">
-        <p>Discover this modern 3-bedroom apartment located in the heart of the city, offering a perfect blend of comfort and convenience. Enjoy breathtaking skyline views, an open-concept kitchen, spacious living areas, and a private balcony ideal for relaxing evenings.</p>
-      </div>
-
-      <!-- Features -->
-      <div class="bg-gray-100 p-4 rounded-lg">
-        <h3 class="font-semibold mb-3">Amenities</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm text-gray-600">
-          <span>✅ 2 Beds</span>
-          <span>✅ 3 Baths</span>
-          <span>✅ 10k sq ft</span>
-          <span>✅ Smoking Area</span>
-          <span>✅ Kitchen</span>
-          <span>✅ Balcony</span>
-          <span>✅ Wifi</span>
-          <span>✅ Parking Area</span>
+          <a href="#" class="hover:text-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24"><path fill="#fff"
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" /></svg>
+          </a>
+          <a href="#" class="hover:text-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24"><g fill="none" stroke="#fff"
+                stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="1.5"><path
+                  d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12" /><path
+                  d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m1.008-5.5h-.01" /></g></svg>
+          </a>
+          <a href="#" class="hover:text-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24"><path fill="#fff"
+                d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.14.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18s.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.27c-.25-.14-1.47-.74-1.69-.82c-.23-.08-.37-.12-.56.12c-.16.25-.64.81-.78.97c-.15.17-.29.19-.53.07c-.26-.13-1.06-.39-2-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.12-.24-.01-.39.11-.5c.11-.11.27-.29.37-.44c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.56-1.35-.77-1.84c-.2-.48-.4-.42-.56-.43c-.14 0-.3-.01-.47-.01" /></svg>
+          </a>
         </div>
       </div>
 
-      <!-- Status -->
-      <div class="mt-4">
-        <h4 class="text-sm text-gray-500">Status</h4>
-        <p class="text-base font-medium text-gray-800">For Sale</p>
-      </div>
-    </div>
-  </div>
+      <nav class="bg-white shadow-md py-2 px-6 relative">
+        <div class="container mx-auto flex justify-between items-center">
+          <a href="index.html">
+            <img src="./static/images/logo.png" alt="Logo"
+              class="h-14 w-auto" />
+          </a>
 
-  <!-- Right Side: Contact Form -->
-  <div class="bg-gray-50 rounded-xl p-6 shadow-sm space-y-4">
-    <!-- Agent Info -->
-    <div class="flex items-center space-x-3">
-      <img src="agent.jpg" class="w-12 h-12 rounded-full" alt="Agent">
-      <div>
-        <p class="font-medium text-gray-900">Alex Ripon</p>
-        <p class="text-sm text-gray-500">example@gmail.com</p>
-      </div>
-    </div>
+          <ul class="hidden md:flex space-x-10 text-gray-700 navbar-times">
+            <li><a href="index.html" class="hover:text-[#8bc83f]">Home</a></li>
+            <li><a href="about.html" class="hover:text-[#8bc83f]">About
+                Us</a></li>
+            <li><a href="properties.html"
+                class="text-[#8bc83f]">Properties</a></li>
+            <li><a href="agents.html"
+                class="hover:text-[#8bc83f]">Agents</a></li>
+            <li><a href="blogs.html" class="hover:text-[#8bc83f]">Blogs</a></li>
+            <li><a href="contact.html"
+                class="hover:text-[#8bc83f]">Contact</a></li>
+          </ul>
 
-    <!-- Contact Form -->
-    <form class="space-y-4">
-      <div>
-        <label class="block text-sm text-gray-600">Full Name</label>
-        <input type="text" placeholder="Jone Doe" class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-      </div>
-      <div>
-        <label class="block text-sm text-gray-600">Email Address</label>
-        <input type="email" placeholder="yourmail@gmail.com" class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-      </div>
-      <div>
-        <label class="block text-sm text-gray-600">Phone</label>
-        <input type="text" placeholder="+880" class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-      </div>
-      <div>
-        <label class="block text-sm text-gray-600">Message</label>
-        <textarea placeholder="Write here..." rows="3" class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-      </div>
-      <button type="submit" class="w-full bg-black text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition">Submit</button>
-    </form>
-  </div>
-</div>
+          <a href="agent_login.html"
+            class="hidden md:flex ml-4 border border-[#8bc83f] text-[#8bc83f] px-6 py-2 items-center gap-2 hover:bg-[#76ad33] hover:text-white transition rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-dasharray="28"
+                stroke-dashoffset="28" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2">
+                <path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1">
+                  <animate fill="freeze" attributeName="stroke-dashoffset"
+                    dur="0.4s" values="28;0" />
+                </path>
+                <path
+                  d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z">
+                  <animate fill="freeze" attributeName="stroke-dashoffset"
+                    begin="0.4s" dur="0.4s" values="28;0" />
+                </path>
+              </g>
+            </svg>
+            Login
+          </a>
 
-
-
-
-
-
-
-<footer class="bg-white text-gray-700 ">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-start">
-    
-    <div class="space-y-4">
-      <img src="./static/images/logo.png" class="w-28 h-[4rem] object-contain">
-      <div class="text-sm space-y-2">
-        <p>123 Real Estate Ave,<br>Kochi, Kerala</p>
-        <div class="flex items-start">
-          <svg class="w-4 h-4 mt-1 mr-2 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M6.62 10.79a15.09 15.09 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1h3.25a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.24 1.05l-2.2 2.2z"/>
-          </svg>
-          <p>+91 98765 43210</p>
+          <div class="md:hidden">
+            <button id="mobile-menu-btn"
+              class="text-[#8bc83f] focus:outline-none">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="flex items-start">
-          <svg class="w-4 h-4 mt-1 mr-2 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20 4H4a2 2 0 00-2 2v1.18l10 6.25 10-6.25V6a2 2 0 00-2-2zm0 4.82l-8 5-8-5V18a2 2 0 002 2h12a2 2 0 002-2V8.82z"/>
-          </svg>
-          <p>contact@buysel.in</p>
+
+        <div id="mobile-menu"
+          class="fixed top-0 right-0 w-[90%] h-full bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+          <div class="p-6 flex justify-end">
+            <button id="close-menu"
+              class="text-gray-700 text-2xl">&times;</button>
+          </div>
+          <ul class="flex flex-col items-start space-y-6 p-6 text-gray-700">
+            <li><a href="index.html" class="hover:text-[#8bc83f]">Home</a></li>
+            <li><a href="about.html" class="hover:text-[#8bc83f]">About
+                Us</a></li>
+            <li><a href="properties.html"
+                class="hover:text-[#8bc83f]">Properties</a></li>
+            <li><a href="agents.html"
+                class="hover:text-[#8bc83f]">Agents</a></li>
+            <li><a href="blogs.html" class="hover:text-[#8bc83f]">Blogs</a></li>
+            <li><a href="contact.html"
+                class="hover:text-[#8bc83f]">Contact</a></li>
+            <li><a href="agent_login.html"
+                class="text-[#8bc83f] border border-[#8bc83f] px-4 py-2 rounded hover:bg-[#8bc83f] hover:text-white">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div
+      class="w-full px-20 mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-8 mt-32 max-md:px-6">
+
+      <div class="lg:col-span-2 space-y-6">
+
+        <div class="grid grid-cols-3 gap-4 max-w-7xl mx-auto cursor-pointer">
+          <div class="col-span-2">
+            <img src="./static/images/demo.png" alt="Main Property"
+              class="w-full h-[450px] object-cover rounded-xl">
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <img src="./static/images/addproperty.png" alt="Small Image 1"
+              class="w-full h-[215px] object-cover rounded-xl">
+
+            <div class="relative">
+              <a href="propertygallery.html">
+                <img src="./static/images/about1.png" alt="Small Image 2"
+                  class="w-full h-[215px] object-cover rounded-xl">
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-50 rounded-xl flex items-center justify-center">
+                  <span class="text-white text-2xl font-semibold">7+</span>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex flex-col gap-2">
+
+            <div class="flex justify-between items-center">
+              <p class="bg-[red] text-white rounded-full px-3 py-1">Sale</p>
+              <p class="hidden">House</p>
+              <div class="flex justify-between">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                  viewBox="0 0 24 24"><path fill="#000" fill-rule="evenodd"
+                    d="M5.25 3.5A.75.75 0 0 1 6 2.75h12a.75.75 0 0 1 0 1.5h-4.919q.111.106.216.217a5.4 5.4 0 0 1 1.387 2.894H18a.75.75 0 0 1 0 1.5h-3.284c-.124 1.145-.592 2.264-1.419 3.144c-.987 1.052-2.44 1.717-4.297 1.717H7.93l7.076 6.475a.75.75 0 1 1-1.012 1.106l-8.5-7.778A.75.75 0 0 1 6 12.223h3c1.477 0 2.523-.518 3.203-1.243a3.9 3.9 0 0 0 1.002-2.118H6a.75.75 0 0 1 0-1.5h7.16a3.9 3.9 0 0 0-.957-1.868C11.523 4.77 10.477 4.25 9 4.25H6a.75.75 0 0 1-.75-.75"
+                    clip-rule="evenodd" /></svg>
+                <p>8000</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-left">HOUSE FOR SALE</h2>
+          </div>
+
+          <div class="text-sm text-gray-500 flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24"><g fill="none" stroke="#8bc83f"
+                stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="1.5"><path
+                  d="M12.56 20.82a.96.96 0 0 1-1.12 0C6.611 17.378 1.486 10.298 6.667 5.182A7.6 7.6 0 0 1 12 3c2 0 3.919.785 5.333 2.181c5.181 5.116.056 12.196-4.773 15.64" /><path
+                  d="M12 12a2 2 0 1 0 0-4a2 2 0 0 0 0 4" /></g></svg>
+            <span>Kochi,Kerala</span>
+          </div>
+
+          <div class="text-gray-700">
+            <p>Discover this modern 3-bedroom apartment located in the heart of
+              the city, offering a perfect blend of comfort and convenience.
+              Enjoy breathtaking skyline views, an open-concept kitchen,
+              spacious living areas and a private balcony ideal for relaxing
+              evenings.</p>
+          </div>
+
+          <div class="bg-gray-100 p-4 rounded-lg">
+            <h3 class="font-semibold mb-3">Amenities</h3>
+            <div
+              class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm text-gray-600">
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24"><path fill="#8bc83f"
+                    d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12s12-5.383 12-12h-2.7c0 5.128-4.172 9.3-9.3 9.3S2.7 17.128 2.7 12S6.872 2.7 12 2.7zm7.4 2.583l-7.505 9.371L8.388 9.08l-2.002 2.436l4.741 3.888a1.573 1.573 0 0 0 2.231-.233l8.504-10.617z" /></svg>
+
+                <span>2 Beds</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24"><path fill="#8bc83f"
+                    d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12s12-5.383 12-12h-2.7c0 5.128-4.172 9.3-9.3 9.3S2.7 17.128 2.7 12S6.872 2.7 12 2.7zm7.4 2.583l-7.505 9.371L8.388 9.08l-2.002 2.436l4.741 3.888a1.573 1.573 0 0 0 2.231-.233l8.504-10.617z" /></svg>
+
+                <span>3 Baths</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24"><path fill="#8bc83f"
+                    d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12s12-5.383 12-12h-2.7c0 5.128-4.172 9.3-9.3 9.3S2.7 17.128 2.7 12S6.872 2.7 12 2.7zm7.4 2.583l-7.505 9.371L8.388 9.08l-2.002 2.436l4.741 3.888a1.573 1.573 0 0 0 2.231-.233l8.504-10.617z" /></svg>
+
+                <span>10k sq ft</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24"><path fill="#8bc83f"
+                    d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12s12-5.383 12-12h-2.7c0 5.128-4.172 9.3-9.3 9.3S2.7 17.128 2.7 12S6.872 2.7 12 2.7zm7.4 2.583l-7.505 9.371L8.388 9.08l-2.002 2.436l4.741 3.888a1.573 1.573 0 0 0 2.231-.233l8.504-10.617z" /></svg>
+
+                <span>Smoking Area</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24"><path fill="#8bc83f"
+                    d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12s12-5.383 12-12h-2.7c0 5.128-4.172 9.3-9.3 9.3S2.7 17.128 2.7 12S6.872 2.7 12 2.7zm7.4 2.583l-7.505 9.371L8.388 9.08l-2.002 2.436l4.741 3.888a1.573 1.573 0 0 0 2.231-.233l8.504-10.617z" /></svg>
+
+                <span>Kitchen</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24"><path fill="#8bc83f"
+                    d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12s12-5.383 12-12h-2.7c0 5.128-4.172 9.3-9.3 9.3S2.7 17.128 2.7 12S6.872 2.7 12 2.7zm7.4 2.583l-7.505 9.371L8.388 9.08l-2.002 2.436l4.741 3.888a1.573 1.573 0 0 0 2.231-.233l8.504-10.617z" /></svg>
+
+                <span>Balcony</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24"><path fill="#8bc83f"
+                    d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12s12-5.383 12-12h-2.7c0 5.128-4.172 9.3-9.3 9.3S2.7 17.128 2.7 12S6.872 2.7 12 2.7zm7.4 2.583l-7.505 9.371L8.388 9.08l-2.002 2.436l4.741 3.888a1.573 1.573 0 0 0 2.231-.233l8.504-10.617z" /></svg>
+
+                <span>Wifi</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24"><path fill="#8bc83f"
+                    d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12s12-5.383 12-12h-2.7c0 5.128-4.172 9.3-9.3 9.3S2.7 17.128 2.7 12S6.872 2.7 12 2.7zm7.4 2.583l-7.505 9.371L8.388 9.08l-2.002 2.436l4.741 3.888a1.573 1.573 0 0 0 2.231-.233l8.504-10.617z" /></svg>
+                <span>Parking Area</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Status -->
+          <div class="flex gap-4 mt-4 max-w-sm">
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/919876543210" target="_blank"
+              class="flex-1 flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24"
+                class="mr-2"><path fill="#fff"
+                  d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" /></svg>
+              WhatsApp
+            </a>
+
+            <!-- Call Button -->
+            <a href="tel:+919876543210"
+              class="flex-1 flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                viewBox="0 0 24 24"
+                class="mr-2">
+                <path fill="#fff"
+                  d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3" />
+              </svg>
+              Call
+            </a>
+          </div>
+
         </div>
       </div>
-    </div>
 
+      <div class="bg-gray-50 rounded-md p-6 shadow-sm space-y-4">
+        <!-- Agent Info -->
+        <!-- <div class="flex items-center space-x-3">
+    <img src="agent.jpg" class="w-12 h-12 rounded-full" alt="Agent">
     <div>
-      <h3 class="text-xl  mb-4">Pages</h3>
-      <ul class="space-y-4 text-sm">
-        <li><a href="index.html" class="hover:text-[#8bc83f] transition">Home</a></li>
-        <li><a href="about.html" class="hover:text-[#8bc83f] transition">About Us</a></li>
-        <li><a href="properties.html" class="hover:text-[#8bc83f] transition">Properties</a></li>
-        <li><a href="contact.html" class="hover:text-[#8bc83f] transition">Contact</a></li>
-      </ul>
+      <p class="font-medium text-gray-900">Alex Ripon</p>
+      <p class="text-sm text-gray-500">example@gmail.com</p>
     </div>
+  </div> -->
 
-    <div>
-      <h3 class="text-xl  mb-4">Services</h3>
-      <ul class="space-y-4 text-sm">
-        <li><a href="#" class="hover:text-[#8bc83f] transition">Buy Property</a></li>
-        <li><a href="#" class="hover:text-[#8bc83f] transition">Sell Property</a></li>
-        <li><a href="#" class="hover:text-[#8bc83f] transition">Rent/Lease</a></li>
-        <li><a href="#" class="hover:text-[#8bc83f] transition">Agent Support</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="text-xl  mb-4">Follow Us</h3>
-      <div class="flex space-x-4">
-        <a href="#" aria-label="Facebook" class="text-gray-600 hover:text-[#8bc83f] transition">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M22 12a10 10 0 10-11.63 9.87v-6.99H8v-2.88h2.37V9.41c0-2.34 1.4-3.64 3.54-3.64 1.03 0 2.1.18 2.1.18v2.3h-1.18c-1.16 0-1.53.72-1.53 1.46v1.75h2.6l-.42 2.88h-2.18v6.99A10 10 0 0022 12z"/>
-          </svg>
-        </a>
-        <a href="#" aria-label="Twitter" class="text-gray-600 hover:text-[#8bc83f] transition">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8.29 20c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.35-.01-.53A8.35 8.35 0 0022 5.92a8.18 8.18 0 01-2.36.65 4.1 4.1 0 001.8-2.27 8.2 8.2 0 01-2.6.99A4.1 4.1 0 0015.5 4c-2.27 0-4.1 1.84-4.1 4.1 0 .32.04.64.1.94C7.7 8.9 4.1 7.1 1.67 4.15a4.1 4.1 0 00-.55 2.07c0 1.43.73 2.68 1.84 3.42a4.07 4.07 0 01-1.86-.52v.05c0 2 1.42 3.67 3.3 4.05a4.1 4.1 0 01-1.85.07c.52 1.62 2.03 2.8 3.83 2.84A8.24 8.24 0 012 18.57a11.61 11.61 0 006.29 1.84"/>
-          </svg>
-        </a>
-        <a href="#" aria-label="Instagram" class="text-gray-600 hover:text-[#8bc83f] transition">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.06 1.95.24 2.4.4.58.22 1 .48 1.44.92.44.44.7.86.92 1.44.16.45.34 1.23.4 2.4.07 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.06 1.17-.24 1.95-.4 2.4-.22.58-.48 1-.92 1.44-.44.44-.86.7-1.44.92-.45.16-1.23.34-2.4.4-1.25.07-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.06-1.95-.24-2.4-.4a3.69 3.69 0 01-1.44-.92 3.69 3.69 0 01-.92-1.44c-.16-.45-.34-1.23-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.06-1.17.24-1.95.4-2.4.22-.58.48-1 .92-1.44.44-.44.86-.7 1.44-.92.45-.16 1.23-.34 2.4-.4C8.4 2.2 8.8 2.2 12 2.2m0 1.8c-3.14 0-3.5 0-4.73.07-1.02.05-1.57.22-1.93.36a2.17 2.17 0 00-1.27 1.27c-.14.36-.31.91-.36 1.93C3.8 8.5 3.8 8.86 3.8 12s0 3.5.07 4.73c.05 1.02.22 1.57.36 1.93.26.64.73 1.11 1.27 1.27.36.14.91.31 1.93.36 1.23.07 1.59.07 4.73.07s3.5 0 4.73-.07c1.02-.05 1.57-.22 1.93-.36.64-.26 1.11-.73 1.27-1.27.14-.36.31-.91.36-1.93.07-1.23.07-1.59.07-4.73s0-3.5-.07-4.73c-.05-1.02-.22-1.57-.36-1.93a2.17 2.17 0 00-1.27-1.27c-.36-.14-.91-.31-1.93-.36C15.5 4 15.14 4 12 4zM12 7.1a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zm0 1.8a3.1 3.1 0 110 6.2 3.1 3.1 0 010-6.2zm5.55-1.8a1.17 1.17 0 11-2.34 0 1.17 1.17 0 012.34 0z"/>
-          </svg>
-        </a>
+        <div class="space-y-6 text-sm text-gray-700 ">
+          <div class="flex justify-between">
+            <span class="font-medium text-gray-600">Total Land Area:</span>
+            <span>5 cents</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium text-gray-600">House Sq.ft:</span>
+            <span>1800 sq ft</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium text-gray-600">Total Price:</span>
+            <span>₹40,00,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium text-gray-600">Price per Cent:</span>
+            <span>₹8,00,000</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium text-gray-600">Address:</span>
+            <span>123, Rose Villa, Kochi</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium text-gray-600">Owner Name:</span>
+            <span>John Mathew</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium text-gray-600">Pincode:</span>
+            <span>682001</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium text-gray-600">Phone Number:</span>
+            <span>+91 98765 43210</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium text-gray-600">Landmark:</span>
+            <span>Near InfoPark</span>
+          </div>
+        </div>
       </div>
+
     </div>
-  </div>
 
-  <div class="text-center text-sm py-4 border-t mt-4 text-gray-500">
-    &copy; 2025 Buysel. All rights reserved.
-  </div>
-</footer> 
+    <div
+      class="w-full h-72 md:h-96 rounded-md overflow-hidden shadow-md px-20 max-md:px-6">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251479.49747803173!2d76.13730739775555!3d9.986500065414937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d514abec6bf%3A0xbd582caa5844192!2sKochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1753938536472!5m2!1sen!2sin"
+        width="600" height="450" style="border:0;" allowfullscreen
+        loading="lazy" class="w-full rounded-md h-full"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-<script src="./static/js/script.js"></script>
-</body>
+    </div>
+
+    <footer class="bg-white text-gray-700 ">
+      <div
+        class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-start">
+
+        <div class="space-y-4">
+          <img src="./static/images/logo.png"
+            class="w-28 h-[4rem] object-contain">
+          <div class="text-sm space-y-2">
+            <p>123 Real Estate Ave,<br>Kochi, Kerala</p>
+            <div class="flex items-start">
+              <svg class="w-4 h-4 mt-1 mr-2 text-gray-600" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M6.62 10.79a15.09 15.09 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1h3.25a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.24 1.05l-2.2 2.2z" />
+              </svg>
+              <p>+91 98765 43210</p>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-4 h-4 mt-1 mr-2 text-gray-600" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4a2 2 0 00-2 2v1.18l10 6.25 10-6.25V6a2 2 0 00-2-2zm0 4.82l-8 5-8-5V18a2 2 0 002 2h12a2 2 0 002-2V8.82z" />
+              </svg>
+              <p>contact@buysel.in</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl  mb-4">Pages</h3>
+          <ul class="space-y-4 text-sm">
+            <li><a href="index.html"
+                class="hover:text-[#8bc83f] transition">Home</a></li>
+            <li><a href="about.html"
+                class="hover:text-[#8bc83f] transition">About Us</a></li>
+            <li><a href="properties.html"
+                class="hover:text-[#8bc83f] transition">Properties</a></li>
+            <li><a href="contact.html"
+                class="hover:text-[#8bc83f] transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl  mb-4">Services</h3>
+          <ul class="space-y-4 text-sm">
+            <li><a href="#" class="hover:text-[#8bc83f] transition">Buy
+                Property</a></li>
+            <li><a href="#" class="hover:text-[#8bc83f] transition">Sell
+                Property</a></li>
+            <li><a href="#"
+                class="hover:text-[#8bc83f] transition">Rent/Lease</a></li>
+            <li><a href="#" class="hover:text-[#8bc83f] transition">Agent
+                Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl  mb-4">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a href="#" aria-label="Facebook"
+              class="text-gray-600 hover:text-[#8bc83f] transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22 12a10 10 0 10-11.63 9.87v-6.99H8v-2.88h2.37V9.41c0-2.34 1.4-3.64 3.54-3.64 1.03 0 2.1.18 2.1.18v2.3h-1.18c-1.16 0-1.53.72-1.53 1.46v1.75h2.6l-.42 2.88h-2.18v6.99A10 10 0 0022 12z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter"
+              class="text-gray-600 hover:text-[#8bc83f] transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M8.29 20c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.35-.01-.53A8.35 8.35 0 0022 5.92a8.18 8.18 0 01-2.36.65 4.1 4.1 0 001.8-2.27 8.2 8.2 0 01-2.6.99A4.1 4.1 0 0015.5 4c-2.27 0-4.1 1.84-4.1 4.1 0 .32.04.64.1.94C7.7 8.9 4.1 7.1 1.67 4.15a4.1 4.1 0 00-.55 2.07c0 1.43.73 2.68 1.84 3.42a4.07 4.07 0 01-1.86-.52v.05c0 2 1.42 3.67 3.3 4.05a4.1 4.1 0 01-1.85.07c.52 1.62 2.03 2.8 3.83 2.84A8.24 8.24 0 012 18.57a11.61 11.61 0 006.29 1.84" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram"
+              class="text-gray-600 hover:text-[#8bc83f] transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.06 1.95.24 2.4.4.58.22 1 .48 1.44.92.44.44.7.86.92 1.44.16.45.34 1.23.4 2.4.07 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.06 1.17-.24 1.95-.4 2.4-.22.58-.48 1-.92 1.44-.44.44-.86.7-1.44.92-.45.16-1.23.34-2.4.4-1.25.07-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.06-1.95-.24-2.4-.4a3.69 3.69 0 01-1.44-.92 3.69 3.69 0 01-.92-1.44c-.16-.45-.34-1.23-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.06-1.17.24-1.95.4-2.4.22-.58.48-1 .92-1.44.44-.44.86-.7 1.44-.92.45-.16 1.23-.34 2.4-.4C8.4 2.2 8.8 2.2 12 2.2m0 1.8c-3.14 0-3.5 0-4.73.07-1.02.05-1.57.22-1.93.36a2.17 2.17 0 00-1.27 1.27c-.14.36-.31.91-.36 1.93C3.8 8.5 3.8 8.86 3.8 12s0 3.5.07 4.73c.05 1.02.22 1.57.36 1.93.26.64.73 1.11 1.27 1.27.36.14.91.31 1.93.36 1.23.07 1.59.07 4.73.07s3.5 0 4.73-.07c1.02-.05 1.57-.22 1.93-.36.64-.26 1.11-.73 1.27-1.27.14-.36.31-.91.36-1.93.07-1.23.07-1.59.07-4.73s0-3.5-.07-4.73c-.05-1.02-.22-1.57-.36-1.93a2.17 2.17 0 00-1.27-1.27c-.36-.14-.91-.31-1.93-.36C15.5 4 15.14 4 12 4zM12 7.1a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zm0 1.8a3.1 3.1 0 110 6.2 3.1 3.1 0 010-6.2zm5.55-1.8a1.17 1.17 0 11-2.34 0 1.17 1.17 0 012.34 0z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center text-sm py-4 border-t mt-4 text-gray-500">
+        &copy; 2025 Buysel. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="./static/js/script.js"></script>
+  </body>
 </html>
