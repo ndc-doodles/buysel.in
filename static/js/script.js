@@ -57,9 +57,9 @@ function eventFunction() {
                 console.log(imageCount);
 
                 const images = [
-                    "./static/img/10p.jpg",
-                    "./static/img/11p.jpg",
-                    "./static/img/9p.jpg",
+                    "./static/images/10p.jpg",
+                    "./static/images/11p.jpg",
+                    "./static/images/9p.jpg",
                 ];
 
                 const imageArray = document.querySelectorAll('.image-box-mobile')
@@ -92,9 +92,9 @@ function eventFunction() {
                 console.log(imageCount);
 
                 const images = [
-                    "./static/img/10p.jpg",
-                    "./static/img/11p.jpg",
-                    "./static/img/9p.jpg",
+                    "./static/images/10p.jpg",
+                    "./static/images/11p.jpg",
+                    "./static/images/9p.jpg",
                 ];
 
                 const imageArray = document.querySelectorAll('.image-box')
@@ -375,6 +375,14 @@ function closeModal() {
 
 
 
-
+// agents scrolling in home page
+function scrollAgents(direction) {
+    const container = document.querySelector('.animate-marquee');
+    const scrollAmount = 150;
+    container.parentElement.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+  }
 
 
