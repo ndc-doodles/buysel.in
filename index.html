@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navbar Example</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <title>Buysel.in</title>
+  <link rel="icon" href="./static/images/logo.png" type="image/png" />
+    <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./static/css/style.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link
@@ -15,10 +16,10 @@
 
 </head>
 
-<body class="bg-white">
+<body class="bg-white overflow-x-hidden">
 
-  <div class="fixed top-0 left-0 right-0 z-50">
-    <div class="bg-[#8bc83f] text-white text-sm py-2 px-6 flex justify-between items-center">
+  <div class="fixed top-0 left-0 right-0 z-50 overflow-x-hidden">
+    <div class="bg-[#8bc83f] text-white text-xs py-2 px-6 flex justify-between items-center">
       <div>Welcome to Our Real Estate Platform</div>
       <div class="space-x-4 flex">
 
@@ -94,7 +95,7 @@
           <button id="close-menu" class="text-gray-700 text-2xl">&times;</button>
         </div>
         <ul class="flex flex-col items-start space-y-6 p-6 text-gray-700">
-          <li><a href="index.html" class="hover:text-[#8bc83f]">Home</a></li>
+          <li><a href="index.html" class="text-[#8bc83f]">Home</a></li>
           <li><a href="about.html" class="hover:text-[#8bc83f]">About
               Us</a></li>
           <li><a href="properties.html" class="hover:text-[#8bc83f]">Properties</a></li>
@@ -148,19 +149,20 @@
 
     </div>
   </section>
-  <div class="image-section-mobile-outer">
+  <div class="image-section-mobile-outer mt-6 md:mt-0 ">
+
     <div class="image-section-mobile" onclick="sendMessageToWhatsApp('property', 'place')">
       <a href="https://wa.me/9061827363" style="height: 100%" target="_blank" aria-label="WhatsApp Chat 1">
-        <img class="image-box-mobile" id="box-mobile1" src="./static/img/9p.jpg" alt />
+        <img class="image-box-mobile" id="box-mobile1" src="./static/images/9p.jpg" alt />
       </a>
       <a href="https://wa.me/9061827363" style="height: 100%" target="_blank" aria-label="WhatsApp Chat 1">
-        <img class="image-box-mobile" id="box-mobile2" src="./static/img/10p.jpg" alt />
+        <img class="image-box-mobile" id="box-mobile2" src="./static/images/10p.jpg" alt />
       </a>
       <a href="https://wa.me/9061827363" style="height: 100%" target="_blank" aria-label="WhatsApp Chat 1">
-        <img class="image-box-mobile" id="box-mobile3" src="./static/img/11p.jpg" alt />
+        <img class="image-box-mobile" id="box-mobile3" src="./static/images/11p.jpg" alt />
       </a>
       <a href="https://wa.me/9061827363" style="height: 100%" target="_blank" aria-label="WhatsApp Chat 1">
-        <img class="image-box-mobile" id="box-mobile4" src="./asset/img/9p.jpg" alt />
+        <img class="image-box-mobile" id="box-mobile4" src="./static/images/9p.jpg" alt />
       </a>
     </div>
   </div>
@@ -325,50 +327,58 @@
         </div>
       </div>
     </div>
-    <div class="list-view hidden bg-white rounded-xl shadow-md overflow-hidden text-sm ">
-      <div class="flex flex-row">
-        <div class="w-1/3 h-auto ">
-          <img src="./static/images/demo.png" alt="Property Image" class="w-full h-full object-cover "
-            style="border-radius:6px;">
-        </div>
+      <div
+        class="list-view hidden bg-white rounded-xl shadow-md overflow-hidden text-sm ">
+        <div class="flex flex-row">
+          <div class="w-1/3 h-auto ">
+            <img src="./static/images/demo.png" alt="Property Image"
+              class="w-full h-full object-cover " style="border-radius:6px;">
+          </div>
 
-        <div class="w-2/3 p-2 sm:p-4 flex flex-col justify-between">
-          <span
-            class="bg-red-500 text-white text-[8px] sm:text-xs font-semibold px-2 py-0.5 rounded w-max mb-1 sm:mb-2">For
-            Sale</span>
+          <div class="w-2/3 p-2 sm:p-4 flex flex-col justify-between">
+            <span
+              class="bg-red-500 text-white text-[8px] sm:text-xs font-semibold px-2 py-0.5 rounded w-max mb-1 sm:mb-2">For
+              Sale</span>
 
-          <h2 class="text-base sm:text-lg font-bold mb-1">House for Rent</h2>
-          <!-- <p class="text-gray-500 text-xs sm:text-sm mb-1">Spacious 2BHK house featuring parking, kitchen, balcony...</p> -->
+            <h2 class="text-base sm:text-lg font-bold mb-1">House for Rent</h2>
+            <!-- <p class="text-gray-500 text-xs sm:text-sm mb-1">Spacious 2BHK house featuring parking, kitchen, balcony...</p> -->
 
-          <p class="text-black font-semibold text-base sm:text-lg">₹80 Lakhs
-            <span class="text-xs sm:text-sm text-gray-400">/acre</span>
-          </p>
-          <a href="#" class="inline-block text-[14px] text-[#0088FF] underline transition">
-            View Details
-          </a>
-          <div class="flex justify-between items-center mt-2 sm:mt-3">
-            <p class="text-[11px] text-gray-500 flex items-center space-x-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <g fill="none" stroke="#8bc83f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-                  <path
-                    d="M12.56 20.82a.96.96 0 0 1-1.12 0C6.611 17.378 1.486 10.298 6.667 5.182A7.6 7.6 0 0 1 12 3c2 0 3.919.785 5.333 2.181c5.181 5.116.056 12.196-4.773 15.64" />
-                  <path d="M12 12a2 2 0 1 0 0-4a2 2 0 0 0 0 4" />
-                </g>
-              </svg>
-              <span class="text-[11px] text-black">Ernakulam, Kerala</span>
-            </p> <a href="#" class="text-blue-500 underline text-xs sm:text-sm">Directions</a>
+            <p class="text-black font-semibold text-base sm:text-lg">₹80 Lakhs
+              <span class="text-xs sm:text-sm text-gray-400">/acre</span>
+            </p>
+            <a href="detail_properties.html"
+              class="inline-block text-[10px] text-[#0088FF] underline transition mt-[-5px]">
+              View Details
+            </a>
+            <div class="flex justify-between items-center mt-2 sm:mt-3">
+              <p class="text-[11px] text-gray-500 flex items-center space-x-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                  viewBox="0 0 24 24"><g fill="none" stroke="#8bc83f"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.5"><path
+                      d="M12.56 20.82a.96.96 0 0 1-1.12 0C6.611 17.378 1.486 10.298 6.667 5.182A7.6 7.6 0 0 1 12 3c2 0 3.919.785 5.333 2.181c5.181 5.116.056 12.196-4.773 15.64" /><path
+                      d="M12 12a2 2 0 1 0 0-4a2 2 0 0 0 0 4" /></g></svg>
+                <span class="text-[11px] text-black">Ernakulam, Kerala</span>
+              </p>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=10.123456,76.123456"
+                class="text-blue-500 underline text-xs sm:text-sm"
+                target="_blank" rel="noopener noreferrer">
+                Directions
+              </a>
+
+            </div>
+
           </div>
 
         </div>
-
+        <div class="flex space-x-2 mt-3 p-[1rem]">
+          <a href="tel:1234567890"
+            class="w-1/2 bg-[#8bc83f] text-white py-1 sm:py-2 rounded text-xs sm:text-sm text-center">Call</a>
+          <a href="https://wa.me/1234567890" target="_blank"
+            class="w-1/2 border border-[#8bc83f] text-[#8bc83f] py-1 sm:py-2 rounded text-xs sm:text-sm text-center">WhatsApp</a>
+        </div>
       </div>
-      <div class="flex space-x-2 mt-3 p-[1rem]">
-        <a href="tel:1234567890"
-          class="w-1/2 bg-[#8bc83f] text-white py-1 sm:py-2 rounded text-xs sm:text-sm text-center">Call</a>
-        <a href="https://wa.me/1234567890" target="_blank"
-          class="w-1/2 border border-[#8bc83f] text-[#8bc83f] py-1 sm:py-2 rounded text-xs sm:text-sm text-center">WhatsApp</a>
-      </div>
-    </div>
 
     <div class="flex justify-center mt-10">
       <a href="properties.html">
