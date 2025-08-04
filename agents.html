@@ -131,11 +131,39 @@
 
 
 
+<section class="bg-white py-12 px-4 md:px-28 mt-28">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h1 class="text-2xl md:text-4xl font-bold leading-tight">
+        THE PERFECT PARTNER<br />
+        FOR YOUR REAL ESTATE NEEDS
+      </h1>
+    </div>
+
+    <div>
+      <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+        Browse our list of agents to find the right professional for your real estate needs. Filter by experience, specialization, or location to make an informed choice. Whether buying, selling, or investing, our agents are here to provide expert guidance for a successful journey
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-4 relative z-10 mt-20 max-md:mt-10">
+    <div class="w-full md:w-1/3 max-md:hidden">
+      <img src="./static/images/about1.png" alt="Home 1" class="rounded shadow-lg object-cover w-full h-72" />
+    </div>
+    <div class="w-full md:w-1/3 md:-mt-12">
+      <img src="./static/images/agent2.jpg" alt="Home 2" class="rounded shadow-lg object-cover w-full h-72" />
+    </div>
+    <div class="w-full md:w-1/3 max-md:hidden">
+      <img src="./static/images/about3.jpg" alt="Home 3" class="rounded shadow-lg object-cover w-full h-72" />
+    </div>
+  </div>
+</section>
 
 
 
 
-<div class="flex flex-col md:flex-row items-center justify-between  gap-20 px-6 xl:px-28 py-12 bg-white mt-24">
+<!-- <div class="flex flex-col md:flex-row items-center justify-between  gap-20 px-6 xl:px-28 py-12 bg-white mt-24">
   <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0 max-md:mt-[2rem]">
     <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-4 uppercase">Explore
 Our Agents</h2>
@@ -148,7 +176,7 @@ Our Agents</h2>
   <div class="md:w-1/2 flex justify-center">
     <img src="./static/images/agent2.jpg" alt="Real Estate Agents" class="max-w-full h-auto rounded-lg shadow-md" />
   </div>
-</div>
+</div> -->
 
 
 
@@ -428,24 +456,35 @@ Our Agents</h2>
 
 
 
-<div class="w-full bg-[#f2faef] min-h-[500px] flex items-center justify-center px-6 py-12">
-  <div class="bg-white shadow-lg rounded-xl p-8 max-w-xl w-full text-center">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-      JOIN AS AN<br><span class="text-[#a8bfa0]">AGENT</span>
+<div class="w-full bg-[#8bc83f]/60 min-h-[500px] flex items-center justify-center px-6 py-12">
+  <div class="bg-white shadow-xl rounded-2xl p-10 max-w-xl w-full text-center border border-[#e2f0dd] hover:shadow-2xl transition-shadow duration-300">
+    
+    <div class="mb-3">
+      <span class="inline-block px-3 py-1 text-xs font-medium text-[#5d7a56] bg-[#e8f5e1] rounded-full uppercase tracking-wider">
+        Start Today
+      </span>
+    </div>
+
+    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 leading-snug mb-4 uppercase">
+      Join as an<br><span class="text-[#8bc83f]">Agent</span>
     </h2>
-    <p class="text-gray-700 mb-6">
-      Register with BuySel to list properties under your name and connect with more buyers, sellers and potential clients.
+
+    <p class="text-gray-600 text-sm md:text-base mb-8">
+      Partner with <span class="font-medium text-[#8bc83f]">BuySel</span> to list your properties, reach more buyers and sellers, and grow your real estate network.
     </p>
 
-    <button onclick="openAgentModal()" class="inline-flex items-center gap-2 bg-black text-gray-200 font-semibold px-6 py-2 rounded hover:bg-gray-900 transition">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4a4 4 0 0 0-4-4a4 4 0 0 0-4 4a4 4 0 0 0 4 4" />
+    <button onclick="openAgentModal()"
+      class="inline-flex items-center gap-2 bg-[#8bc83f] text-white font-semibold px-6 py-3 rounded-md shadow hover:bg-[#4b6348] hover:scale-105 transition-all duration-200">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+        viewBox="0 0 24 24">
+        <path
+          d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4M6 10V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4a4 4 0 0 0-4-4a4 4 0 0 0-4 4a4 4 0 0 0 4 4" />
       </svg>
-      Register as an agent
+      Register as an Agent
     </button>
   </div>
 </div>
+
 
 
 <div id="agentModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center px-4">
