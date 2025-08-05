@@ -35,6 +35,11 @@
             </a>
           </li>
           <li>
+            <a href="admin_agentlogin.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+             Agent Login
+            </a>
+          </li>
+          <li>
             <a href="admin_premiumagents.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">
              Premium Agents
             </a> 
@@ -68,7 +73,6 @@
 
 
 
-    <!-- Main Content -->
 <div class="flex-1 ml-64 p-6">
   <h1 class="text-2xl font-bold mb-6">Premium Agents</h1>
 
@@ -76,6 +80,7 @@
     <table class="min-w-full bg-white rounded shadow-md">
       <thead class="bg-black text-white text-left">
         <tr>
+          <th class="p-4">Image</th>
           <th class="p-4">Name</th>
           <th class="p-4">Specialised In</th>
           <th class="p-4">Phone</th>
@@ -87,6 +92,9 @@
       </thead>
       <tbody class="divide-y">
         <tr class="hover:bg-gray-50">
+          <td class="p-4">
+  <img src="./static/images/agent1.jpg" alt="Agent Image" class="w-12 h-12 rounded-full object-cover" />
+</td>
           <td class="p-4 font-semibold">John Doe</td>
           <td class="p-4">Sale</td>
           <td class="p-4">+91 9876543210</td>
@@ -110,38 +118,50 @@
   <div class="bg-white rounded-lg shadow-lg w-full max-w-2xl p-6 relative">
     <h2 class="text-xl font-bold mb-4">Edit Agent</h2>
     <form id="editAgentForm" class="space-y-4">
-      <div class="grid grid-cols-2 gap-4">
-        <div>
-          <label class="block text-sm">Name</label>
-          <input type="text" name="name" class="w-full border rounded px-3 py-2" />
-        </div>
-        <div>
-          <label class="block text-sm">Specialised In</label>
-          <input type="text" name="specialised" class="w-full border rounded px-3 py-2" />
-        </div>
-        <div>
-          <label class="block text-sm">Phone</label>
-          <input type="text" name="phone" class="w-full border rounded px-3 py-2" />
-        </div>
-        <div>
-          <label class="block text-sm">Email</label>
-          <input type="email" name="email" class="w-full border rounded px-3 py-2" />
-        </div>
-        <div>
-          <label class="block text-sm">Location</label>
-          <input type="text" name="location" class="w-full border rounded px-3 py-2" />
-        </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    
+    <div class="flex items-center space-x-4 col-span-1 md:col-span-2">
+      <img id="agentPreviewImage" src="./static/images/agent1.jpg" alt="Preview" class="w-20 h-20 object-cover rounded-full border shadow" />
+      <input type="file" accept="image/*" class="border rounded px-3 py-2" onchange="previewAgentImage(event)">
+    </div>
 
-        <div>
-          <label class="block text-sm">Listed Properties</label>
-          <input type="text" name="listed properties" class="w-full border rounded px-3 py-2" />
-        </div>
-      </div>
-      <div class="flex justify-end gap-4 mt-4">
-        <button type="button" onclick="closePremiumAgentProfileEditModal()" class="bg-gray-300 px-4 py-2 rounded">Cancel</button>
-        <button type="submit" class="bg-[#8bc83f] px-4 py-2 rounded text-white">Save</button>
-      </div>
-    </form>
+    <div>
+      <label class="block text-sm">Name</label>
+      <input type="text" name="name" class="w-full border rounded px-3 py-2" />
+    </div>
+
+    <div>
+      <label class="block text-sm">Specialised In</label>
+      <input type="text" name="specialised" class="w-full border rounded px-3 py-2" />
+    </div>
+
+    <div>
+      <label class="block text-sm">Phone</label>
+      <input type="text" name="phone" class="w-full border rounded px-3 py-2" />
+    </div>
+
+    <div>
+      <label class="block text-sm">Email</label>
+      <input type="email" name="email" class="w-full border rounded px-3 py-2" />
+    </div>
+
+    <div>
+      <label class="block text-sm">Location</label>
+      <input type="text" name="location" class="w-full border rounded px-3 py-2" />
+    </div>
+
+    <div>
+      <label class="block text-sm">Listed Properties</label>
+      <input type="text" name="listed_properties" class="w-full border rounded px-3 py-2" />
+    </div>
+  </div>
+
+  <div class="flex justify-end gap-4 mt-4">
+    <button type="button" onclick="closePremiumAgentProfileEditModal()" class="bg-gray-300 px-4 py-2 rounded">Cancel</button>
+    <button type="submit" class="bg-[#8bc83f] px-4 py-2 rounded text-white">Save</button>
+  </div>
+</form>
+
   </div>
 </div>
 

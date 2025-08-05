@@ -35,16 +35,10 @@
     </ul>
   </nav>
 </div>
-<!-- Mobile Toggle Button -->
 <button onclick="toggleSidebar()" class="md:hidden fixed top-4 left-4 z-50 bg-[#8bc83f] text-white p-2 rounded shadow-lg">
   &#9776;
 </button>
-<script>
-   function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('-translate-x-full');
-  }
-</script>
+
 
 
 <div class="w-full overflow-x-hidden">
@@ -52,7 +46,6 @@
 
     <h1 class="text-3xl font-bold mb-6">Add New Property</h1>
 
-    <!-- Form Section -->
     <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 bg-gray-100 p-4 sm:p-6 lg:p-8 rounded-lg mb-10 shadow max-w-screen-xl mx-auto w-full">
       <div><label class="block font-semibold mb-1">Category</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
       <div><label class="block font-semibold mb-1">Purpose</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
@@ -73,7 +66,6 @@
       </div>
     </form>
 
-    <!-- Table Section -->
     <div class="overflow-x-auto bg-white rounded sm:rounded-lg shadow mb-8">
       <table class="min-w-[700px] text-sm text-left w-full">
         <thead class="bg-[#8bc83f] text-white">
@@ -112,7 +104,6 @@
     </div>
   </div>
 
-  <!-- Edit Modal -->
   <div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden px-2">
     <div class="bg-white p-4 sm:p-6 rounded-lg w-full max-w-4xl shadow-lg max-h-[90vh] overflow-y-auto mx-auto">
       <h2 class="text-xl font-semibold mb-4">Edit Property</h2>

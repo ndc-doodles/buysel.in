@@ -257,3 +257,18 @@ function openAgentPropertyEditModal() {
   function closePremiumAgentProfileEditModal() {
     document.getElementById('editModal').classList.add('hidden');
   }
+  function previewAgentImage(event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      document.getElementById('agentPreviewImage').src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  }
+
+
+
+
+    function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('-translate-x-full');
+  }
