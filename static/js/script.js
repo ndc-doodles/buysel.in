@@ -400,3 +400,25 @@ function scrollAgents(direction) {
       btn.innerText = "Show less";
     }
   }
+
+
+// share button for property
+
+   const openBtn = document.getElementById('openShareModal');
+  const closeBtn = document.getElementById('closeShareModal');
+  const shareModal = document.getElementById('shareModal');
+
+  openBtn.addEventListener('click', () => {
+    shareModal.classList.remove('hidden');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    shareModal.classList.add('hidden');
+  });
+
+  // Optional: click outside to close
+  window.addEventListener('click', (e) => {
+    if (e.target === shareModal) {
+      shareModal.classList.add('hidden');
+    }
+  });
