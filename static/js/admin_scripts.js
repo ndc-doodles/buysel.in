@@ -224,3 +224,36 @@ function openAgentPropertyEditModal() {
   function closeAgentPropertyEditModal() {
     document.getElementById('editModal').classList.add('hidden');
   }
+
+
+
+
+
+
+
+
+// agent profile
+
+
+
+  function openAgentProfileEditModal(name) {
+    document.getElementById('editModal').classList.remove('hidden');
+    document.querySelector('input[name="name"]').value = name; 
+  }
+
+  function closeAgentProfileEditModal() {
+    document.getElementById('editModal').classList.add('hidden');
+  }
+
+
+// premiumagent
+   function openPremiumAgentProfileEditModal(agentName) {
+    document.getElementById('editModal').classList.remove('hidden');
+    // Populate form (add real logic here if pulling data dynamically)
+    const form = document.getElementById('editAgentForm');
+    form.name.value = agentName;
+  }
+
+  function closePremiumAgentProfileEditModal() {
+    document.getElementById('editModal').classList.add('hidden');
+  }

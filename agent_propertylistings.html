@@ -13,49 +13,53 @@
 
 
 
-    <aside class="w-64 bg-[#8bc83f] text-white p-6 fixed h-screen">
-      <div class="flex items-center justify-center mb-8 bg-white">
-        <img src="./static/images/logo.png" alt="Logo" class="w-32 h-32 object-contain">
-      </div>
-      <nav>
-        <ul class="space-y-4 text-sm">
-           <li>
-            <a href="agent_dashboard.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
-              Dashboard
-            </a>
-          </li>
-          
-          <li>
-            <a href="agent_propertylistings.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">
-              Agent Property Listings
-            </a>
-          </li>
-         
-          <li>
-  <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">
-    Logout
-  </a>
-</li>
+    <!-- Sidebar -->
+<div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-[#8bc83f] text-white p-6 z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+  <div class="flex items-center justify-between mb-6">
+    <div class="w-full bg-white flex justify-center">
+      <img src="./static/images/logo.png" alt="Logo" class="w-32 h-32 object-contain">
+    </div>
+    <button onclick="toggleSidebar()" class="md:hidden text-white text-2xl">&times;</button>
+  </div>
+  <nav>
+    <ul class="space-y-4 text-sm">
+      <li>
+        <a href="agent_dashboard.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Dashboard</a>
+      </li>
+      <li>
+        <a href="agent_propertylistings.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">Agent Property Listings</a>
+      </li>
+      <li>
+        <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!-- Mobile Toggle Button -->
+<button onclick="toggleSidebar()" class="md:hidden fixed top-4 left-4 z-50 bg-[#8bc83f] text-white p-2 rounded shadow-lg">
+  &#9776;
+</button>
+<script>
+   function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('-translate-x-full');
+  }
+</script>
 
-        </ul>
-      </nav>
-    </aside>
 
+<div class="w-full overflow-x-hidden">
+  <div id="mainContent" class="flex-1 p-4 sm:p-6 bg-gray-50 min-h-screen transition-all duration-300 ease-in-out md:ml-64 max-md:mt-[5rem]">
 
-     <main class="ml-64 p-6 w-full">
     <h1 class="text-3xl font-bold mb-6">Add New Property</h1>
 
-    <form class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100 p-6 rounded-lg mb-10 shadow">
+    <!-- Form Section -->
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 bg-gray-100 p-4 sm:p-6 lg:p-8 rounded-lg mb-10 shadow max-w-screen-xl mx-auto w-full">
       <div><label class="block font-semibold mb-1">Category</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
       <div><label class="block font-semibold mb-1">Purpose</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
       <div><label class="block font-semibold mb-1">Land Area</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
       <div><label class="block font-semibold mb-1">Sq. Ft</label><input type="number" class="w-full border px-3 py-2 rounded"></div>
       <div class="md:col-span-2"><label class="block font-semibold mb-1">Description</label><textarea class="w-full border px-3 py-2 rounded" rows="3"></textarea></div>
-<div class="md:col-span-2">
-  <label class="block font-semibold mb-1">Amenities</label>
-  <div id="amenitiesContainer" class="space-y-2"></div>
-</div>
-
+      <div class="md:col-span-2"><label class="block font-semibold mb-1">Amenities</label><div id="amenitiesContainer" class="space-y-2"></div></div>
       <div class="md:col-span-2"><label class="block font-semibold mb-1">Image</label><input type="file" class="w-full border px-3 py-2 rounded"></div>
       <div><label class="block font-semibold mb-1">Price</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
       <div><label class="block font-semibold mb-1">Owner</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
@@ -64,14 +68,14 @@
       <div><label class="block font-semibold mb-1">PIN Code</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
       <div><label class="block font-semibold mb-1">Landmark</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
       <div><label class="block font-semibold mb-1">Paid</label><select class="w-full border px-3 py-2 rounded"><option>Yes</option><option>No</option></select></div>
-      <!-- <div><label class="block font-semibold mb-1">Added By</label><input type="text" class="w-full border px-3 py-2 rounded"></div> -->
       <div class="md:col-span-2 text-right mt-4">
         <button type="submit" class="bg-[#8bc83f] text-white px-6 py-2 rounded hover:bg-[#76a62f] transition">Add Property</button>
       </div>
     </form>
 
-    <div class="overflow-x-auto bg-white rounded shadow">
-      <table class="min-w-full text-sm text-left">
+    <!-- Table Section -->
+    <div class="overflow-x-auto bg-white rounded sm:rounded-lg shadow mb-8">
+      <table class="min-w-[700px] text-sm text-left w-full">
         <thead class="bg-[#8bc83f] text-white">
           <tr>
             <th class="px-4 py-2">Category</th>
@@ -103,43 +107,41 @@
         </tbody>
       </table>
     </div>
-  </main>
-</div>
+  </div>
 
-<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
-  <div class="bg-white p-6 rounded-lg w-full max-w-4xl shadow-lg max-h-[90vh] overflow-y-auto">
-    <h2 class="text-xl font-semibold mb-4">Edit Property</h2>
-    <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div><label class="block font-semibold mb-1">Category</label><input type="text" id="editCategory" class="w-full border px-3 py-2 rounded"></div>
-      <div><label class="block font-semibold mb-1">Purpose</label><input type="text" id="editPurpose" class="w-full border px-3 py-2 rounded"></div>
-      <div><label class="block font-semibold mb-1">Land Area</label><input type="text" id="editArea" class="w-full border px-3 py-2 rounded"></div>
-      <div><label class="block font-semibold mb-1">Sq. Ft</label><input type="number" id="editSqft" class="w-full border px-3 py-2 rounded"></div>
-      <div class="md:col-span-2"><label class="block font-semibold mb-1">Description</label><textarea id="editDesc" class="w-full border px-3 py-2 rounded" rows="3"></textarea></div>
-<div class="md:col-span-2">
-  <label class="block font-semibold mb-1">Amenities</label>
-  <div id="editAmenitiesContainer" class="space-y-2"></div>
-</div>
-      <div class="md:col-span-2"><label class="block font-semibold mb-1">Image</label><input type="file" id="editImage" class="w-full border px-3 py-2 rounded"></div>
-      <div><label class="block font-semibold mb-1">Price</label><input type="text" id="editPrice" class="w-full border px-3 py-2 rounded"></div>
-      <div><label class="block font-semibold mb-1">Owner</label><input type="text" id="editOwner" class="w-full border px-3 py-2 rounded"></div>
-      <div><label class="block font-semibold mb-1">Phone</label><input type="text" id="editPhone" class="w-full border px-3 py-2 rounded"></div>
-      <div><label class="block font-semibold mb-1">Location</label><input type="text" id="editLocation" class="w-full border px-3 py-2 rounded"></div>
-      <div><label class="block font-semibold mb-1">PIN Code</label><input type="text" id="editPin" class="w-full border px-3 py-2 rounded"></div>
-      <div><label class="block font-semibold mb-1">Landmark</label><input type="text" id="editLandmark" class="w-full border px-3 py-2 rounded"></div>
-      <div><label class="block font-semibold mb-1">Paid</label>
-        <select id="editPaid" class="w-full border px-3 py-2 rounded">
-          <option>Yes</option>
-          <option>No</option>
-        </select>
-      </div>
-      <!-- <div><label class="block font-semibold mb-1">Added By</label><input type="text" id="editAddedBy" class="w-full border px-3 py-2 rounded"></div> -->
-      <div class="md:col-span-2 text-right mt-4">
-        <button type="button" onclick="closeAgentPropertyEditModal()" class="bg-gray-400 text-white px-4 py-2 rounded mr-2">Cancel</button>
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save Changes</button>
-      </div>
-    </form>
+  <!-- Edit Modal -->
+  <div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden px-2">
+    <div class="bg-white p-4 sm:p-6 rounded-lg w-full max-w-4xl shadow-lg max-h-[90vh] overflow-y-auto mx-auto">
+      <h2 class="text-xl font-semibold mb-4">Edit Property</h2>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div><label class="block font-semibold mb-1">Category</label><input type="text" id="editCategory" class="w-full border px-3 py-2 rounded"></div>
+        <div><label class="block font-semibold mb-1">Purpose</label><input type="text" id="editPurpose" class="w-full border px-3 py-2 rounded"></div>
+        <div><label class="block font-semibold mb-1">Land Area</label><input type="text" id="editArea" class="w-full border px-3 py-2 rounded"></div>
+        <div><label class="block font-semibold mb-1">Sq. Ft</label><input type="number" id="editSqft" class="w-full border px-3 py-2 rounded"></div>
+        <div class="md:col-span-2"><label class="block font-semibold mb-1">Description</label><textarea id="editDesc" class="w-full border px-3 py-2 rounded" rows="3"></textarea></div>
+        <div class="md:col-span-2"><label class="block font-semibold mb-1">Amenities</label><div id="editAmenitiesContainer" class="space-y-2"></div></div>
+        <div class="md:col-span-2"><label class="block font-semibold mb-1">Image</label><input type="file" id="editImage" class="w-full border px-3 py-2 rounded"></div>
+        <div><label class="block font-semibold mb-1">Price</label><input type="text" id="editPrice" class="w-full border px-3 py-2 rounded"></div>
+        <div><label class="block font-semibold mb-1">Owner</label><input type="text" id="editOwner" class="w-full border px-3 py-2 rounded"></div>
+        <div><label class="block font-semibold mb-1">Phone</label><input type="text" id="editPhone" class="w-full border px-3 py-2 rounded"></div>
+        <div><label class="block font-semibold mb-1">Location</label><input type="text" id="editLocation" class="w-full border px-3 py-2 rounded"></div>
+        <div><label class="block font-semibold mb-1">PIN Code</label><input type="text" id="editPin" class="w-full border px-3 py-2 rounded"></div>
+        <div><label class="block font-semibold mb-1">Landmark</label><input type="text" id="editLandmark" class="w-full border px-3 py-2 rounded"></div>
+        <div><label class="block font-semibold mb-1">Paid</label>
+          <select id="editPaid" class="w-full border px-3 py-2 rounded">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="md:col-span-2 text-right mt-4">
+          <button type="button" onclick="closeAgentPropertyEditModal()" class="bg-gray-400 text-white px-4 py-2 rounded mr-2">Cancel</button>
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save Changes</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
+  
 
 <script src="./static/js/admin_scripts.js"></script>
 </body>

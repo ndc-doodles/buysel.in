@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Cybexel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-[#151a37] font-sans">
+
+  <div class="flex min-h-screen">
+
+
+
+    <aside class="w-64 bg-[#8bc83f] text-white p-6 fixed h-screen">
+      <div class="flex items-center justify-center mb-8 bg-white">
+        <img src="./static/images/logo.png" alt="Logo" class="w-32 h-32 object-contain">
+      </div>
+      <nav>
+        <ul class="space-y-4 text-sm">
+           <li>
+            <a href="admin_dashboard.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="admin_categories.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+              Categories
+            </a>
+          </li>
+          <li>
+            <a href="admin_propertylistings.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+             Property Listings
+            </a>
+          </li>
+          <li>
+            <a href="admin_premiumagents.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">
+             Premium Agents
+            </a> 
+          </li>
+          <li>
+            <a href="admin_agents.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+             Agents
+            </a> 
+          </li>
+          <li>
+            <a href="admin_blogs.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+              Blogs
+            </a>
+          </li>
+          <li>
+            <a href="admin_contact.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+              Contact Form
+            </a>
+          </li>
+          
+          <li>
+  <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">
+    Logout
+  </a>
+</li>
+
+        </ul>
+      </nav>
+    </aside>
+
+
+
+
+    <!-- Main Content -->
+<div class="flex-1 ml-64 p-6">
+  <h1 class="text-2xl font-bold mb-6">Premium Agents</h1>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white rounded shadow-md">
+      <thead class="bg-black text-white text-left">
+        <tr>
+          <th class="p-4">Name</th>
+          <th class="p-4">Specialised In</th>
+          <th class="p-4">Phone</th>
+          <th class="p-4">Email</th>
+          <th class="p-4">Location</th>
+          <th class="p-4">Listed Properties</th>
+          <th class="p-4">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y">
+        <tr class="hover:bg-gray-50">
+          <td class="p-4 font-semibold">John Doe</td>
+          <td class="p-4">Sale</td>
+          <td class="p-4">+91 9876543210</td>
+          <td class="p-4">john@example.com</td>
+          <td class="p-4">Mumbai</td>
+          <td class="p-4">5</td>
+          <td class="p-4 space-x-2">
+            <button onclick="openPremiumAgentProfileEditModal('John Doe')" class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded">Edit</button>
+            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Delete</button>
+          </td>
+        </tr>
+
+       
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex  items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-2xl p-6 relative">
+    <h2 class="text-xl font-bold mb-4">Edit Agent</h2>
+    <form id="editAgentForm" class="space-y-4">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm">Name</label>
+          <input type="text" name="name" class="w-full border rounded px-3 py-2" />
+        </div>
+        <div>
+          <label class="block text-sm">Specialised In</label>
+          <input type="text" name="specialised" class="w-full border rounded px-3 py-2" />
+        </div>
+        <div>
+          <label class="block text-sm">Phone</label>
+          <input type="text" name="phone" class="w-full border rounded px-3 py-2" />
+        </div>
+        <div>
+          <label class="block text-sm">Email</label>
+          <input type="email" name="email" class="w-full border rounded px-3 py-2" />
+        </div>
+        <div>
+          <label class="block text-sm">Location</label>
+          <input type="text" name="location" class="w-full border rounded px-3 py-2" />
+        </div>
+
+        <div>
+          <label class="block text-sm">Listed Properties</label>
+          <input type="text" name="listed properties" class="w-full border rounded px-3 py-2" />
+        </div>
+      </div>
+      <div class="flex justify-end gap-4 mt-4">
+        <button type="button" onclick="closePremiumAgentProfileEditModal()" class="bg-gray-300 px-4 py-2 rounded">Cancel</button>
+        <button type="submit" class="bg-[#8bc83f] px-4 py-2 rounded text-white">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+</div>
+
+<script src="./static/js/admin_scripts.js"></script>
+
+</body>
+</html>
