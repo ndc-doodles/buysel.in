@@ -272,3 +272,19 @@ function openAgentPropertyEditModal() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('-translate-x-full');
   }
+
+
+
+  function addAmenityField() {
+    const container = document.getElementById('amenitiesContainer');
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Enter Amenity';
+    input.className = 'w-full border px-3 py-2 rounded';
+    container.appendChild(input);
+  }
+
+  // Optional: add one field by default
+  window.onload = () => {
+    addAmenityField();
+  };

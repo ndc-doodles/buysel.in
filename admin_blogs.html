@@ -71,60 +71,67 @@
 
 
 <main class="flex-1 ml-64 p-8">
-      <h1 class="text-3xl font-bold mb-6">Add New Blog</h1>
+  <h1 class="text-3xl font-bold mb-6">Add New Blog</h1>
 
-      <form id="blogForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100 p-6 rounded-lg">
-        <input type="text" placeholder="Tag" class="border rounded p-2" required>
-        <input type="date" class="border rounded p-2" required>
-        <input type="text" placeholder="Short Heading" class="border rounded p-2 col-span-2" required>
-        <input type="text" placeholder="Full Heading" class="border rounded p-2 col-span-2" required>
-        <textarea placeholder="Paragraph 1" class="border rounded p-2 col-span-2" rows="2" required></textarea>
-        <textarea placeholder="Paragraph 2" class="border rounded p-2 col-span-2" rows="2"></textarea>
-        <textarea placeholder="Paragraph 3" class="border rounded p-2 col-span-2" rows="2"></textarea>
-        <textarea placeholder="Paragraph 4" class="border rounded p-2 col-span-2" rows="2"></textarea>
-        <input type="file" accept="image/*" class="border rounded p-2 col-span-2" required>
-        <button type="submit" class="bg-black text-white px-4 py-2 rounded col-span-2">Add Blog</button>
-      </form>
+  <form id="blogForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100 p-6 rounded-lg">
+    <input type="text" placeholder="Heading 1" class="border rounded p-2 col-span-2" required>
+    <input type="text" placeholder="Heading 2" class="border rounded p-2 col-span-2" required>
+    <input type="date" class="border rounded p-2 col-span-2" required>
+    <textarea placeholder="Paragraph 1" class="border rounded p-2 col-span-2" rows="3" required></textarea>
+    <textarea placeholder="Paragraph 2" class="border rounded p-2 col-span-2" rows="3" required></textarea>
+    <input type="file" accept="image/*" class="border rounded p-2 col-span-2" required>
+    <button type="submit" class="bg-black text-white px-4 py-2 rounded col-span-2">Add Blog</button>
+  </form>
 
-      <h2 class="text-2xl font-semibold mt-10 mb-4">All Blogs</h2>
-      <div class="overflow-x-auto bg-white shadow rounded-lg">
-        <table class="min-w-full text-left text-sm">
-          <thead class="bg-black text-white">
-            <tr>
-              <th class="px-4 py-2">Tag</th>
-              <th class="px-4 py-2">Date</th>
-              <th class="px-4 py-2">Short Heading</th>
-              <th class="px-4 py-2">Image</th>
-              <th class="px-4 py-2">Actions</th>
-            </tr>
-          </thead>
-          <tbody id="blogTableBody" class="text-[#151a37]"></tbody>
-        </table>
-      </div>
-    </main>
+  <h2 class="text-2xl font-semibold mt-10 mb-4">All Blogs</h2>
+  <div class="overflow-x-auto bg-white shadow rounded-lg">
+    <table class="min-w-full text-left text-sm">
+      <thead class="bg-black text-white">
+        <tr>
+          <th class="px-4 py-2">Heading 1</th>
+          <th class="px-4 py-2">Heading 2</th>
+          <th class="px-4 py-2">Date</th>
+          <th class="px-4 py-2">Image</th>
+          <th class="px-4 py-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="blogTableBody" class="text-[#151a37]"></tbody>
+    </table>
+  </div>
+</main>
+
   </div>
 
   
-  <div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-    <div class="bg-white p-6 rounded-lg w-[95%] max-w-3xl max-h-[90vh] overflow-y-auto">
-      <h3 class="text-xl font-semibold mb-4">Edit Blog</h3>
-      <form id="editBlogForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input type="text" id="editTag" class="border p-2 rounded" required>
-        <input type="date" id="editDate" class="border p-2 rounded" required>
-        <input type="text" id="editShortHeading" class="border p-2 rounded col-span-2" required>
-        <input type="text" id="editFullHeading" class="border p-2 rounded col-span-2" required>
-        <textarea id="editPara1" class="border p-2 rounded col-span-2" rows="2" required></textarea>
-        <textarea id="editPara2" class="border p-2 rounded col-span-2" rows="2"></textarea>
-        <textarea id="editPara3" class="border p-2 rounded col-span-2" rows="2"></textarea>
-        <textarea id="editPara4" class="border p-2 rounded col-span-2" rows="2"></textarea>
-        <input type="file" id="editImage" class="border p-2 rounded col-span-2">
-        <div class="col-span-2 flex justify-between mt-2">
-          <button type="submit" class="bg-black text-white px-4 py-2 rounded">Update</button>
-          <button type="button" onclick="closeAdminBlogEditModal()" class="bg-red-500 text-white px-4 py-2 rounded">Cancel</button>
-        </div>
-      </form>
-    </div>
+  
+<div id="editModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+  <div class="bg-white p-6 rounded-lg w-[95%] max-w-3xl max-h-[90vh] overflow-hidden">
+    <h3 class="text-xl font-semibold mb-4">Edit Blog</h3>
+
+    <form id="editBlogForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 overflow-y-auto max-h-[70vh] pr-2">
+
+      <input type="text" id="editTag" class="border p-2 rounded" placeholder="Tag" required>
+      <input type="date" id="editDate" class="border p-2 rounded" required>
+
+      <input type="text" id="editShortHeading" class="border p-2 rounded col-span-2" placeholder="Short Heading" required>
+      <input type="text" id="editFullHeading" class="border p-2 rounded col-span-2" placeholder="Full Heading" required>
+
+      <textarea id="editPara1" class="border p-2 rounded col-span-2" rows="2" placeholder="Paragraph 1" required></textarea>
+      <textarea id="editPara2" class="border p-2 rounded col-span-2" rows="2" placeholder="Paragraph 2"></textarea>
+      <textarea id="editPara3" class="border p-2 rounded col-span-2" rows="2" placeholder="Paragraph 3"></textarea>
+      <textarea id="editPara4" class="border p-2 rounded col-span-2" rows="2" placeholder="Paragraph 4"></textarea>
+
+      <input type="file" id="editImage" class="border p-2 rounded col-span-2">
+
+      <div class="col-span-2 flex justify-between mt-2">
+        <button type="submit" class="bg-black text-white px-4 py-2 rounded">Update</button>
+        <button type="button" onclick="closeAdminBlogEditModal()" class="bg-red-500 text-white px-4 py-2 rounded">Cancel</button>
+      </div>
+
+    </form>
   </div>
+</div>
+
 
    
 
