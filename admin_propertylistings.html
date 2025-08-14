@@ -74,10 +74,11 @@
       <main class="ml-64 p-6 w-full">
     <h1 class="text-3xl font-bold mb-6">Add New Property</h1>
 
-    <!-- Property Form -->
 <form class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100 p-6 rounded-lg mb-10 shadow">
   <div><label class="block font-semibold mb-1">Category</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
   <div><label class="block font-semibold mb-1">Purpose</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
+    <div><label class="block font-semibold mb-1">Label</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
+
   <div><label class="block font-semibold mb-1">Land Area</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
   <div><label class="block font-semibold mb-1">Sq. Ft</label><input type="number" class="w-full border px-3 py-2 rounded"></div>
   <div class="md:col-span-2"><label class="block font-semibold mb-1">Description</label><textarea class="w-full border px-3 py-2 rounded" rows="3"></textarea></div>
@@ -91,6 +92,8 @@
 
   <div class="md:col-span-2"><label class="block font-semibold mb-1">Image</label><input type="file" class="w-full border px-3 py-2 rounded"></div>
   <div><label class="block font-semibold mb-1">Price</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
+    <div><label class="block font-semibold mb-1">Total Price</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
+
   <div><label class="block font-semibold mb-1">Owner</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
   <div><label class="block font-semibold mb-1">Phone</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
   <div><label class="block font-semibold mb-1">Location</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
@@ -115,17 +118,19 @@
 </form>
 
 <!-- Property Table -->
-<div class="overflow-x-auto bg-white rounded shadow">
-  <table class="min-w-full text-sm text-left">
+<div class="w-full overflow-x-auto bg-white rounded shadow">
+  <table class="min-w-max text-sm text-left">
     <thead class="bg-[#8bc83f] text-white">
       <tr>
         <th class="px-4 py-2">Category</th>
         <th class="px-4 py-2">Purpose</th>
+        <th class="px-4 py-2">Label</th>
         <th class="px-4 py-2">Area</th>
         <th class="px-4 py-2">Sq. Ft</th>
-        <th class="px-4 py-2">City</th>         <!-- ✅ -->
-        <th class="px-4 py-2">District</th>     <!-- ✅ -->
+        <th class="px-4 py-2">City</th>
+        <th class="px-4 py-2">District</th>
         <th class="px-4 py-2">Price</th>
+        <th class="px-4 py-2">Total Price</th>
         <th class="px-4 py-2">Owner</th>
         <th class="px-4 py-2">Phone</th>
         <th class="px-4 py-2">Paid</th>
@@ -136,11 +141,13 @@
       <tr class="border-t">
         <td class="px-4 py-2">House</td>
         <td class="px-4 py-2">Sale</td>
+        <td class="px-4 py-2">House for sale</td>
         <td class="px-4 py-2">1500 sq.ft</td>
         <td class="px-4 py-2">1500</td>
-        <td class="px-4 py-2">Delhi</td>       <!-- ✅ -->
-        <td class="px-4 py-2">Central</td>     <!-- ✅ -->
-        <td class="px-4 py-2">₹50,00,000</td>
+        <td class="px-4 py-2">Delhi</td>
+        <td class="px-4 py-2">Central</td>
+        <td class="px-4 py-2">₹80L per Acre</td>
+        <td class="px-4 py-2">₹80,00,000</td>
         <td class="px-4 py-2">John Doe</td>
         <td class="px-4 py-2">9876543210</td>
         <td class="px-4 py-2">Yes</td>
@@ -152,6 +159,7 @@
     </tbody>
   </table>
 </div>
+
 
   </main>
 </div>
