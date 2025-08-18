@@ -191,11 +191,13 @@
   window.addEventListener("DOMContentLoaded", () => {
     createAmenityRow("amenities[]");
   });
+
+
 function openAgentPropertyEditModal() {
   const container = document.getElementById("editAmenitiesContainer");
-  container.innerHTML = ""; // Clear previous
+  container.innerHTML = ""; 
 
-  const amenities = ["Parking", "Gym"]; // Sample data
+  const amenities = ["Parking", "Gym"];
   amenities.forEach((value) => {
     createAmenityRow("editAmenities[]", value, true);
   });
@@ -209,21 +211,18 @@ function openAgentPropertyEditModal() {
   document.getElementById('editPrice').value = "₹50,00,000";
   document.getElementById('editOwner').value = "John Doe";
   document.getElementById('editPhone').value = "9876543210";
+  document.getElementById('editWhatsappNumber').value = "9876543210"; // ✅ Will work now
   document.getElementById('editLocation').value = "Downtown";
   document.getElementById('editPin').value = "123456";
   document.getElementById('editLandmark').value = "Near Mall";
   document.getElementById('editPaid').value = "Yes";
 
-  // 💥 REMOVE this line because the field is commented out
-  // document.getElementById('editAddedBy').value = "Admin";
-
   document.getElementById('editModal').classList.remove('hidden');
 }
 
-
-  function closeAgentPropertyEditModal() {
-    document.getElementById('editModal').classList.add('hidden');
-  }
+function closeAgentPropertyEditModal() {
+  document.getElementById('editModal').classList.add('hidden');
+}
 
 
 

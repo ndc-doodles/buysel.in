@@ -25,7 +25,7 @@
             </a>
           </li>
           <li>
-            <a href="admin_categories.html" class="block py-2 px-4 rounded  hover:bg-white  hover:text-[#151a37]">
+            <a href="admin_categories.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
               Categories
             </a>
           </li>
@@ -55,15 +55,16 @@
             </a>
           </li>
           <li>
-            <a href="admin_contact.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">
+            <a href="admin_contact.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
               Contact Form
             </a>
           </li>
           <li>
-            <a href="admin_messagebox.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+            <a href="admin_messagebox.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">
               Message box
             </a>
           </li>
+          
           <li>
   <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">
     Logout
@@ -75,20 +76,19 @@
     </aside>
 
 
-
 <main class="ml-64 p-6 w-full">
-  <h1 class="text-2xl font-bold mb-6">Contact Form Submissions</h1>
+  <h1 class="text-2xl font-bold mb-6">Message Form Submissions</h1>
 
   <div class="overflow-x-auto bg-white rounded-lg shadow">
     <table class="min-w-full divide-y divide-gray-200 text-sm">
       <thead class="bg-black text-left text-white">
         <tr>
-          <th class="px-4 py-3">Date</th>
+          <th class="px-4 py-3">Date</th>        
           <th class="px-4 py-3">Name</th>
-          <th class="px-4 py-3">Email</th>
-          <th class="px-4 py-3">Phone</th>
-          <th class="px-4 py-3">Message</th>
-          <th class="px-4 py-3 text-center">Action</th>
+          <th class="px-4 py-3">Way to Contact</th>
+          <th class="px-4 py-3">Pincode</th>
+          <th class="px-4 py-3">Requirements</th>
+
         </tr>
       </thead>
       <tbody class="divide-y divide-gray-200">
@@ -96,20 +96,21 @@
         <tr>
           <td class="px-4 py-2">2025-08-04</td>
           <td class="px-4 py-2">John Doe</td>
-          <td class="px-4 py-2">john@example.com</td>
+          <td class="px-4 py-2">phone</td>
           <td class="px-4 py-2">+91-9876543210</td>
           <td class="px-4 py-2">Interested in 2BHK</td>
-          <td class="px-4 py-2 text-center">
-            <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-xs"
-              onclick="deleteRow(this)">
-              Delete
-            </button>
-          </td>
+          
         </tr>
       </tbody>
     </table>
   </div>
 </main>
-</div>
-</body>
-</html>
+
+
+
+
+
+
+    </div>
+    </body>
+    </html>

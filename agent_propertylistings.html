@@ -32,6 +32,9 @@
         <a href="agent_enquiry.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Agent Enquiries</a>
       </li>
       <li>
+        <a href="agent_messagebox.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">Agent Message box </a>
+      </li>
+      <li>
         <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">Logout</a>
       </li>
     </ul>
@@ -56,7 +59,6 @@
   <div><label class="block font-semibold mb-1">Sq. Ft</label><input type="number" class="w-full border px-3 py-2 rounded"></div>
   <div class="md:col-span-2"><label class="block font-semibold mb-1">Description</label><textarea class="w-full border px-3 py-2 rounded" rows="3"></textarea></div>
 
-  <!-- Amenities -->
   <div class="md:col-span-2">
     <label class="block font-semibold mb-1">Amenities</label>
     <div id="amenitiesContainer" class="space-y-2"></div>
@@ -69,9 +71,10 @@
 
   <div><label class="block font-semibold mb-1">Owner</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
   <div><label class="block font-semibold mb-1">Phone</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block font-semibold mb-1">Whatsapp Number</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
+
   <div><label class="block font-semibold mb-1">Location</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
 
-  <!-- ✅ City and District added -->
   <div><label class="block font-semibold mb-1">City</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
   <div><label class="block font-semibold mb-1">District</label><input type="text" class="w-full border px-3 py-2 rounded"></div>
 
@@ -90,7 +93,6 @@
   </div>
 </form>
 
-<!-- Property Table -->
 <div class="w-full overflow-x-auto bg-white rounded shadow">
   <table class="min-w-max text-sm text-left">
     <thead class="bg-[#8bc83f] text-white">
@@ -106,6 +108,7 @@
         <th class="px-4 py-2">Total Price</th>
         <th class="px-4 py-2">Owner</th>
         <th class="px-4 py-2">Phone</th>
+        <th class="px-4 py-2">Whatsapp Number</th>
         <th class="px-4 py-2">Paid</th>
         <th class="px-4 py-2">Actions</th>
       </tr>
@@ -123,6 +126,7 @@
         <td class="px-4 py-2">₹80,00,000</td>
         <td class="px-4 py-2">John Doe</td>
         <td class="px-4 py-2">9876543210</td>
+        <td class="px-4 py-2">9876543210</td>
         <td class="px-4 py-2">Yes</td>
         <td class="px-4 py-2 space-x-2">
           <button onclick="openAdminPropertyEditModal()" class="bg-yellow-500 text-white px-3 py-1 rounded">Edit</button>
@@ -132,38 +136,105 @@
     </tbody>
   </table>
 </div>
+
   </div>
 
-  <div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden px-2">
-    <div class="bg-white p-4 sm:p-6 rounded-lg w-full max-w-4xl shadow-lg max-h-[90vh] overflow-y-auto mx-auto">
-      <h2 class="text-xl font-semibold mb-4">Edit Property</h2>
-      <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div><label class="block font-semibold mb-1">Category</label><input type="text" id="editCategory" class="w-full border px-3 py-2 rounded"></div>
-        <div><label class="block font-semibold mb-1">Purpose</label><input type="text" id="editPurpose" class="w-full border px-3 py-2 rounded"></div>
-        <div><label class="block font-semibold mb-1">Land Area</label><input type="text" id="editArea" class="w-full border px-3 py-2 rounded"></div>
-        <div><label class="block font-semibold mb-1">Sq. Ft</label><input type="number" id="editSqft" class="w-full border px-3 py-2 rounded"></div>
-        <div class="md:col-span-2"><label class="block font-semibold mb-1">Description</label><textarea id="editDesc" class="w-full border px-3 py-2 rounded" rows="3"></textarea></div>
-        <div class="md:col-span-2"><label class="block font-semibold mb-1">Amenities</label><div id="editAmenitiesContainer" class="space-y-2"></div></div>
-        <div class="md:col-span-2"><label class="block font-semibold mb-1">Image</label><input type="file" id="editImage" class="w-full border px-3 py-2 rounded"></div>
-        <div><label class="block font-semibold mb-1">Price</label><input type="text" id="editPrice" class="w-full border px-3 py-2 rounded"></div>
-        <div><label class="block font-semibold mb-1">Owner</label><input type="text" id="editOwner" class="w-full border px-3 py-2 rounded"></div>
-        <div><label class="block font-semibold mb-1">Phone</label><input type="text" id="editPhone" class="w-full border px-3 py-2 rounded"></div>
-        <div><label class="block font-semibold mb-1">Location</label><input type="text" id="editLocation" class="w-full border px-3 py-2 rounded"></div>
-        <div><label class="block font-semibold mb-1">PIN Code</label><input type="text" id="editPin" class="w-full border px-3 py-2 rounded"></div>
-        <div><label class="block font-semibold mb-1">Landmark</label><input type="text" id="editLandmark" class="w-full border px-3 py-2 rounded"></div>
-        <div><label class="block font-semibold mb-1">Paid</label>
-          <select id="editPaid" class="w-full border px-3 py-2 rounded">
-            <option>Yes</option>
-            <option>No</option>
-          </select>
-        </div>
-        <div class="md:col-span-2 text-right mt-4">
-          <button type="button" onclick="closeAgentPropertyEditModal()" class="bg-gray-400 text-white px-4 py-2 rounded mr-2">Cancel</button>
-          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save Changes</button>
-        </div>
-      </form>
-    </div>
+
+<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
+  <div class="bg-white p-6 rounded-lg w-full max-w-4xl shadow-lg max-h-[90vh] overflow-y-auto">
+    <h2 class="text-xl font-semibold mb-4">Edit Property</h2>
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label class="block font-semibold mb-1">Category</label>
+        <input type="text" id="editCategory" class="w-full border px-3 py-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Purpose</label>
+        <input type="text" id="editPurpose" class="w-full border px-3 py-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Land Area</label>
+        <input type="text" id="editArea" class="w-full border px-3 py-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Sq. Ft</label>
+        <input type="number" id="editSqft" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div class="md:col-span-2">
+        <label class="block font-semibold mb-1">Description</label>
+        <textarea id="editDesc" class="w-full border px-3 py-2 rounded" rows="3"></textarea>
+      </div>
+
+      <div class="md:col-span-2">
+        <label class="block font-semibold mb-1">Amenities</label>
+        <div id="editAmenitiesContainer" class="space-y-2"></div>
+      </div>
+
+      <div class="md:col-span-2">
+        <label class="block font-semibold mb-1">Current Image</label>
+        <img id="editImagePreview" src="#" alt="Property Image" class="w-40 h-32 object-cover border rounded mb-2" />
+        <input type="file" id="editImage" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Price</label>
+        <input type="text" id="editPrice" class="w-full border px-3 py-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Owner</label>
+        <input type="text" id="editOwner" class="w-full border px-3 py-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Phone</label>
+        <input type="text" id="editPhone" class="w-full border px-3 py-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Whatsapp Number</label>
+        <input type="text" id="editWhatsappNumber" class="w-full border px-3 py-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Location</label>
+        <input type="text" id="editLocation" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">City</label>
+        <input type="text" id="editCity" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">District</label>
+        <input type="text" id="editDistrict" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">PIN Code</label>
+        <input type="text" id="editPin" class="w-full border px-3 py-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Landmark</label>
+        <input type="text" id="editLandmark" class="w-full border px-3 py-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Paid</label>
+        <select id="editPaid" class="w-full border px-3 py-2 rounded">
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Added By</label>
+        <input type="text" id="editAddedBy" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div class="md:col-span-2 text-right mt-4">
+        <button type="button" onclick="closeAdminPropertyEditModal()" class="bg-gray-400 text-white px-4 py-2 rounded mr-2">Cancel</button>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save Changes</button>
+      </div>
+    </form>
   </div>
+</div>
 </div>
 
 

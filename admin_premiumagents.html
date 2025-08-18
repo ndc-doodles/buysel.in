@@ -59,6 +59,11 @@
               Contact Form
             </a>
           </li>
+          <li>
+            <a href="admin_messagebox.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+              Message box
+            </a>
+          </li>
           
           <li>
   <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">
@@ -84,8 +89,11 @@
           <th class="p-4">Name</th>
           <th class="p-4">Specialised In</th>
           <th class="p-4">Phone</th>
+          <th class="p-4">Whatsapp number</th>
           <th class="p-4">Email</th>
           <th class="p-4">Location</th>
+          <th class="p-4">City</th>
+
           <th class="p-4">Listed Properties</th>
           <th class="p-4">Actions</th>
         </tr>
@@ -93,17 +101,23 @@
       <tbody class="divide-y">
         <tr class="hover:bg-gray-50">
           <td class="p-4">
-  <img src="./static/images/agent1.jpg" alt="Agent Image" class="w-12 h-12 rounded-full object-cover" />
+  <img src="./static/images/demo.png" alt="Agent Image" class="w-12 h-12 rounded-full object-cover" />
 </td>
           <td class="p-4 font-semibold">John Doe</td>
           <td class="p-4">Sale</td>
           <td class="p-4">+91 9876543210</td>
+          <td class="p-4">+91 9876543210</td>
+
           <td class="p-4">john@example.com</td>
           <td class="p-4">Mumbai</td>
+          <td class="p-4">City</td>
+
           <td class="p-4">5</td>
-          <td class="p-4 space-x-2">
-            <button onclick="openPremiumAgentProfileEditModal('John Doe')" class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded">Edit</button>
-            <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Delete</button>
+          <td class="p-4 space-x-2 w-full">
+            <button onclick="openPremiumAgentProfileEditModal('John Doe')" class="bg-[blue] text-white px-3 py-1 rounded">Edit</button>
+            <button class="bg-[red] text-white px-3 py-1 rounded">Delete</button>
+            <button class="bg-[orange]  text-white px-3 py-1 rounded">Disable</button>
+
           </td>
         </tr>
 
@@ -140,6 +154,12 @@
       <input type="text" name="phone" class="w-full border rounded px-3 py-2" />
     </div>
 
+
+    <div>
+      <label class="block text-sm">Whatsapp Number</label>
+      <input type="text" name="whatsapp number" class="w-full border rounded px-3 py-2" />
+    </div>
+
     <div>
       <label class="block text-sm">Email</label>
       <input type="email" name="email" class="w-full border rounded px-3 py-2" />
@@ -148,6 +168,11 @@
     <div>
       <label class="block text-sm">Location</label>
       <input type="text" name="location" class="w-full border rounded px-3 py-2" />
+    </div>
+
+    <div>
+      <label class="block text-sm">City</label>
+      <input type="text" name="city" class="w-full border rounded px-3 py-2" />
     </div>
 
     <div>
