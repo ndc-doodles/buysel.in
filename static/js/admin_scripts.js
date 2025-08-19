@@ -122,6 +122,8 @@
     createAmenityRow("amenities[]");
   });
 
+
+  
   // Edit Modal Amenity Row Setup
   function openAdminPropertyEditModal() {
     const container = document.getElementById("editAmenitiesContainer");
@@ -134,16 +136,21 @@
       createAmenityRow("editAmenities[]", value, true);
     });
 
-    // Other fields
+    // Other fields (mapping to form IDs)
     document.getElementById('editCategory').value = "House";
     document.getElementById('editPurpose').value = "Sale";
-    document.getElementById('editArea').value = "1500 sq.ft";
+    document.getElementById('editLabel').value = "For Sale";
+    document.getElementById('editLandArea').value = "1500 sq.ft";
     document.getElementById('editSqft').value = "1500";
     document.getElementById('editDesc').value = "Spacious family house.";
     document.getElementById('editPrice').value = "₹50,00,000";
+    document.getElementById('editTotalPrice').value = "₹80,00,000";
     document.getElementById('editOwner').value = "John Doe";
     document.getElementById('editPhone').value = "9876543210";
+    document.getElementById('editWhatsapp').value = "9876543210";
     document.getElementById('editLocation').value = "Downtown";
+    document.getElementById('editCity').value = "Panampally";
+    document.getElementById('editDistrict').value = "Ernakulam";
     document.getElementById('editPin').value = "123456";
     document.getElementById('editLandmark').value = "Near Mall";
     document.getElementById('editPaid').value = "Yes";
@@ -155,6 +162,7 @@
   function closeAdminPropertyEditModal() {
     document.getElementById('editModal').classList.add('hidden');
   }
+
 
 
 

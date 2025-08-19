@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Cybexel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./static/css/admin.css">
+</head>
+<body class="bg-white text-[#151a37] font-sans">
+
+  <div class="flex min-h-screen">
+
+
+
+    <aside class="w-64 bg-[#8bc83f] text-white p-6 fixed h-screen">
+      <div class="flex items-center justify-center mb-8 bg-white">
+        <img src="./static/images/logo.png" alt="Logo" class="w-32 h-32 object-contain">
+      </div>
+      <nav>
+        <ul class="space-y-4 text-sm">
+           <li>
+            <a href="admin_dashboard.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="admin_categories.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+              Categories
+            </a>
+          </li>
+          <li>
+            <a href="admin_propertylistings.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+             Property Listings
+            </a>
+          </li>
+
+          <li>
+            <a href="admin_expiredproperties.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">
+             Expired Properties
+            </a>
+          </li>
+
+
+
+          <li>
+            <a href="admin_expiredagents.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+             Expired Agents
+            </a>
+          </li>
+
+          <li>
+            <a href="admin_agentlogin.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+             Agent Login
+            </a>
+          </li>
+          <li>
+            <a href="admin_premiumagents.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+             Premium Agents
+            </a> 
+          </li>
+          <li>
+            <a href="admin_agents.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+             Agents
+            </a> 
+          </li>
+         <li>
+            <a href="admin_blogs.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+              Blogs
+            </a>
+          </li>
+          <li>
+            <a href="admin_contact.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+              Contact Form
+            </a>
+          </li>
+          <li>
+            <a href="admin_messagebox.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+              Message box
+            </a>
+          </li>
+          
+          <li>
+  <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">
+    Logout
+  </a>
+</li>
+
+        </ul>
+      </nav>
+    </aside>
+
+
+      <main class="ml-64 p-6 w-full">
+            <h1 class="text-3xl font-bold mb-6">Expired Properties</h1>
+
+
+
+
+<div class="w-[80%] overflow-x-auto bg-white rounded shadow">
+  <table class="w-full text-sm text-left">
+    <thead class="bg-black text-white">
+      <tr>
+        <th class="px-4 py-2">Img</th>       
+        <th class="px-4 py-2">Category</th>
+        <th class="px-4 py-2">Purpose</th>
+        <th class="px-4 py-2">Label</th>
+        <th class="px-4 py-2">Area</th>
+        <th class="px-4 py-2">Sq. Ft</th>
+        <th class="px-4 py-2">Description</th>
+        <th class="px-4 py-2">Amenitities</th> 
+        <th class="px-4 py-2">Map location</th>   
+        <th class="px-4 py-2">Landmark</th>           
+        <th class="px-4 py-2">City</th>
+        <th class="px-4 py-2">District</th>
+        <th class="px-4 py-2">Price</th>
+        <th class="px-4 py-2">Total Price</th>
+        <th class="px-4 py-2">Owner</th>
+        <th class="px-4 py-2">Phone Number</th>
+        <th class="px-4 py-2">Whatsapp Number</th>
+
+        <th class="px-4 py-2">Paid</th>
+        <th class="px-4 py-2">Marketing staff</th>       
+        <th class="px-4 py-2">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border-t">
+        <td class="px-4 py-2">
+    <img src="./static/images/about1.png" alt="House" class="w-16 h-16 object-cover rounded">
+  </td>
+        <td class="px-4 py-2">House</td>
+        <td class="px-4 py-2">Sale</td>
+        <td class="px-4 py-2">sale</td>
+        <td class="px-4 py-2">1500 sq.ft</td>
+        <td class="px-4 py-2">1500</td>
+        <td class="px-4 py-2">VDJFHJDSFBJSDBFJSDFJDSJSHJHDKS</td>
+        <td class="px-4 py-2">kkkjkjj</td>
+        <td class="px-4 py-2">https://maps.app.goo.gl/cfmyqLY6oWRUwE4w7</td>
+        <td class="px-4 py-2">kkkjkjj</td>
+
+        <td class="px-4 py-2">Panampally</td>
+        <td class="px-4 py-2">Ernakulam</td>
+
+        <td class="px-4 py-2">₹80L per Acre</td>
+        <td class="px-4 py-2">₹80,00,000</td>
+        <td class="px-4 py-2">John Doe</td>
+        <td class="px-4 py-2">9876543210</td>
+        <td class="px-4 py-2">9876543210</td>
+        <td class="px-4 py-2">Yes</td>
+        <td class="px-4 py-2">John</td>
+
+        <td class="px-4 flex space-x-2 py-8">
+  <button onclick="openAdminPropertyEditModal(this)" 
+    class="bg-yellow-500 text-white px-3 py-1 rounded">
+    Edit
+  </button>
+
+  <button class="bg-red-600 text-white px-3 py-1 rounded">
+    Delete
+  </button>
+
+  <button class="bg-blue-600 text-white px-3 py-1 rounded">
+    Repost
+  </button>
+</td>
+
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+      </main>
+
+
+      </div>
+    <script src="./static/js/admin_scripts.js"></script>
+  
+      </body>
+      </html>
