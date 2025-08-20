@@ -13,7 +13,7 @@
 
 
 
-    <aside class="w-64 bg-[#8bc83f] text-white p-6 fixed h-screen">
+    <aside class="w-64 bg-[#8bc83f] text-white p-6 fixed h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
       <div class="flex items-center justify-center mb-8 bg-white">
         <img src="./static/images/logo.png" alt="Logo" class="w-32 h-32 object-contain">
       </div>
@@ -123,12 +123,14 @@
           <td class="p-4">City</td>
 
           <td class="p-4">5</td>
-          <td class="p-4 space-x-2 ">
-            <button onclick="openPremiumAgentProfileEditModal('John Doe')" class="bg-[blue] text-white px-3 py-1 rounded">Edit</button>
-            <button class="bg-[red] text-white px-3 py-1 rounded">Delete</button>
-            <button class="bg-[orange]  text-white px-3 py-1 rounded">Disable</button>
+          <td class="p-4">
+  <div class="flex flex-nowrap gap-2">
+    <button onclick="openPremiumAgentProfileEditModal('John Doe')" class="bg-[blue] text-white px-3 py-1 rounded whitespace-nowrap">Edit</button>
+    <button class="bg-[red] text-white px-3 py-1 rounded whitespace-nowrap">Delete</button>
+    <button class="bg-[orange] text-white px-3 py-1 rounded whitespace-nowrap">Disable</button>
+  </div>
+</td>
 
-          </td>
         </tr>
 
        

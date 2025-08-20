@@ -14,7 +14,7 @@
 
 
 
-    <aside class="w-64 bg-[#8bc83f] text-white p-6 fixed h-screen">
+    <aside class="w-64 bg-[#8bc83f] text-white p-6 fixed h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
       <div class="flex items-center justify-center mb-8 bg-white">
         <img src="./static/images/logo.png" alt="Logo" class="w-32 h-32 object-contain">
       </div>
@@ -120,11 +120,14 @@
         <td class="px-6 py-4">john@example.com</td>
         <td class="px-6 py-4">Mumbai</td>
         <td class="px-6 py-4">hsd</td>
-        <td class="px-6 py-4 space-x-2 w-64">
-          <button onclick="openAgentProfileEditModal('John Doe')" class="bg-yellow-500 text-white px-3 py-1 rounded">Edit</button>
-          <button class="bg-[red] text-white px-3 py-1 rounded">Delete</button>
-          <button class="bg-blue-600 text-white px-3 py-1 rounded">Repost</button>
-        </td>
+        <td class="px-6 py-4 w-64">
+  <div class="flex flex-wrap gap-2">
+    <button onclick="openAgentProfileEditModal('John Doe')" class="bg-yellow-500 text-white px-3 py-1 rounded">Edit</button>
+    <button class="bg-[red] text-white px-3 py-1 rounded">Delete</button>
+    <button class="bg-blue-600 text-white px-3 py-1 rounded">Repost</button>
+  </div>
+</td>
+
       </tr>
     </tbody>
   </table>
@@ -190,12 +193,14 @@
           <td class="p-4">City</td>
 
           <td class="p-4">5</td>
-          <td class="p-4 space-x-2 ">
-            <button onclick="openPremiumAgentProfileEditModal('John Doe')" class="bg-yellow-500 text-white px-3 py-1 rounded">Edit</button>
-            <button class="bg-[red] text-white px-3 py-1 rounded">Delete</button>
-            <button class="bg-blue-600  text-white px-3 py-1 rounded">Repost</button>
+          <td class="p-4">
+  <div class="flex gap-2 flex-nowrap">
+    <button onclick="openPremiumAgentProfileEditModal('John Doe')" class="bg-yellow-500 text-white px-3 py-1 rounded whitespace-nowrap">Edit</button>
+    <button class="bg-[red] text-white px-3 py-1 rounded whitespace-nowrap">Delete</button>
+    <button class="bg-blue-600 text-white px-3 py-1 rounded whitespace-nowrap">Repost</button>
+  </div>
+</td>
 
-          </td>
         </tr>
 
        
