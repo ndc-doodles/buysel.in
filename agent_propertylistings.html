@@ -68,10 +68,9 @@
   </div>
 
   <div class="md:col-span-2"><label>Image</label><input id="editImage" type="file" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>Price</label><input id="editPrice" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label>Price</label><input id="editPrice" type="text" placeholder="10000 per cent"  class="w-full border px-3 py-2 rounded"></div>
   <div><label>Total Price</label><input id="editTotalPrice" type="text" class="w-full border px-3 py-2 rounded"></div>
 
-  <div><label>Owner</label><input id="editOwner" type="text" class="w-full border px-3 py-2 rounded"></div>
   <div><label>Phone</label><input id="editPhone" type="text" class="w-full border px-3 py-2 rounded"></div>
   <div><label>Whatsapp Number</label><input id="editWhatsapp" type="text" class="w-full border px-3 py-2 rounded"></div>
 
@@ -81,14 +80,7 @@
   <div><label>PIN Code</label><input id="editPin" type="text" class="w-full border px-3 py-2 rounded"></div>
   <div><label>Landmark</label><input id="editLandmark" type="text" class="w-full border px-3 py-2 rounded"></div>
 
-  <div><label>Paid</label>
-    <select id="editPaid" class="w-full border px-3 py-2 rounded">
-      <option>Yes</option>
-      <option>No</option>
-    </select>
-  </div>
-
-  <div><label>Added By</label><input id="editAddedBy" type="text" class="w-full border px-3 py-2 rounded"></div>
+  
 
   <div class="md:col-span-2 text-right mt-4">
     <button type="submit" class="bg-[#8bc83f] text-white px-6 py-2 rounded">Update Property</button>
@@ -114,12 +106,10 @@
         <th class="px-4 py-2">District</th>
         <th class="px-4 py-2">Price</th>
         <th class="px-4 py-2">Total Price</th>
-        <th class="px-4 py-2">Owner</th>
         <th class="px-4 py-2">Phone Number</th>
         <th class="px-4 py-2">Whatsapp Number</th>
 
-        <th class="px-4 py-2">Paid</th>
-        <th class="px-4 py-2">Marketing staff</th>       
+     
         <th class="px-4 py-2">Actions</th>
 
       </tr>
@@ -144,14 +134,12 @@
 
         <td class="px-4 py-2">₹80L per Acre</td>
         <td class="px-4 py-2">₹80,00,000</td>
-        <td class="px-4 py-2">John Doe</td>
         <td class="px-4 py-2">9876543210</td>
         <td class="px-4 py-2">9876543210</td>
-        <td class="px-4 py-2">Yes</td>
-        <td class="px-4 py-2">John</td>
+
 
         <td class="px-4 flex space-x-2 py-8">
-<button onclick="openAdminPropertyEditModal(this)" 
+<button onclick="openAgentPropertyEditModal(this)" 
   class="bg-yellow-500 text-white px-3 py-1 rounded">
   Edit
 </button>
@@ -208,12 +196,9 @@
 
       <div>
         <label class="block font-semibold mb-1">Price</label>
-        <input type="text" id="editPrice" class="w-full border px-3 py-2 rounded" />
+        <input type="text" id="editPrice" placeholder="10000 per cent"  class="w-full border px-3 py-2 rounded" />
       </div>
-      <div>
-        <label class="block font-semibold mb-1">Owner</label>
-        <input type="text" id="editOwner" class="w-full border px-3 py-2 rounded" />
-      </div>
+      
       <div>
         <label class="block font-semibold mb-1">Phone</label>
         <input type="text" id="editPhone" class="w-full border px-3 py-2 rounded" />
@@ -245,20 +230,10 @@
         <label class="block font-semibold mb-1">Landmark</label>
         <input type="text" id="editLandmark" class="w-full border px-3 py-2 rounded" />
       </div>
-      <div>
-        <label class="block font-semibold mb-1">Paid</label>
-        <select id="editPaid" class="w-full border px-3 py-2 rounded">
-          <option>Yes</option>
-          <option>No</option>
-        </select>
-      </div>
-      <div>
-        <label class="block font-semibold mb-1">Added By</label>
-        <input type="text" id="editAddedBy" class="w-full border px-3 py-2 rounded" />
-      </div>
+      
 
       <div class="md:col-span-2 text-right mt-4">
-        <button type="button" onclick="closeAdminPropertyEditModal()" class="bg-gray-400 text-white px-4 py-2 rounded mr-2">Cancel</button>
+        <button type="button" onclick="closeAgentPropertyEditModal()" class="bg-gray-400 text-white px-4 py-2 rounded mr-2">Cancel</button>
         <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save Changes</button>
       </div>
     </form>

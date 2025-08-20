@@ -201,6 +201,11 @@
   });
 
 
+
+
+
+
+
 function openAgentPropertyEditModal() {
   const container = document.getElementById("editAmenitiesContainer");
   container.innerHTML = ""; 
@@ -217,13 +222,11 @@ function openAgentPropertyEditModal() {
   document.getElementById('editSqft').value = "1500";
   document.getElementById('editDesc').value = "Spacious family house.";
   document.getElementById('editPrice').value = "₹50,00,000";
-  document.getElementById('editOwner').value = "John Doe";
   document.getElementById('editPhone').value = "9876543210";
   document.getElementById('editWhatsappNumber').value = "9876543210"; // ✅ Will work now
   document.getElementById('editLocation').value = "Downtown";
   document.getElementById('editPin').value = "123456";
   document.getElementById('editLandmark').value = "Near Mall";
-  document.getElementById('editPaid').value = "Yes";
 
   document.getElementById('editModal').classList.remove('hidden');
 }
