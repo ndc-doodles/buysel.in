@@ -89,49 +89,54 @@
 
       <main class="ml-64 p-6 w-[85%]">
     <h1 class="text-3xl font-bold mb-6">Add New Property</h1>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100 p-6 rounded-lg mb-10 shadow w-full max-w-7xl mx-auto">
+  <div><label class="block mb-1">Category</label><input id="editCategory" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">Purpose</label><input id="editPurpose" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">Label</label><input id="editLabel" type="text" class="w-full border px-3 py-2 rounded"></div>
 
-<form class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100 p-6 rounded-lg mb-10 shadow">
-  <div><label>Category</label><input id="editCategory" type="text" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>Purpose</label><input id="editPurpose" type="text" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>Label</label><input id="editLabel" type="text" class="w-full border px-3 py-2 rounded"></div>
-
-  <div><label>Land Area</label><input id="editLandArea" type="text" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>Sq. Ft</label><input id="editSqft" type="number" class="w-full border px-3 py-2 rounded"></div>
-  <div class="md:col-span-2"><label>Description</label><textarea id="editDesc" class="w-full border px-3 py-2 rounded" rows="3"></textarea></div>
+  <div><label class="block mb-1">Land Area</label><input id="editLandArea" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">Sq. Ft</label><input id="editSqft" type="number" class="w-full border px-3 py-2 rounded"></div>
 
   <div class="md:col-span-2">
-    <label>Amenities</label>
+    <label class="block mb-1">Description</label>
+    <textarea id="editDesc" class="w-full border px-3 py-2 rounded" rows="3"></textarea>
+  </div>
+
+  <div class="md:col-span-2">
+    <label class="block mb-1">Amenities</label>
     <div id="editAmenitiesContainer" class="space-y-2"></div>
     <button type="button" onclick="addAmenityField()" class="mt-2 px-4 py-1 bg-blue-500 text-white rounded">+ Add Amenity</button>
   </div>
 
-  <div class="md:col-span-2"><label>Image</label><input id="editImage" type="file" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>Price</label><input id="editPrice" type="text" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>Total Price</label><input id="editTotalPrice" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div class="md:col-span-2"><label class="block mb-1">Image</label><input id="editImage" type="file" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">Price</label><input id="editPrice" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">Total Price</label><input id="editTotalPrice" type="text" class="w-full border px-3 py-2 rounded"></div>
 
-  <div><label>Owner</label><input id="editOwner" type="text" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>Phone</label><input id="editPhone" type="text" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>Whatsapp Number</label><input id="editWhatsapp" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">Owner</label><input id="editOwner" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">Phone</label><input id="editPhone" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">Whatsapp Number</label><input id="editWhatsapp" type="text" class="w-full border px-3 py-2 rounded"></div>
 
-  <div><label>Map Location</label><input id="editLocation" type="text" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>City</label><input id="editCity" type="text" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>District</label><input id="editDistrict" type="text" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>PIN Code</label><input id="editPin" type="text" class="w-full border px-3 py-2 rounded"></div>
-  <div><label>Landmark</label><input id="editLandmark" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">Map Location</label><input id="editLocation" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">City</label><input id="editCity" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">District</label><input id="editDistrict" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">PIN Code</label><input id="editPin" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">Landmark</label><input id="editLandmark" type="text" class="w-full border px-3 py-2 rounded"></div>
 
-  <div><label>Paid</label>
+  <div>
+    <label class="block mb-1">Paid</label>
     <select id="editPaid" class="w-full border px-3 py-2 rounded">
       <option>Yes</option>
       <option>No</option>
     </select>
   </div>
 
-  <div><label>Added By</label><input id="editAddedBy" type="text" class="w-full border px-3 py-2 rounded"></div>
+  <div><label class="block mb-1">Added By</label><input id="editAddedBy" type="text" class="w-full border px-3 py-2 rounded"></div>
 
   <div class="md:col-span-2 text-right mt-4">
     <button type="submit" class="bg-[#8bc83f] text-white px-6 py-2 rounded">Update Property</button>
   </div>
 </form>
+
 
 
 <div class="w-full overflow-x-auto bg-white rounded shadow">
