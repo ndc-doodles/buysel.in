@@ -307,16 +307,29 @@ function closeAgentPropertyEditModal() {
 
 
 
-  function addAmenityField() {
-    const container = document.getElementById('amenitiesContainer');
+function addAmenityField() {
+    const container = document.getElementById('editAmenitiesContainer');
+
+    const wrapper = document.createElement('div');
+    wrapper.className = "flex items-center space-x-2";
+
     const input = document.createElement('input');
     input.type = 'text';
     input.placeholder = 'Enter Amenity';
     input.className = 'w-full border px-3 py-2 rounded';
-    container.appendChild(input);
+
+    const delBtn = document.createElement('button');
+    delBtn.type = "button";
+    delBtn.innerHTML = "&#10006;"; 
+    delBtn.className = "text-red-500 hover:text-red-700 text-lg font-bold px-2";
+    delBtn.onclick = () => wrapper.remove();
+
+    wrapper.appendChild(input);
+    wrapper.appendChild(delBtn);
+
+    container.appendChild(wrapper);
   }
 
-  // Optional: add one field by default
   window.onload = () => {
     addAmenityField();
-  };
+  };
