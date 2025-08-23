@@ -125,10 +125,11 @@
   </div>
 
   <div class="md:col-span-2">
-    <label class="block mb-1">Amenities</label>
-    <div id="editAmenitiesContainer" class="space-y-2"></div>
-    <button type="button" onclick="addAmenityField()" class="mt-2 px-4 py-1 bg-blue-500 text-white rounded">+ Add Amenity</button>
-  </div>
+  <label class="block font-semibold mb-1">Amenities</label>
+  <div id="formAmenitiesContainer" class="space-y-2"></div>
+  <button type="button" onclick="addAmenityField('', 'formAmenitiesContainer')" class="mt-2 px-4 py-1 bg-blue-500 text-white rounded">+ Add Amenity</button>
+</div>
+
 
   <div class="md:col-span-2"><label class="block mb-1">Image</label><input id="editImage" type="file" class="w-full border px-3 py-2 rounded" multiple  ></div>
   <div><label class="block mb-1">Price</label><input id="editPrice" type="text" placeholder="10000 per cent" class="w-full border px-3 py-2 rounded"></div>
@@ -151,6 +152,8 @@
       <option>No</option>
     </select>
   </div>
+    <div><label class="block mb-1">Duration</label><input id="editDuration" type="text" class="w-full border px-3 py-2 rounded"></div>
+
 
   <div><label class="block mb-1">Added By</label><input id="editAddedBy" type="text" class="w-full border px-3 py-2 rounded"></div>
 
@@ -161,7 +164,7 @@
 
 
 
-<div class="w-full overflow-x-auto bg-white rounded shadow">
+<div class="w-full overflow-x-auto bg-white rounded shadow my-8">
   <table class="w-full text-sm text-left">
     <thead class="bg-black text-white">
       <tr>
@@ -172,8 +175,8 @@
         <th class="px-4 py-2">Area</th>
         <th class="px-4 py-2">Sq. Ft</th>
         <th class="px-4 py-2">Description</th>
-        <th class="px-4 py-2">Amenitities</th> 
-        <th class="px-4 py-2">Map location</th>   
+        <th class="px-4 py-2">Amenities</th> 
+        <th class="px-4 py-2">Map Location</th>   
         <th class="px-4 py-2">Landmark</th>           
         <th class="px-4 py-2">City</th>
         <th class="px-4 py-2">District</th>
@@ -182,31 +185,28 @@
         <th class="px-4 py-2">Owner</th>
         <th class="px-4 py-2">Phone Number</th>
         <th class="px-4 py-2">Whatsapp Number</th>
-
         <th class="px-4 py-2">Paid</th>
-        <th class="px-4 py-2">Added by</th>       
+        <th class="px-4 py-2">Added By</th>
+        <th class="px-4 py-2">Duration</th>        
         <th class="px-4 py-2">Actions</th>
-
       </tr>
     </thead>
     <tbody>
       <tr class="border-t">
         <td class="px-4 py-2">
-    <img src="./static/images/about1.png" alt="House" class="w-16 h-16 object-cover rounded">
-  </td>
+          <img src="./static/images/about1.png" alt="House" class="w-16 h-16 object-cover rounded">
+        </td>
         <td class="px-4 py-2">House</td>
         <td class="px-4 py-2">Sale</td>
         <td class="px-4 py-2">sale</td>
         <td class="px-4 py-2">1500 sq.ft</td>
         <td class="px-4 py-2">1500</td>
         <td class="px-4 py-2">VDJFHJDSFBJSDBFJSDFJDSJSHJHDKS</td>
-        <td class="px-4 py-2">kkkjkjj</td>
+        <td class="px-4 py-2">Pool, Garden</td>
         <td class="px-4 py-2">https://maps.app.goo.gl/cfmyqLY6oWRUwE4w7</td>
-        <td class="px-4 py-2">kkkjkjj</td>
-
+        <td class="px-4 py-2">Near Mall</td>
         <td class="px-4 py-2">Panampally</td>
         <td class="px-4 py-2">Ernakulam</td>
-
         <td class="px-4 py-2">₹80L per Acre</td>
         <td class="px-4 py-2">₹80,00,000</td>
         <td class="px-4 py-2">John Doe</td>
@@ -214,15 +214,15 @@
         <td class="px-4 py-2">9876543210</td>
         <td class="px-4 py-2">Yes</td>
         <td class="px-4 py-2">John</td>
+        <td class="px-4 py-2">1 year</td>
 
         <td class="px-4 flex space-x-2 py-8">
-<button onclick="openAdminPropertyEditModal(this)" 
-  class="bg-yellow-500 text-white px-3 py-1 rounded">
-  Edit
-</button>
-  <button class="bg-red-600 text-white px-3 py-1 rounded">Delete</button>
-</td>
-
+          <button onclick="openAdminPropertyEditModal(this)" 
+            class="bg-yellow-500 text-white px-3 py-1 rounded">
+            Edit
+          </button>
+          <button class="bg-red-600 text-white px-3 py-1 rounded">Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -235,37 +235,40 @@
 <div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
   <div class="bg-white p-6 rounded-lg w-full max-w-4xl shadow-lg max-h-[90vh] overflow-y-auto">
     <h2 class="text-xl font-semibold mb-4">Edit Property</h2>
-    <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div>
-  <label class="block font-semibold mb-1">Category</label>
-  <select id="editCategory" class="w-full border px-3 py-2 rounded">
-    <option value="">-- Select Category --</option>
-    <option value="software">Software</option>
-    <option value="hardware">Hardware</option>
-    <option value="network">Network</option>
-    <option value="other">Other</option>
-  </select>
-</div>
+    <form id="editPropertyForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-<div>
-  <label class="block font-semibold mb-1">Purpose</label>
-  <select id="editPurpose" class="w-full border px-3 py-2 rounded">
-    <option value="">-- Select Purpose --</option>
-    <option value="development">Development</option>
-    <option value="testing">Testing</option>
-    <option value="research">Research</option>
-    <option value="maintenance">Maintenance</option>
-  </select>
-</div>
+      <div>
+        <label class="block font-semibold mb-1">Category</label>
+        <select id="editCategory" class="w-full border px-3 py-2 rounded">
+          <option value="">-- Select Category --</option>
+          <option value="software">Software</option>
+          <option value="hardware">Hardware</option>
+          <option value="network">Network</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Purpose</label>
+        <select id="editPurpose" class="w-full border px-3 py-2 rounded">
+          <option value="">-- Select Purpose --</option>
+          <option value="development">Development</option>
+          <option value="testing">Testing</option>
+          <option value="research">Research</option>
+          <option value="maintenance">Maintenance</option>
+        </select>
+      </div>
 
       <div>
         <label class="block font-semibold mb-1">Label</label>
-        <input type="text" id="editPurpose" class="w-full border px-3 py-2 rounded" />
+        <input type="text" id="editLabel" class="w-full border px-3 py-2 rounded" />
       </div>
+
       <div>
         <label class="block font-semibold mb-1">Land Area</label>
         <input type="text" id="editArea" class="w-full border px-3 py-2 rounded" />
       </div>
+
       <div>
         <label class="block font-semibold mb-1">Sq. Ft</label>
         <input type="number" id="editSqft" class="w-full border px-3 py-2 rounded" />
@@ -277,9 +280,11 @@
       </div>
 
       <div class="md:col-span-2">
-        <label class="block font-semibold mb-1">Amenities</label>
-        <div id="editAmenitiesContainer" class="space-y-2"></div>
-      </div>
+  <label class="block font-semibold mb-1">Amenities</label>
+  <div id="modalEditAmenitiesContainer" class="space-y-2"></div>
+  <button type="button" onclick="addAmenityField('', 'modalEditAmenitiesContainer')" class="mt-2 px-4 py-1 bg-blue-500 text-white rounded">+ Add Amenity</button>
+</div>
+
 
       <div class="md:col-span-2">
         <label class="block font-semibold mb-1">Current Image</label>
@@ -291,18 +296,22 @@
         <label class="block font-semibold mb-1">Price</label>
         <input type="text" id="editPrice" placeholder="10000 per cent" class="w-full border px-3 py-2 rounded" />
       </div>
+
       <div>
         <label class="block font-semibold mb-1">Owner</label>
         <input type="text" id="editOwner" class="w-full border px-3 py-2 rounded" />
       </div>
+
       <div>
         <label class="block font-semibold mb-1">Phone</label>
         <input type="text" id="editPhone" class="w-full border px-3 py-2 rounded" />
       </div>
+
       <div>
         <label class="block font-semibold mb-1">Whatsapp Number</label>
         <input type="text" id="editWhatsappNumber" class="w-full border px-3 py-2 rounded" />
       </div>
+
       <div>
         <label class="block font-semibold mb-1">Map Location</label>
         <input type="text" id="editLocation" class="w-full border px-3 py-2 rounded" />
@@ -322,10 +331,12 @@
         <label class="block font-semibold mb-1">PIN Code</label>
         <input type="text" id="editPin" class="w-full border px-3 py-2 rounded" />
       </div>
+
       <div>
         <label class="block font-semibold mb-1">Landmark</label>
         <input type="text" id="editLandmark" class="w-full border px-3 py-2 rounded" />
       </div>
+
       <div>
         <label class="block font-semibold mb-1">Paid</label>
         <select id="editPaid" class="w-full border px-3 py-2 rounded">
@@ -333,18 +344,27 @@
           <option>No</option>
         </select>
       </div>
+
       <div>
         <label class="block font-semibold mb-1">Added By</label>
         <input type="text" id="editAddedBy" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+
+      <div>
+        <label class="block font-semibold mb-1">Duration</label>
+        <input type="text" id="editDuration" class="w-full border px-3 py-2 rounded" />
       </div>
 
       <div class="md:col-span-2 text-right mt-4">
         <button type="button" onclick="closeAdminPropertyEditModal()" class="bg-gray-400 text-white px-4 py-2 rounded mr-2">Cancel</button>
         <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save Changes</button>
       </div>
+
     </form>
   </div>
 </div>
+
 
 
 <script src="./static/js/admin_scripts.js"></script>
