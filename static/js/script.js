@@ -21,130 +21,78 @@
 
 
 
+document.addEventListener("DOMContentLoaded", handleHomeAnimation);
 
 
+let eachSlide = 1
 
-document.addEventListener("DOMContentLoaded", eventFunction);
-function createNewImageDiv(idNo, array, index, mobile) {
-
+function handleHomeAnimation() {
+  const mainDiv = document.getElementById('slidingmain')
+  
+  
+  setInterval(() => {
 
     
 
-    if (mobile) {
+    const slidingOne = document.getElementById(`sliding${eachSlide}`)
+    const slidingTwo = document.getElementById(`sliding${eachSlide+1}`)
+    const slidingThree = document.getElementById(`sliding${eachSlide+2}`)
+    const slidingFour = document.getElementById(`sliding${eachSlide+3}`)
+
+    slidingOne.style.width = "0%"
+    slidingOne.style.marginLeft = '0px'
+    slidingTwo.style.width = "50%"
+    slidingThree.style.width = "30%"
+    slidingFour.style.width = "20%"
 
 
-        const imageSection = document.querySelector('.image-section-mobile');
-        const newDiv = document.createElement('img');
-        newDiv.className = 'image-box-mobile';
+          console.log(eachSlide%3,'mod');
 
-        newDiv.id = `box-mobile${idNo}`;
 
-        newDiv.style.height = '100%'
-        newDiv.style.width = '0'
-        newDiv.src = `${array[index]}`
-         newDiv.style.objectFit = 'cover'
-        newDiv.style.objectPosition = 'center'
+    const images = [
+      "./static/images/9p.jpg",
+      "./static/images/10p.jpg",
+      "./static/images/11p.jpg",
+        ];
+    
+    const imgElement = createElement(images[eachSlide%3],eachSlide+4)
 
-        imageSection.appendChild(newDiv);
+  
+    
+    mainDiv.appendChild(imgElement)
 
-    } else {
+    eachSlide = eachSlide+1
 
-        const imageSection = document.querySelector('.image-section');
-        const newDiv = document.createElement('img');
-        newDiv.className = 'image-box';
-        newDiv.id = `box${idNo}`;
-        newDiv.style.height = '100%'
-        newDiv.style.width = '0'
-        newDiv.src = `${array[index]}`
-        newDiv.style.objectFit = 'cover'
-        newDiv.style.objectPosition = 'center'
-        // newDiv.style.backgroundRepeat = 'no-repeat'
-
-        imageSection.appendChild(newDiv);
-
-    }
+  }, 2000);
 
 
 }
 
 
-function eventFunction() {
+function createElement(image,id){
 
-    let imageCount = 0
-    let imageIndex = 0
+  // Create the <a> element
+  const link = document.createElement("a");
+  link.href = "https://wa.me/9061827363";
+  link.className = "w-0 ml-2 transition-all duration-1000";
+  link.target = "_blank";
+  link.id = `sliding${id}`;
+  link.setAttribute("aria-label", "WhatsApp Chat 1");
 
+  // Create the <img> element
+  const img = document.createElement("img");
+  img.src = image;
+  img.alt = "";
+  img.className = "h-full w-full object-cover object-center shrink-0";
 
-
-    if (window.screen.width < 1336) {
-
-        setInterval(
-            () => {
-                console.log(imageCount);
-
-                const images = [
-                    "./static/images/10p.jpg",
-                    "./static/images/11p.jpg",
-                    "./static/images/9p.jpg",
-                ];
-
-                const imageArray = document.querySelectorAll('.image-box-mobile')
-
-                console.log(imageArray, 'imagearray');
-
-
-
-                imageArray[imageCount].style.width = 0
-                imageArray[imageCount].style.marginLeft = 0
-                imageArray[imageCount + 1].style.width = '15.5rem'
-                imageArray[imageCount + 1].style.marginLeft = '5px'
-                imageArray[imageCount + 2].style.width = '5.5rem'
-                imageArray[imageCount + 3].style.width = '2.375rem'
-                createNewImageDiv(imageCount + 4, images, imageIndex, true)
-
-                imageCount++
-
-                if (imageIndex == 2) {
-                    imageIndex = 0
-                } else {
-                    imageIndex++
-                }
-
-            },
-            2000);
-    } else {
-        setInterval(
-            () => {
-                console.log(imageCount);
-
-                const images = [
-                    "./static/images/10p.jpg",
-                    "./static/images/11p.jpg",
-                    "./static/images/9p.jpg",
-                ];
-
-                const imageArray = document.querySelectorAll('.image-box')
-
-
-                imageArray[imageCount].style.width = 0
-                imageArray[imageCount].style.marginLeft = 0
-                imageArray[imageCount + 1].style.width = '22.5rem'
-                imageArray[imageCount + 2].style.width = '12.5rem'
-                imageArray[imageCount + 3].style.width = '9.375rem'
-                createNewImageDiv(imageCount + 4, images, imageIndex, false)
-
-                imageCount++
-
-                if (imageIndex == 2) {
-                    imageIndex = 0
-                } else {
-                    imageIndex++
-                }
-
-            },
-            2000);
-    }
-
+  // Append image inside link
+  link.appendChild(img);
+  console.log(link,'mainn');
+  
+  return link
 }
+
+
 
 
 // property card in home page 
