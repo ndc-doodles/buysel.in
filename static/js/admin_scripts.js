@@ -349,10 +349,8 @@ window.onload = () => {
   }
 
 
-// premiumagent
    function openPremiumAgentProfileEditModal(agentName) {
     document.getElementById('editModal').classList.remove('hidden');
-    // Populate form (add real logic here if pulling data dynamically)
     const form = document.getElementById('editAgentForm');
     form.name.value = agentName;
   }
