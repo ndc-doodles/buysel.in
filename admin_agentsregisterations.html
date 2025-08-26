@@ -20,7 +20,7 @@
       <nav>
         <ul class="space-y-4 text-sm">
            <li>
-            <a href="admin_dashboard.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">
+            <a href="admin_dashboard.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
               Dashboard
             </a>
           </li>
@@ -34,8 +34,9 @@
              Property Listings
             </a>
           </li>
+
           <li>
-            <a href="admin_agentsregisterations.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+            <a href="admin_agentsregisterations.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">
              Agents Registerations
             </a>
           </li>
@@ -49,6 +50,7 @@
              Agent Login
             </a>
           </li>
+          
           <li>
             <a href="admin_premiumagents.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
              Premium Agents
@@ -59,7 +61,7 @@
              Agents
             </a> 
           </li>
-           <li>
+          <li>
             <a href="admin_expiredproperties.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
              Expired Properties
             </a>
@@ -76,7 +78,7 @@
               Blogs
             </a>
           </li>
-           <li>
+          <li>
             <a href="admin_messagebox.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
               Message box
             </a>
@@ -86,7 +88,7 @@
               Contact Form
             </a>
           </li>
-         
+          
           
           <li>
   <a href="{% url 'logout' %}" class="block py-2 px-4 rounded bg-[red] text-white">
@@ -98,66 +100,50 @@
       </nav>
     </aside>
 
-<main class="ml-64 flex-1 p-8 bg-gray-50 min-h-screen">
 
-  <h1 class="text-3xl font-bold mb-6">Admin Dashboard</h1>
+<main class="ml-64 p-6 w-full">
+  <h1 class="text-3xl font-bold mb-6">Agent Registerations Forms</h1>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-    <div class="bg-white shadow-md p-6 rounded-xl text-center">
-      <h2 class="text-lg font-semibold mb-2">Total Properties</h2>
-      <p class="text-3xl font-bold text-[#8bc83f]">135</p>
-    </div>
-    <div class="bg-white shadow-md p-6 rounded-xl text-center">
-      <h2 class="text-lg font-semibold mb-2">For Sale</h2>
-      <p class="text-3xl font-bold text-[#8bc83f]">60</p>
-    </div>
-    <div class="bg-white shadow-md p-6 rounded-xl text-center">
-      <h2 class="text-lg font-semibold mb-2">For Rent</h2>
-      <p class="text-3xl font-bold text-[#8bc83f]">45</p>
-    </div>
-    <div class="bg-white shadow-md p-6 rounded-xl text-center">
-      <h2 class="text-lg font-semibold mb-2">For Lease</h2>
-      <p class="text-3xl font-bold text-[#8bc83f]">30</p>
-    </div>
-  </div>
+  <div class="overflow-x-auto bg-white rounded-lg shadow">
+    <table class="min-w-full divide-y divide-gray-200 text-sm">
+      <thead class="bg-black text-left text-white">
+  <tr>
+    <th class="px-4 py-3">Name</th>        
+    <th class="px-4 py-3">Email</th>
+    <th class="px-4 py-3">Location</th>
+    <th class="px-4 py-3">City</th>
+    <th class="px-4 py-3">Phone Number</th>
+    <th class="px-4 py-3">WhatsApp Number</th>
+    <th class="px-4 py-3">Specialised</th>
+    <th class="px-4 py-3">Image</th>
+    <th class="px-4 py-3">Actions</th> <!-- Added actions column -->
+  </tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+  <tr>
+    <td class="px-4 py-2">John Doe</td>
+    <td class="px-4 py-2">john@example.com</td>
+    <td class="px-4 py-2">MG Road</td>
+    <td class="px-4 py-2">Bangalore</td>
+    <td class="px-4 py-2">+91-9876543210</td>
+    <td class="px-4 py-2">+91-9876543210</td>
+    <td class="px-4 py-2">sale</td>
+    <td class="px-4 py-2">
+      <img src="https://via.placeholder.com/50" alt="Agent" class="w-12 h-12 object-cover rounded" />
+    </td>
+    <td class="px-4 py-2">
+      <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-xs" onclick="deleteRow(this)">
+        Delete
+      </button>
+    </td>
+  </tr>
+</tbody>
 
-
-  <div class="bg-white shadow-md rounded-xl p-6">
-    <h2 class="text-2xl font-bold mb-4">Agent Registration Summary</h2>
-    <div class="overflow-x-auto">
-      <table class="min-w-full table-auto border border-gray-200">
-        <thead class="bg-black text-white">
-          <tr>
-            <th class="px-6 py-3 text-left">#</th>
-            <th class="px-6 py-3 text-left">Agent Name</th>
-            <th class="px-6 py-3 text-left">Total Registrations</th>
-            <th class="px-6 py-3 text-left">For Sale</th>
-            <th class="px-6 py-3 text-left">For Rent</th>
-            <th class="px-6 py-3 text-left">For Lease</th>
-          </tr>
-        </thead>
-        <tbody class="text-gray-700">
-          <tr class="border-b">
-            <td class="px-6 py-4">1</td>
-            <td class="px-6 py-4">Ravi Kumar</td>
-            <td class="px-6 py-4">35</td>
-            <td class="px-6 py-4">15</td>
-            <td class="px-6 py-4">10</td>
-            <td class="px-6 py-4">10</td>
-          </tr>
-          <tr class="border-b">
-            <td class="px-6 py-4">2</td>
-            <td class="px-6 py-4">Anita Sharma</td>
-            <td class="px-6 py-4">22</td>
-            <td class="px-6 py-4">9</td>
-            <td class="px-6 py-4">7</td>
-            <td class="px-6 py-4">6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    </table>
   </div>
 </main>
 </div>
+
 </body>
 </html>
+
