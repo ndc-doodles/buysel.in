@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard - Cybexel</title>
   <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 </head>
 <body class="bg-white text-[#151a37] font-sans">
 
@@ -107,46 +109,90 @@
 
 
 <main class="ml-64 p-6 w-full">
-  <h1 class="text-3xl font-bold mb-6">Agent Registerations Forms</h1>
+  <h1 class="text-3xl font-bold mb-6">Agent Registrations Forms</h1>
+
+ <button onclick="exportTableToExcelWithImageURL()" 
+        class="bg-green-500 text-white px-3 py-2 rounded mb-10">
+  Export to Excel
+</button>
 
   <div class="overflow-x-auto bg-white rounded-lg shadow">
     <table class="min-w-full divide-y divide-gray-200 text-sm">
       <thead class="bg-black text-left text-white">
-  <tr>
-    <th class="px-4 py-3">Name</th>        
-    <th class="px-4 py-3">Email</th>
-    <th class="px-4 py-3">Location</th>
-    <th class="px-4 py-3">City</th>
-    <th class="px-4 py-3">Phone Number</th>
-    <th class="px-4 py-3">WhatsApp Number</th>
-    <th class="px-4 py-3">Specialised</th>
-    <th class="px-4 py-3">Image</th>
-    <th class="px-4 py-3">Actions</th> <!-- Added actions column -->
-  </tr>
-</thead>
-<tbody class="divide-y divide-gray-200">
-  <tr>
-    <td class="px-4 py-2">John Doe</td>
-    <td class="px-4 py-2">john@example.com</td>
-    <td class="px-4 py-2">MG Road</td>
-    <td class="px-4 py-2">Bangalore</td>
-    <td class="px-4 py-2">+91-9876543210</td>
-    <td class="px-4 py-2">+91-9876543210</td>
-    <td class="px-4 py-2">sale</td>
-    <td class="px-4 py-2">
-      <img src="https://via.placeholder.com/50" alt="Agent" class="w-12 h-12 object-cover rounded" />
-    </td>
-    <td class="px-4 py-2">
-      <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-xs" onclick="deleteRow(this)">
-        Delete
-      </button>
-    </td>
-  </tr>
-</tbody>
+        <tr>
+          <th class="px-4 py-3">Name</th>        
+          <th class="px-4 py-3">Email</th>
+          <th class="px-4 py-3">Location</th>
+          <th class="px-4 py-3">City</th>
+          <th class="px-4 py-3">Phone Number</th>
+          <th class="px-4 py-3">WhatsApp Number</th>
+          <th class="px-4 py-3">Specialised</th>
+          <th class="px-4 py-3">Image</th>
+          <th class="px-4 py-3">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        <tr>
+          <td class="px-4 py-2">John Doe</td>
+          <td class="px-4 py-2">john@example.com</td>
+          <td class="px-4 py-2">MG Road</td>
+          <td class="px-4 py-2">Bangalore</td>
+          <td class="px-4 py-2">+91-9876543210</td>
+          <td class="px-4 py-2">+91-9876543210</td>
+          <td class="px-4 py-2">sale</td>
+          <td class="px-4 py-2 text-center">
+  <div class="flex flex-col items-center space-y-1">
+    <img src="./static/images/about1.png" 
+         alt="Agent" 
+         class="w-12 h-12 object-cover rounded" />
+    
+   <a href="static/images/about1.png" 
+       download="agent-image.jpg"
+       class="bg-blue-500 text-white px-3 py-1 rounded text-xs hover:bg-blue-600 transition">
+      Download
+    </a>
 
+  </div>
+</td>
+
+
+          <td class="px-4 py-2">
+            <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-xs">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </main>
+
+<script>
+function exportTableToExcelWithImageURL() {
+  const wb = XLSX.utils.book_new();
+  const table = document.querySelector("table");
+  const rows = [];
+
+  table.querySelectorAll("tr").forEach((tr) => {
+    const row = [];
+    tr.querySelectorAll("td, th").forEach((td) => {
+      const img = td.querySelector("img");
+      if (img) {
+        row.push(img.src); 
+      } else {
+        row.push(td.innerText.trim());
+      }
+    });
+    rows.push(row);
+  });
+
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  XLSX.utils.book_append_sheet(wb, ws, "Agents");
+  XLSX.writeFile(wb, "agents.xlsx");
+}
+
+</script>
+
 </div>
 
 </body>

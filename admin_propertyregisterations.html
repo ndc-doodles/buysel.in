@@ -109,7 +109,10 @@
 
 <main class="ml-64 p-6 w-full">
   <h1 class="text-3xl font-bold mb-6">Property Registerations Forms</h1>
-
+<button onclick="exportTableToExcel()" 
+        class="bg-green-500 text-white px-3 py-2 rounded mb-4">
+  Export to Excel
+</button>
   <div class="overflow-x-auto bg-white rounded-lg shadow">
 <table class="min-w-full divide-y divide-gray-200 text-sm">
   <thead class="bg-black text-left text-white">
@@ -121,7 +124,6 @@
       <th class="px-4 py-3">Sq. Ft</th>
       <th class="px-4 py-3">Description</th>
       <th class="px-4 py-3">Amenities</th>
-      <th class="px-4 py-3">Image</th>
       <th class="px-4 py-3">Price</th>
       <th class="px-4 py-3">Total Price</th>
       <th class="px-4 py-3">Owner</th>
@@ -133,6 +135,8 @@
       <th class="px-4 py-3">PIN Code</th>
       <th class="px-4 py-3">Landmark</th>
       <th class="px-4 py-3">Duration</th>
+      <th class="px-4 py-3">Image</th>
+
       <th class="px-4 py-3">Actions</th>
     </tr>
   </thead>
@@ -146,9 +150,7 @@
       <td class="px-4 py-2">1200</td>
       <td class="px-4 py-2">Spacious 2BHK with balcony</td>
       <td class="px-4 py-2">Parking, Pool</td>
-      <td class="px-4 py-2">
-        <img src="https://via.placeholder.com/50" alt="Property" class="w-12 h-12 object-cover rounded" />
-      </td>
+      
       <td class="px-4 py-2">₹50,00,000</td>
       <td class="px-4 py-2">₹75,00,000</td>
       <td class="px-4 py-2">John Doe</td>
@@ -159,7 +161,22 @@
       <td class="px-4 py-2">Bangalore Urban</td>
       <td class="px-4 py-2">560001</td>
       <td class="px-4 py-2">Near City Mall</td>
+    
       <td class="px-4 py-2">12 Months Lease</td>
+      <td class="px-4 py-2 text-center">
+  <div class="flex flex-col items-center space-y-1">
+    <img src="./static/images/about1.png" 
+         alt="Property" 
+         class="w-12 h-12 object-cover rounded" />
+    
+    <a href="./static/images/about1.png" 
+       download="property-image.jpg"
+       class="bg-blue-500 text-white px-3 py-1 rounded text-xs hover:bg-blue-600 transition">
+      Download
+    </a>
+  </div>
+</td>
+
       <td class="px-4 py-2">
         <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-xs" onclick="deleteRow(this)">
           Delete
@@ -172,7 +189,33 @@
   </div>
 </main>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script>
+function exportTableToExcel() {
+  const wb = XLSX.utils.book_new();
+  const table = document.querySelector("table");
+  const rows = [];
 
+  table.querySelectorAll("tr").forEach((tr) => {
+    const row = [];
+    tr.querySelectorAll("td, th").forEach((td) => {
+      const img = td.querySelector("img");
+      if (img) {
+        row.push(img.src); // Add image URL
+      } else if (td.querySelector("a")) {
+        row.push(td.querySelector("a").innerText.trim()); // For map links or download text
+      } else {
+        row.push(td.innerText.trim());
+      }
+    });
+    rows.push(row);
+  });
+
+  const ws = XLSX.utils.aoa_to_sheet(rows);
+  XLSX.utils.book_append_sheet(wb, ws, "Properties");
+  XLSX.writeFile(wb, "properties.xlsx");
+}
+</script>
 </body>
 </html>
 
