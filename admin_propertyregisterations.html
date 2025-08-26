@@ -25,7 +25,7 @@
             </a>
           </li>
           <li>
-            <a href="admin_categories.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">
+            <a href="admin_categories.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
               Categories
             </a>
           </li>
@@ -34,16 +34,18 @@
              Property Listings
             </a>
           </li>
+
           <li>
             <a href="admin_agentsregisterations.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
              Agents Registerations
             </a>
           </li>
           <li>
-            <a href="admin_propertyregisterations.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
+            <a href="admin_propertyregisterations.html" class="block py-2 px-4 rounded bg-white text-[#151a37]">
              Property Registerations
             </a>
           </li>
+          
           <li>
             <a href="admin_requestform.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
              Agent request form
@@ -54,6 +56,7 @@
              Agent Login
             </a>
           </li>
+          
           <li>
             <a href="admin_premiumagents.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
              Premium Agents
@@ -64,8 +67,7 @@
              Agents
             </a> 
           </li>
-        
-           <li>
+          <li>
             <a href="admin_expiredproperties.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
              Expired Properties
             </a>
@@ -75,6 +77,7 @@
              Expired Agents
             </a>
           </li>
+          
           
           <li>
             <a href="admin_blogs.html" class="block py-2 px-4 rounded hover:bg-white hover:text-[#151a37]">
@@ -103,81 +106,73 @@
       </nav>
     </aside>
 
-<main class="ml-64 p-8 w-full bg-gray-50 min-h-screen">
-  <section class="mb-12">
-    <h2 class="text-2xl font-bold mb-4">Categories</h2>
 
-    <form class="flex flex-col sm:flex-row gap-4 mb-6">
-      <input
-        type="text"
-        placeholder="e.g. House, Land, Offplans"
-        class="flex-1 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#8bc83f]"
-      />
-      <button
-        type="submit"
-        class="bg-black text-white px-6 py-2 rounded hover:bg-[#76a934]"
-      >
-        Add Category
-      </button>
-    </form>
+<main class="ml-64 p-6 w-full">
+  <h1 class="text-3xl font-bold mb-6">Property Registerations Forms</h1>
 
-    <div class="overflow-x-auto bg-white shadow rounded">
-      <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-black text-white">
-          <tr>
-            <th class="text-left px-6 py-3">Category</th>
-            <th class="text-left px-6 py-3">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-100">
-          <tr>
-            <td class="px-6 py-4">House</td>
-            <td class="px-6 py-4">
-              <button class="text-red-600 hover:text-red-800">Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+  <div class="overflow-x-auto bg-white rounded-lg shadow">
+<table class="min-w-full divide-y divide-gray-200 text-sm">
+  <thead class="bg-black text-left text-white">
+    <tr>
+      <th class="px-4 py-3">Category</th>
+      <th class="px-4 py-3">Purpose</th>
+      <th class="px-4 py-3">Label</th>
+      <th class="px-4 py-3">Land Area</th>
+      <th class="px-4 py-3">Sq. Ft</th>
+      <th class="px-4 py-3">Description</th>
+      <th class="px-4 py-3">Amenities</th>
+      <th class="px-4 py-3">Image</th>
+      <th class="px-4 py-3">Price</th>
+      <th class="px-4 py-3">Total Price</th>
+      <th class="px-4 py-3">Owner</th>
+      <th class="px-4 py-3">Phone</th>
+      <th class="px-4 py-3">WhatsApp</th>
+      <th class="px-4 py-3">Map Location</th>
+      <th class="px-4 py-3">City</th>
+      <th class="px-4 py-3">District</th>
+      <th class="px-4 py-3">PIN Code</th>
+      <th class="px-4 py-3">Landmark</th>
+      <th class="px-4 py-3">Duration</th>
+      <th class="px-4 py-3">Actions</th>
+    </tr>
+  </thead>
 
-  <section>
-    <h2 class="text-2xl font-bold mb-4">Purpose</h2>
+  <tbody class="divide-y divide-gray-200">
+    <tr>
+      <td class="px-4 py-2">House</td>
+      <td class="px-4 py-2">Sale</td>
+      <td class="px-4 py-2">Premium</td>
+      <td class="px-4 py-2">2000</td>
+      <td class="px-4 py-2">1200</td>
+      <td class="px-4 py-2">Spacious 2BHK with balcony</td>
+      <td class="px-4 py-2">Parking, Pool</td>
+      <td class="px-4 py-2">
+        <img src="https://via.placeholder.com/50" alt="Property" class="w-12 h-12 object-cover rounded" />
+      </td>
+      <td class="px-4 py-2">₹50,00,000</td>
+      <td class="px-4 py-2">₹75,00,000</td>
+      <td class="px-4 py-2">John Doe</td>
+      <td class="px-4 py-2">+91-9876543210</td>
+      <td class="px-4 py-2">+91-9876543210</td>
+      <td class="px-4 py-2"><a href="#" class="text-blue-600 underline">View Map</a></td>
+      <td class="px-4 py-2">Bangalore</td>
+      <td class="px-4 py-2">Bangalore Urban</td>
+      <td class="px-4 py-2">560001</td>
+      <td class="px-4 py-2">Near City Mall</td>
+      <td class="px-4 py-2">12 Months Lease</td>
+      <td class="px-4 py-2">
+        <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-xs" onclick="deleteRow(this)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-    <form class="flex flex-col sm:flex-row gap-4 mb-6">
-      <input
-        type="text"
-        placeholder="e.g. Sale, Rent, Lease"
-        class="flex-1 px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#8bc83f]"
-      />
-      <button
-        type="submit"
-        class="bg-black text-white px-6 py-2 rounded hover:bg-[#76a934]"
-      >
-        Add Purpose
-      </button>
-    </form>
-
-    <div class="overflow-x-auto bg-white shadow rounded">
-      <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-black text-white">
-          <tr>
-            <th class="text-left px-6 py-3">Purpose</th>
-            <th class="text-left px-6 py-3">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-100">
-          <tr>
-            <td class="px-6 py-4">Sale</td>
-            <td class="px-6 py-4">
-              <button class="text-red-600 hover:text-red-800">Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+  </div>
 </main>
 </div>
+
 </body>
 </html>
+
