@@ -21,91 +21,58 @@
 
 
 
-    const form = document.getElementById('blogForm');
-    const tableBody = document.getElementById('blogTableBody');
-    const editModal = document.getElementById('editModal');
-    const editForm = document.getElementById('editBlogForm');
+  let currentRow = null; 
 
-    let blogData = [];
+  function openAdminBlogEditModal(row) {
+    currentRow = row; 
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const inputs = form.querySelectorAll('input, textarea');
-      const newBlog = {
-        tag: inputs[0].value,
-        date: inputs[1].value,
-        shortHeading: inputs[2].value,
-        fullHeading: inputs[3].value,
-        para1: inputs[4].value,
-        para2: inputs[5].value,
-        para3: inputs[6].value,
-        para4: inputs[7].value,
-        image: inputs[8].files[0]?.name || ''
+  
+    document.getElementById("editHeading1").value = row.cells[0].innerText;
+    document.getElementById("editHeading2").value = row.cells[1].innerText;
+    document.getElementById("editDate").value = row.cells[2].innerText;
+    document.getElementById("editParagraph1").value = row.cells[0].innerText; 
+    document.getElementById("editParagraph2").value = row.cells[1].innerText;
+
+    const img = row.querySelector("td img").src;
+    document.getElementById("editImagePreview").src = img;
+
+    document.getElementById("editModal").classList.remove("hidden");
+  }
+
+  function closeAdminBlogEditModal() {
+    document.getElementById("editModal").classList.add("hidden");
+  }
+
+  document.getElementById("editImageFile").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById("editImagePreview").src = e.target.result;
       };
-      blogData.push(newBlog);
-      renderTable();
-      form.reset();
-    });
-
-    function renderTable() {
-      tableBody.innerHTML = '';
-      blogData.forEach((blog, index) => {
-        tableBody.innerHTML += `
-          <tr class="border-b">
-            <td class="px-4 py-2">${blog.tag}</td>
-            <td class="px-4 py-2">${blog.date}</td>
-            <td class="px-4 py-2">${blog.shortHeading}</td>
-            <td class="px-4 py-2">${blog.image}</td>
-            <td class="px-4 py-2 space-x-2">
-              <button onclick="openAdminBlogEditModal(${index})" class="text-blue-600 underline">Edit</button>
-              <button onclick="deleteBlog(${index})" class="text-red-600 underline">Delete</button>
-            </td>
-          </tr>
-        `;
-      });
+      reader.readAsDataURL(file);
     }
+  });
 
-    function openAdminBlogEditModal(index) {
-      const blog = blogData[index];
-      document.getElementById('editTag').value = blog.tag;
-      document.getElementById('editDate').value = blog.date;
-      document.getElementById('editShortHeading').value = blog.shortHeading;
-      document.getElementById('editFullHeading').value = blog.fullHeading;
-      document.getElementById('editPara1').value = blog.para1;
-      document.getElementById('editPara2').value = blog.para2;
-      document.getElementById('editPara3').value = blog.para3;
-      document.getElementById('editPara4').value = blog.para4;
+  document.getElementById("editBlogForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    if (!currentRow) return;
 
-      editForm.onsubmit = function (e) {
-        e.preventDefault();
-        blogData[index] = {
-          tag: document.getElementById('editTag').value,
-          date: document.getElementById('editDate').value,
-          shortHeading: document.getElementById('editShortHeading').value,
-          fullHeading: document.getElementById('editFullHeading').value,
-          para1: document.getElementById('editPara1').value,
-          para2: document.getElementById('editPara2').value,
-          para3: document.getElementById('editPara3').value,
-          para4: document.getElementById('editPara4').value,
-          image: blog.image // keep existing image name
-        };
-        closeAdminBlogEditModal();
-        renderTable();
-      };
+    currentRow.cells[0].innerText = document.getElementById("editHeading1").value;
+    currentRow.cells[1].innerText = document.getElementById("editHeading2").value;
+    currentRow.cells[2].innerText = document.getElementById("editDate").value;
 
-      editModal.classList.remove('hidden');
-    }
+    const imgPreview = document.getElementById("editImagePreview").src;
+    currentRow.querySelector("td img").src = imgPreview;
 
-    function closeAdminBlogEditModal() {
-      editModal.classList.add('hidden');
-    }
+    closeAdminBlogEditModal();
+  });
 
-    function deleteBlog(index) {
-      blogData.splice(index, 1);
-      renderTable();
-    }
+  function deleteRow(row) {
+    row.remove();
+  }
 
-
+ 
 
 
 

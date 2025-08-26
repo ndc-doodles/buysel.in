@@ -106,50 +106,61 @@
   </form>
 
   <h2 class="text-2xl font-semibold mt-10 mb-4">All Blogs</h2>
-  <div class="overflow-x-auto bg-white shadow rounded-lg">
-    <table class="min-w-full text-left text-sm">
-      <thead class="bg-black text-white">
-        <tr>
-          <th class="px-4 py-2">Heading 1</th>
-          <th class="px-4 py-2">Heading 2</th>
-          <th class="px-4 py-2">Date</th>
-          <th class="px-4 py-2">Image</th>
-          <th class="px-4 py-2">Actions</th>
-        </tr>
-      </thead>
-      <tbody id="blogTableBody" class="text-[#151a37]"></tbody>
-    </table>
-  </div>
+<div class="overflow-x-auto bg-white shadow rounded-lg">
+<table class="min-w-full text-left text-sm">
+  <thead class="bg-black text-white">
+    <tr>
+      <th class="px-4 py-2">Heading 1</th>
+      <th class="px-4 py-2">Heading 2</th>
+      <th class="px-4 py-2">Date</th>
+      <th class="px-4 py-2">Image</th>
+      <th class="px-4 py-2">Actions</th>
+    </tr>
+  </thead>
+  <tbody id="blogTableBody" class="text-[#151a37]">
+    <tr class="border-b">
+      <td class="px-4 py-2">Introduction to AI</td>
+      <td class="px-4 py-2">Basics of Artificial Intelligence</td>
+      <td class="px-4 py-2">2025-08-26</td>
+      <td class="px-4 py-2">
+        <img src="./static/images/about1.png" alt="AI" class="w-12 h-12 object-cover rounded" />
+      </td>
+      <td class="px-4 py-2 space-x-2">
+        <button onclick="openAdminBlogEditModal(this.closest('tr'))" class="px-2 py-1 bg-blue-500 text-white rounded">Edit</button>
+        <button onclick="deleteRow(this.closest('tr'))" class="px-2 py-1 bg-red-500 text-white rounded">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </main>
 
   </div>
 
   
-  
-<div id="editModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
-  <div class="bg-white p-6 rounded-lg w-[95%] max-w-3xl max-h-[90vh] overflow-hidden">
-    <h3 class="text-xl font-semibold mb-4">Edit Blog</h3>
+<div id="editModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+  <div class="bg-white p-6 rounded-lg max-w-7xl shadow-lg">
+    <h2 class="text-lg font-bold mb-4">Edit Blog</h2>
+    <form id="editBlogForm" class="space-y-3">
+      <input type="text" id="editHeading1" class="w-full border rounded px-3 py-2" placeholder="Heading 1" />
+      <input type="text" id="editHeading2" class="w-full border rounded px-3 py-2" placeholder="Heading 2" />
+      <input type="date" id="editDate" class="w-full border rounded px-3 py-2" />
+      <input type="text" id="editParagraph1" class="w-full border rounded px-3 py-2" placeholder="Paragraph 1" />
+      <input type="text" id="editParagraph2" class="w-full border rounded px-3 py-2" placeholder="Paragraph 2" />
 
-    <form id="editBlogForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 overflow-y-auto max-h-[70vh] pr-2">
-
-      <input type="text" id="editTag" class="border p-2 rounded" placeholder="Tag" required>
-      <input type="date" id="editDate" class="border p-2 rounded" required>
-
-      <input type="text" id="editShortHeading" class="border p-2 rounded col-span-2" placeholder="Short Heading" required>
-      <input type="text" id="editFullHeading" class="border p-2 rounded col-span-2" placeholder="Full Heading" required>
-
-      <textarea id="editPara1" class="border p-2 rounded col-span-2" rows="2" placeholder="Paragraph 1" required></textarea>
-      <textarea id="editPara2" class="border p-2 rounded col-span-2" rows="2" placeholder="Paragraph 2"></textarea>
-      <textarea id="editPara3" class="border p-2 rounded col-span-2" rows="2" placeholder="Paragraph 3"></textarea>
-      <textarea id="editPara4" class="border p-2 rounded col-span-2" rows="2" placeholder="Paragraph 4"></textarea>
-
-      <input type="file" id="editImage" class="border p-2 rounded col-span-2">
-
-      <div class="col-span-2 flex justify-between mt-2">
-        <button type="submit" class="bg-black text-white px-4 py-2 rounded">Update</button>
-        <button type="button" onclick="closeAdminBlogEditModal()" class="bg-red-500 text-white px-4 py-2 rounded">Cancel</button>
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-1">Image</label>
+        <img id="editImagePreview" src="https://via.placeholder.com/100" alt="Preview" class="w-24 h-24 object-cover rounded border mb-2" />
+        <input type="file" id="editImageFile" accept="image/*" class="hidden" />
+        <button type="button" onclick="document.getElementById('editImageFile').click()" class="px-3 py-1 bg-gray-500 text-white rounded">
+          Change Image
+        </button>
       </div>
 
+      <div class="flex justify-end space-x-2">
+        <button type="button" onclick="closeAdminBlogEditModal()" class="px-3 py-1 bg-gray-400 text-white rounded">Cancel</button>
+        <button type="submit" class="px-3 py-1 bg-blue-600 text-white rounded">Save</button>
+      </div>
     </form>
   </div>
 </div>
