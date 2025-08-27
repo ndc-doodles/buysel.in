@@ -159,7 +159,24 @@
         <td class="px-4 py-2">sale</td>
         <td class="px-4 py-2">1500 sq.ft</td>
         <td class="px-4 py-2">1500</td>
-        <td class="px-4 py-2">VDJFHJDSFBJSDBFJSDFJDSJSHJHDKS</td>
+<td class="px-4 py-2">
+  <span id="cell-2" class="truncate max-w-[150px] inline-block align-middle">
+    VDJFHJDSFBJSDBFJSDFJDSJSHJHDKSkgsdsakdghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhheeeeeeeeeeeee
+  </span>
+  <button onclick="openModal('cell-2')" 
+          class="text-blue-500 underline ml-2">
+    Read more
+  </button>
+</td>
+
+<div id="textModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-lg max-w-lg w-full max-h-[80vh] overflow-y-auto overflow-x-hidden p-6 relative">
+    <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 font-bold text-xl">&times;</button>
+    <p id="modalContent" class="whitespace-pre-wrap break-words text-gray-800"></p>
+  </div>
+</div>
+
+
         <td class="px-4 py-2">kkkjkjj</td>
         <td class="px-4 py-2">https://maps.app.goo.gl/cfmyqLY6oWRUwE4w7</td>
         <td class="px-4 py-2">kkkjkjj</td>
@@ -200,6 +217,19 @@
 
 
       </div>
+
+
+      <script>
+function openModal(spanId) {
+  const content = document.getElementById(spanId).textContent;
+  document.getElementById("modalContent").textContent = content;
+  document.getElementById("textModal").classList.remove("hidden");
+}
+
+function closeModal() {
+  document.getElementById("textModal").classList.add("hidden");
+}
+</script>
     <script src="./static/js/admin_scripts.js"></script>
   
       </body>

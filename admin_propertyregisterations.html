@@ -148,7 +148,23 @@
       <td class="px-4 py-2">Premium</td>
       <td class="px-4 py-2">2000</td>
       <td class="px-4 py-2">1200</td>
-      <td class="px-4 py-2">Spacious 2BHK with balcony</td>
+<td class="px-4 py-2">
+  <span id="short-text-1">
+    Spacious 2BHK wjhdsjfhjfhdfldflhdjcdddddddddddddddddd...
+  </span>
+  <button onclick="openModal(1)" class="text-blue-500 underline ml-1">Read more</button>
+</td>
+
+<div id="modal-1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-lg max-w-lg w-full max-h-[80vh] overflow-y-auto overflow-x-hidden p-6 relative">
+    <button onclick="closeModal(1)" class="absolute top-2 right-2 text-gray-500 font-bold text-xl">&times;</button>
+    <p id="full-text-1" class="whitespace-pre-wrap break-words">
+      Spacious 2BHK wjhdsjfhjfhdfldflhdjcddddddddddddddddddddddddddddddddddddddddddddddddddddadabvbjlbdvksdjfkjdshfkjdshkfhsdkjfhkdsjfkjdsfkjdskfjds
+    </p>
+  </div>
+</div>
+
+
       <td class="px-4 py-2">Parking, Pool</td>
       
       <td class="px-4 py-2">₹50,00,000</td>
@@ -214,6 +230,14 @@ function exportTableToExcel() {
   const ws = XLSX.utils.aoa_to_sheet(rows);
   XLSX.utils.book_append_sheet(wb, ws, "Properties");
   XLSX.writeFile(wb, "properties.xlsx");
+}
+</script>
+<script>
+function openModal(id) {
+  document.getElementById('modal-' + id).classList.remove('hidden');
+}
+function closeModal(id) {
+  document.getElementById('modal-' + id).classList.add('hidden');
 }
 </script>
 </body>
