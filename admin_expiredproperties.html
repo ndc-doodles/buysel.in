@@ -7,6 +7,8 @@
   <title>Admin Dashboard - Cybexel</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./static/css/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
 </head>
 <body class="bg-white text-[#151a37] font-sans">
 
@@ -120,9 +122,12 @@
 
 
 
-
-<div class="w-[80%] overflow-x-auto bg-white rounded shadow">
-  <table class="w-full text-sm text-left">
+  <button onclick="exportTableToCSV('expiredpropertiesTable', 'properties.csv')" 
+          class="mt-4 bg-green-600 text-white px-4 py-2 rounded">
+    Export Properties
+  </button>
+<div class="w-[80%] overflow-x-auto bg-white rounded shadow mt-10">
+  <table id="expiredpropertiesTable"  class="w-full text-sm text-left">
     <thead class="bg-black text-white">
       <tr>
         <th class="px-4 py-2">Img</th>       
@@ -168,7 +173,6 @@
   </button>
 </td>
 
-<!-- Modal -->
 <div id="textModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
   <div class="bg-white rounded-lg max-w-lg w-full max-h-[80vh] overflow-y-auto overflow-x-hidden p-6 relative">
     <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 font-bold text-xl">&times;</button>
@@ -474,6 +478,54 @@ window.onload = () => {
   }
 };
 
+</script>
+
+
+
+<script>
+function downloadCSV(csv, filename) {
+  let csvFile = new Blob([csv], { type: "text/csv" });
+  let downloadLink = document.createElement("a");
+  downloadLink.download = filename;
+  downloadLink.href = window.URL.createObjectURL(csvFile);
+  downloadLink.style.display = "none";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+}
+
+function exportTableToCSV(tableId, filename) {
+  let csv = [];
+  let table = document.getElementById(tableId);
+  if (!table) return;
+
+  let rows = table.querySelectorAll("tr");
+
+  for (let i = 0; i < rows.length; i++) {
+    let row = [];
+    let cols = rows[i].querySelectorAll("td, th");
+
+    for (let j = 0; j < cols.length; j++) {
+      // Skip last column (Actions)
+      if (j === cols.length - 1) continue;
+
+      // If column contains an image, export src
+      let img = cols[j].querySelector("img");
+      if (img) {
+        row.push('"' + img.src + '"');
+        continue;
+      }
+
+      // Otherwise, get text only and trim spaces, wrap in quotes
+      let text = cols[j].innerText.trim().replace(/\n/g, ' ');
+      row.push('"' + text + '"');
+    }
+
+    csv.push(row.join(","));
+  }
+
+  downloadCSV(csv.join("\n"), filename);
+}
 </script>
     <script src="./static/js/admin_scripts.js"></script>
   

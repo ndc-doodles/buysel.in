@@ -7,6 +7,8 @@
   <title>Admin Dashboard - Cybexel</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./static/css/admin.css">
+      <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
 </head>
 <body class="bg-white text-[#151a37] font-sans">
 
@@ -179,89 +181,94 @@
 </form>
 
 
-
-<div class="w-full overflow-x-auto bg-white rounded shadow my-8">
-  <table class="w-full text-sm text-left">
-    <thead class="bg-black text-white">
-      <tr>
-        <th class="px-4 py-2">Img</th>       
-        <th class="px-4 py-2">Category</th>
-        <th class="px-4 py-2">Purpose</th>
-        <th class="px-4 py-2">Label</th>
-        <th class="px-4 py-2">Area</th>
-        <th class="px-4 py-2">Sq. Ft</th>
-        <th class="px-4 py-2">Description</th>
-        <th class="px-4 py-2">Amenities</th> 
-        <th class="px-4 py-2">Map Location</th>   
-        <th class="px-4 py-2">Landmark</th>           
-        <th class="px-4 py-2">City</th>
-        <th class="px-4 py-2">District</th>
-        <th class="px-4 py-2">Price</th>
-        <th class="px-4 py-2">Total Price</th>
-        <th class="px-4 py-2">Owner</th>
-        <th class="px-4 py-2">Phone Number</th>
-        <th class="px-4 py-2">Whatsapp Number</th>
-        <th class="px-4 py-2">Paid</th>
-        <th class="px-4 py-2">Added By</th>
-        <th class="px-4 py-2">Duration</th>        
-        <th class="px-4 py-2">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="border-t">
-        <td class="px-4 py-2">
-          <img src="./static/images/about1.png" alt="House" class="w-16 h-16 object-cover rounded">
-        </td>
-        <td class="px-4 py-2">House</td>
-        <td class="px-4 py-2">Sale</td>
-        <td class="px-4 py-2">sale</td>
-        <td class="px-4 py-2">1500 sq.ft</td>
-        <td class="px-4 py-2">1500</td>
-<td class="px-4 py-2">
-  <span id="cell-2" class="truncate max-w-[150px] inline-block align-middle">
-    VDJFHJDSFBJSDBFJSDFJDSJSHJHDKSkgsdsakdghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-  </span>
-  <button onclick="openModal('cell-2')" 
-          class="text-blue-500 underline ml-2">
-    Read more
+  <button onclick="exportTableToCSV('propertiesTable', 'properties.csv')" 
+          class="mt-4 bg-green-600 text-white px-4 py-2 rounded">
+    Export Properties
   </button>
-</td>
+  <div class="w-full overflow-x-auto bg-white rounded shadow my-8 ">
+    <table id="propertiesTable" class="w-full text-sm text-left">
+    
 
-<!-- Modal -->
-<div id="textModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-  <div class="bg-white rounded-lg max-w-lg w-full max-h-[80vh] overflow-y-auto overflow-x-hidden p-6 relative">
-    <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 font-bold text-xl">&times;</button>
-    <p id="modalContent" class="whitespace-pre-wrap break-words text-gray-800"></p>
+      <thead class="bg-black text-white">
+        <tr>
+          <th class="px-4 py-2">Img</th>       
+          <th class="px-4 py-2">Category</th>
+          <th class="px-4 py-2">Purpose</th>
+          <th class="px-4 py-2">Label</th>
+          <th class="px-4 py-2">Area</th>
+          <th class="px-4 py-2">Sq. Ft</th>
+          <th class="px-4 py-2">Description</th>
+          <th class="px-4 py-2">Amenities</th> 
+          <th class="px-4 py-2">Map Location</th>   
+          <th class="px-4 py-2">Landmark</th>           
+          <th class="px-4 py-2">City</th>
+          <th class="px-4 py-2">District</th>
+          <th class="px-4 py-2">Price</th>
+          <th class="px-4 py-2">Total Price</th>
+          <th class="px-4 py-2">Owner</th>
+          <th class="px-4 py-2">Phone Number</th>
+          <th class="px-4 py-2">Whatsapp Number</th>
+          <th class="px-4 py-2">Paid</th>
+          <th class="px-4 py-2">Added By</th>
+          <th class="px-4 py-2">Duration</th>        
+          <th class="px-4 py-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-t">
+          <td class="px-4 py-2">
+            <img src="./static/images/about1.png" alt="House" class="w-16 h-16 object-cover rounded">
+          </td>
+          <td class="px-4 py-2">House</td>
+          <td class="px-4 py-2">Sale</td>
+          <td class="px-4 py-2">sale</td>
+          <td class="px-4 py-2">1500 sq.ft</td>
+          <td class="px-4 py-2">1500</td>
+  <td class="px-4 py-2">
+    <span id="cell-2" class="truncate max-w-[150px] inline-block align-middle">
+      VDJFHJDSFBJSDBFJSDFJDSJSHJHDKSkgsdsakdghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    </span>
+    <button onclick="openModal('cell-2')" 
+            class="text-blue-500 underline ml-2">
+      Read more
+    </button>
+  </td>
+
+  <div id="textModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg max-w-lg w-full max-h-[80vh] overflow-y-auto overflow-x-hidden p-6 relative">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 font-bold text-xl">&times;</button>
+      <p id="modalContent" class="whitespace-pre-wrap break-words text-gray-800"></p>
+    </div>
   </div>
-</div>
 
 
 
-        <td class="px-4 py-2">Pool, Garden</td>
-        <td class="px-4 py-2">https://maps.app.goo.gl/cfmyqLY6oWRUwE4w7</td>
-        <td class="px-4 py-2">Near Mall</td>
-        <td class="px-4 py-2">Panampally</td>
-        <td class="px-4 py-2">Ernakulam</td>
-        <td class="px-4 py-2">₹80L per Acre</td>
-        <td class="px-4 py-2">₹80,00,000</td>
-        <td class="px-4 py-2">John Doe</td>
-        <td class="px-4 py-2">9876543210</td>
-        <td class="px-4 py-2">9876543210</td>
-        <td class="px-4 py-2">Yes</td>
-        <td class="px-4 py-2">John</td>
-        <td class="px-4 py-2">1 year</td>
+          <td class="px-4 py-2">Pool, Garden</td>
+          <td class="px-4 py-2">https://maps.app.goo.gl/cfmyqLY6oWRUwE4w7</td>
+          <td class="px-4 py-2">Near Mall</td>
+          <td class="px-4 py-2">Panampally</td>
+          <td class="px-4 py-2">Ernakulam</td>
+          <td class="px-4 py-2">₹80L per Acre</td>
+          <td class="px-4 py-2">₹80,00,000</td>
+          <td class="px-4 py-2">John Doe</td>
+          <td class="px-4 py-2">9876543210</td>
+          <td class="px-4 py-2">9876543210</td>
+          <td class="px-4 py-2">Yes</td>
+          <td class="px-4 py-2">John</td>
+          <td class="px-4 py-2">1 year</td>
 
-        <td class="px-4 flex space-x-2 py-8">
-          <button onclick="openAdminPropertyEditModal(this)" 
-            class="bg-yellow-500 text-white px-3 py-1 rounded">
-            Edit
-          </button>
-          <button class="bg-red-600 text-white px-3 py-1 rounded">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+          <td class="px-4 flex space-x-2 py-8">
+            <button onclick="openAdminPropertyEditModal(this)" 
+              class="bg-yellow-500 text-white px-3 py-1 rounded">
+              Edit
+            </button>
+            <button class="bg-red-600 text-white px-3 py-1 rounded">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
 
 
   </main>
@@ -405,7 +412,51 @@
   </div>
 </div>
 
+<script>
+function downloadCSV(csv, filename) {
+  let csvFile = new Blob([csv], { type: "text/csv" });
+  let downloadLink = document.createElement("a");
+  downloadLink.download = filename;
+  downloadLink.href = window.URL.createObjectURL(csvFile);
+  downloadLink.style.display = "none";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+}
 
+function exportTableToCSV(tableId, filename) {
+  let csv = [];
+  let table = document.getElementById(tableId);
+  if (!table) return;
+
+  let rows = table.querySelectorAll("tr");
+
+  for (let i = 0; i < rows.length; i++) {
+    let row = [];
+    let cols = rows[i].querySelectorAll("td, th");
+
+    for (let j = 0; j < cols.length; j++) {
+      // Skip last column (Actions)
+      if (j === cols.length - 1) continue;
+
+      // If column contains an image, export src
+      let img = cols[j].querySelector("img");
+      if (img) {
+        row.push('"' + img.src + '"');
+        continue;
+      }
+
+      // Otherwise, get text only and trim spaces, wrap in quotes
+      let text = cols[j].innerText.trim().replace(/\n/g, ' ');
+      row.push('"' + text + '"');
+    }
+
+    csv.push(row.join(","));
+  }
+
+  downloadCSV(csv.join("\n"), filename);
+}
+</script>
 <script>
 function openModal(spanId) {
   const content = document.getElementById(spanId).textContent;
@@ -417,6 +468,11 @@ function closeModal() {
   document.getElementById("textModal").classList.add("hidden");
 }
 </script>
+
+
+
+
+
 <script src="./static/js/admin_scripts.js"></script>
 </body>
 </html>
