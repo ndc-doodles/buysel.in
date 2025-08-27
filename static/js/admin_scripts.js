@@ -82,7 +82,6 @@
 
 
 
-
 // Add Amenity Field (works for any container)
 function addAmenityField(value = "", containerId) {
   const container = document.getElementById(containerId);
@@ -108,15 +107,15 @@ function addAmenityField(value = "", containerId) {
   container.appendChild(wrapper);
 }
 
-// Initialize both containers with one empty field
-window.onload = () => {
-  if (document.getElementById("modalEditAmenitiesContainer").children.length === 0) {
+// Initialize amenity containers once DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.getElementById("modalEditAmenitiesContainer")?.children.length === 0) {
     addAmenityField("", "modalEditAmenitiesContainer");
   }
-  if (document.getElementById("formAmenitiesContainer").children.length === 0) {
+  if (document.getElementById("formAmenitiesContainer")?.children.length === 0) {
     addAmenityField("", "formAmenitiesContainer");
   }
-};
+});
 
 // Open Modal + Populate Data
 function openAdminPropertyEditModal(button) {
@@ -124,26 +123,27 @@ function openAdminPropertyEditModal(button) {
   const cells = row.querySelectorAll("td");
 
   // Extract values from table row
-  const category = cells[1].innerText;
-  const purpose = cells[2].innerText;
-  const label = cells[3].innerText;
-  const area = cells[4].innerText;
-  const sqft = cells[5].innerText;
-  const desc = cells[6].innerText;
-  const amenitiesText = cells[7].innerText;
-  const location = cells[8].innerText;
-  const landmark = cells[9].innerText;
-  const city = cells[10].innerText;
-  const district = cells[11].innerText;
-  const price = cells[12].innerText;
-  const totalPrice = cells[13].innerText;
-  const owner = cells[14].innerText;
-  const phone = cells[15].innerText;
-  const whatsapp = cells[16].innerText;
-  const paid = cells[17].innerText;
-  const addedBy = cells[18].innerText;
+  const category = cells[1].innerText.trim();
+  const purpose = cells[2].innerText.trim();
+  const label = cells[3].innerText.trim();
+  const area = cells[4].innerText.trim();
+  const sqft = cells[5].innerText.trim();
+  const desc = cells[6].innerText.trim();
+  const amenitiesText = cells[7].innerText.trim();
+  const location = cells[8].innerText.trim();
+  const landmark = cells[9].innerText.trim();
+  const city = cells[10].innerText.trim();
+  const district = cells[11].innerText.trim();
+  const price = cells[12].innerText.trim();
+  const totalPrice = cells[13].innerText.trim();
+  const owner = cells[14].innerText.trim();
+  const phone = cells[15].innerText.trim();
+  const whatsapp = cells[16].innerText.trim();
+  const paid = cells[17].innerText.trim();
+  const addedBy = cells[18].innerText.trim();
+  const duration = cells[19].innerText.trim(); // ✅ added duration
 
-  // Fill modal inputs
+  // Fill modal inputs (make sure IDs exist in HTML!)
   document.getElementById("editCategory").value = category;
   document.getElementById("editPurpose").value = purpose;
   document.getElementById("editLabel").value = label;
@@ -155,19 +155,20 @@ function openAdminPropertyEditModal(button) {
   document.getElementById("editCity").value = city;
   document.getElementById("editDistrict").value = district;
   document.getElementById("editPrice").value = price;
-  document.getElementById("editTotalPrice").value = totalPrice;
+  document.getElementById("editTotalPrice").value = totalPrice; 
   document.getElementById("editOwner").value = owner;
   document.getElementById("editPhone").value = phone;
   document.getElementById("editWhatsappNumber").value = whatsapp;
   document.getElementById("editPaid").value = paid;
   document.getElementById("editAddedBy").value = addedBy;
+  document.getElementById("editDuration").value = duration;
 
   // Populate amenities
   const container = document.getElementById("modalEditAmenitiesContainer");
   container.innerHTML = ""; // clear previous
-  if (amenitiesText.trim() !== "") {
+  if (amenitiesText) {
     amenitiesText.split(",").forEach(a => {
-      if(a.trim() !== "") addAmenityField(a.trim(), "modalEditAmenitiesContainer");
+      if (a.trim() !== "") addAmenityField(a.trim(), "modalEditAmenitiesContainer");
     });
   } else {
     addAmenityField("", "modalEditAmenitiesContainer"); // at least one field
@@ -182,12 +183,6 @@ function closeAdminPropertyEditModal() {
   document.getElementById("editModal").classList.add("hidden");
 }
 
-// Initialize modal with one amenity field
-window.onload = () => {
-  if (document.getElementById("modalEditAmenitiesContainer").children.length === 0) {
-    addAmenityField("", "modalEditAmenitiesContainer");
-  }
-};
 
 
 
@@ -306,14 +301,25 @@ window.onload = () => {
 
 
 
+
   function openAgentProfileEditModal(name) {
+    // You can also prefill the form here if needed
     document.getElementById('editModal').classList.remove('hidden');
-    document.querySelector('input[name="name"]').value = name; 
   }
 
   function closeAgentProfileEditModal() {
     document.getElementById('editModal').classList.add('hidden');
   }
+
+  // Optional: Preview image
+  function previewAgentImage(event) {
+    const preview = document.getElementById('agentPreviewImage');
+    preview.src = URL.createObjectURL(event.target.files[0]);
+  }
+
+
+
+
 
 
    function openPremiumAgentProfileEditModal(agentName) {

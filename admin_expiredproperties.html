@@ -132,8 +132,8 @@
         <th class="px-4 py-2">Area</th>
         <th class="px-4 py-2">Sq. Ft</th>
         <th class="px-4 py-2">Description</th>
-        <th class="px-4 py-2">Amenitities</th> 
-        <th class="px-4 py-2">Map location</th>   
+        <th class="px-4 py-2">Amenities</th> 
+        <th class="px-4 py-2">Map Location</th>   
         <th class="px-4 py-2">Landmark</th>           
         <th class="px-4 py-2">City</th>
         <th class="px-4 py-2">District</th>
@@ -142,18 +142,17 @@
         <th class="px-4 py-2">Owner</th>
         <th class="px-4 py-2">Phone Number</th>
         <th class="px-4 py-2">Whatsapp Number</th>
-
         <th class="px-4 py-2">Paid</th>
-        <th class="px-4 py-2">Marketing staff</th>       
+        <th class="px-4 py-2">Added By</th>
+        <th class="px-4 py-2">Duration</th>        
         <th class="px-4 py-2">Actions</th>
-
       </tr>
     </thead>
     <tbody>
       <tr class="border-t">
         <td class="px-4 py-2">
-    <img src="./static/images/about1.png" alt="House" class="w-16 h-16 object-cover rounded">
-  </td>
+          <img src="./static/images/about1.png" alt="House" class="w-16 h-16 object-cover rounded">
+        </td>
         <td class="px-4 py-2">House</td>
         <td class="px-4 py-2">Sale</td>
         <td class="px-4 py-2">sale</td>
@@ -161,7 +160,7 @@
         <td class="px-4 py-2">1500</td>
 <td class="px-4 py-2">
   <span id="cell-2" class="truncate max-w-[150px] inline-block align-middle">
-    VDJFHJDSFBJSDBFJSDFJDSJSHJHDKSkgsdsakdghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhheeeeeeeeeeeee
+    VDJFHJDSFBJSDBFJSDFJDSJSHJHDKSkgsdsakdghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
   </span>
   <button onclick="openModal('cell-2')" 
           class="text-blue-500 underline ml-2">
@@ -169,6 +168,7 @@
   </button>
 </td>
 
+<!-- Modal -->
 <div id="textModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
   <div class="bg-white rounded-lg max-w-lg w-full max-h-[80vh] overflow-y-auto overflow-x-hidden p-6 relative">
     <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 font-bold text-xl">&times;</button>
@@ -177,13 +177,12 @@
 </div>
 
 
-        <td class="px-4 py-2">kkkjkjj</td>
-        <td class="px-4 py-2">https://maps.app.goo.gl/cfmyqLY6oWRUwE4w7</td>
-        <td class="px-4 py-2">kkkjkjj</td>
 
+        <td class="px-4 py-2">Pool, Garden</td>
+        <td class="px-4 py-2">https://maps.app.goo.gl/cfmyqLY6oWRUwE4w7</td>
+        <td class="px-4 py-2">Near Mall</td>
         <td class="px-4 py-2">Panampally</td>
         <td class="px-4 py-2">Ernakulam</td>
-
         <td class="px-4 py-2">₹80L per Acre</td>
         <td class="px-4 py-2">₹80,00,000</td>
         <td class="px-4 py-2">John Doe</td>
@@ -191,23 +190,18 @@
         <td class="px-4 py-2">9876543210</td>
         <td class="px-4 py-2">Yes</td>
         <td class="px-4 py-2">John</td>
+        <td class="px-4 py-2">1 year</td>
 
         <td class="px-4 flex space-x-2 py-8">
-  <button onclick="openAdminPropertyEditModal(this)" 
-    class="bg-yellow-500 text-white px-3 py-1 rounded">
-    Edit
-  </button>
-
-  <button class="bg-red-600 text-white px-3 py-1 rounded">
-    Delete
-  </button>
-
-  <button class="bg-blue-600 text-white px-3 py-1 rounded">
+          <button onclick="openAdminPropertyEditModal(this)" 
+            class="bg-yellow-500 text-white px-3 py-1 rounded">
+            Edit
+          </button>
+          <button class="bg-red-600 text-white px-3 py-1 rounded">Delete</button>
+            <button class="bg-blue-600 text-white px-3 py-1 rounded">
     Repost
   </button>
-</td>
-
-
+        </td>
       </tr>
     </tbody>
   </table>
@@ -217,6 +211,144 @@
 
 
       </div>
+
+<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
+  <div class="bg-white p-6 rounded-lg w-full max-w-4xl shadow-lg max-h-[90vh] overflow-y-auto">
+    <h2 class="text-xl font-semibold mb-4">Edit Property</h2>
+    <form id="editPropertyForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      <div>
+        <label class="block font-semibold mb-1">Category</label>
+        <select id="editCategory" class="w-full border px-3 py-2 rounded">
+          <option value="">-- Select Category --</option>
+          <option value="software">Software</option>
+          <option value="hardware">Hardware</option>
+          <option value="network">Network</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Purpose</label>
+        <select id="editPurpose" class="w-full border px-3 py-2 rounded">
+          <option value="">-- Select Purpose --</option>
+          <option value="development">Development</option>
+          <option value="testing">Testing</option>
+          <option value="research">Research</option>
+          <option value="maintenance">Maintenance</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Label</label>
+        <input type="text" id="editLabel" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Land Area</label>
+        <input type="text" id="editArea" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Sq. Ft</label>
+        <input type="number" id="editSqft" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div class="md:col-span-2">
+        <label class="block font-semibold mb-1">Description</label>
+        <textarea id="editDesc" class="w-full border px-3 py-2 rounded" rows="3"></textarea>
+      </div>
+
+      <div class="md:col-span-2">
+  <label class="block font-semibold mb-1">Amenities</label>
+  <div id="modalEditAmenitiesContainer" class="space-y-2"></div>
+  <button type="button" onclick="addAmenityField('', 'modalEditAmenitiesContainer')" class="mt-2 px-4 py-1 bg-blue-500 text-white rounded">+ Add Amenity</button>
+</div>
+
+
+      <div class="md:col-span-2">
+        <label class="block font-semibold mb-1">Current Image</label>
+        <img id="editImagePreview" src="#" alt="Property Image" class="w-40 h-32 object-cover border rounded mb-2" />
+        <input type="file" id="editImage" class="w-full border px-3 py-2 rounded" multiple />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Price</label>
+        <input type="text" id="editPrice" placeholder="10000 per cent" class="w-full border px-3 py-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Total Price</label>
+        <input type="text" id="editTotalPrice" placeholder="100000" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Owner</label>
+        <input type="text" id="editOwner" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Phone</label>
+        <input type="text" id="editPhone" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Whatsapp Number</label>
+        <input type="text" id="editWhatsappNumber" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Map Location</label>
+        <input type="text" id="editLocation" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">City</label>
+        <input type="text" id="editCity" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">District</label>
+        <input type="text" id="editDistrict" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">PIN Code</label>
+        <input type="text" id="editPin" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Landmark</label>
+        <input type="text" id="editLandmark" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Paid</label>
+        <select id="editPaid" class="w-full border px-3 py-2 rounded">
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Added By</label>
+        <input type="text" id="editAddedBy" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+
+      <div>
+        <label class="block font-semibold mb-1">Duration</label>
+        <input type="text" id="editDuration" class="w-full border px-3 py-2 rounded" />
+      </div>
+
+      <div class="md:col-span-2 text-right mt-4">
+        <button type="button" onclick="closeAdminPropertyEditModal()" class="bg-gray-400 text-white px-4 py-2 rounded mr-2">Cancel</button>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save Changes</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
 
 
       <script>
@@ -229,6 +361,119 @@ function openModal(spanId) {
 function closeModal() {
   document.getElementById("textModal").classList.add("hidden");
 }
+</script>
+<script>
+  
+
+
+
+
+// Add Amenity Field (works for any container)
+function addAmenityField(value = "", containerId) {
+  const container = document.getElementById(containerId);
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "flex items-center space-x-2";
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Enter Amenity";
+  input.value = value;
+  input.className = "w-full border px-3 py-2 rounded";
+
+  const delBtn = document.createElement("button");
+  delBtn.type = "button";
+  delBtn.innerHTML = "&#10006;";
+  delBtn.className = "text-red-500 hover:text-red-700 text-lg font-bold px-2";
+  delBtn.onclick = () => wrapper.remove();
+
+  wrapper.appendChild(input);
+  wrapper.appendChild(delBtn);
+
+  container.appendChild(wrapper);
+}
+
+// Initialize both containers with one empty field
+window.onload = () => {
+  if (document.getElementById("modalEditAmenitiesContainer").children.length === 0) {
+    addAmenityField("", "modalEditAmenitiesContainer");
+  }
+  if (document.getElementById("formAmenitiesContainer").children.length === 0) {
+    addAmenityField("", "formAmenitiesContainer");
+  }
+};
+
+// Open Modal + Populate Data
+function openAdminPropertyEditModal(button) {
+  const row = button.closest("tr");
+  const cells = row.querySelectorAll("td");
+
+  // Extract values from table row
+  const category = cells[1].innerText;
+  const purpose = cells[2].innerText;
+  const label = cells[3].innerText;
+  const area = cells[4].innerText;
+  const sqft = cells[5].innerText;
+  const desc = cells[6].innerText;
+  const amenitiesText = cells[7].innerText;
+  const location = cells[8].innerText;
+  const landmark = cells[9].innerText;
+  const city = cells[10].innerText;
+  const district = cells[11].innerText;
+  const price = cells[12].innerText;
+  const totalPrice = cells[13].innerText;
+  const owner = cells[14].innerText;
+  const phone = cells[15].innerText;
+  const whatsapp = cells[16].innerText;
+  const paid = cells[17].innerText;
+  const addedBy = cells[18].innerText;
+
+  // Fill modal inputs
+  document.getElementById("editCategory").value = category;
+  document.getElementById("editPurpose").value = purpose;
+  document.getElementById("editLabel").value = label;
+  document.getElementById("editArea").value = area;
+  document.getElementById("editSqft").value = sqft;
+  document.getElementById("editDesc").value = desc;
+  document.getElementById("editLocation").value = location;
+  document.getElementById("editLandmark").value = landmark;
+  document.getElementById("editCity").value = city;
+  document.getElementById("editDistrict").value = district;
+  document.getElementById("editPrice").value = price;
+  document.getElementById("editTotalPrice").value = totalPrice;
+  document.getElementById("editOwner").value = owner;
+  document.getElementById("editPhone").value = phone;
+  document.getElementById("editWhatsappNumber").value = whatsapp;
+  document.getElementById("editPaid").value = paid;
+  document.getElementById("editAddedBy").value = addedBy;
+
+  // Populate amenities
+  const container = document.getElementById("modalEditAmenitiesContainer");
+  container.innerHTML = ""; // clear previous
+  if (amenitiesText.trim() !== "") {
+    amenitiesText.split(",").forEach(a => {
+      if(a.trim() !== "") addAmenityField(a.trim(), "modalEditAmenitiesContainer");
+    });
+  } else {
+    addAmenityField("", "modalEditAmenitiesContainer"); // at least one field
+  }
+
+  // Show modal
+  document.getElementById("editModal").classList.remove("hidden");
+}
+
+// Close Modal
+function closeAdminPropertyEditModal() {
+  document.getElementById("editModal").classList.add("hidden");
+}
+
+// Initialize modal with one amenity field
+window.onload = () => {
+  if (document.getElementById("modalEditAmenitiesContainer").children.length === 0) {
+    addAmenityField("", "modalEditAmenitiesContainer");
+  }
+};
+
 </script>
     <script src="./static/js/admin_scripts.js"></script>
   
